@@ -1,1 +1,1 @@
-# training-shop
+# Clevertec-Shop
