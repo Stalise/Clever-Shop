@@ -4,6 +4,8 @@ import './Footer.scss';
 
 const Footer: FC = () => {
 
+   const path = process.env.REACT_APP_GITHUB_PATH
+
    return (
       <footer className="footer" data-test-id='footer'>
          <div className="footer__top">
@@ -69,19 +71,19 @@ const Footer: FC = () => {
                <li className="footer__list-item">Useful links</li>
 
                <li className="footer__list-item">
-                  <a href="#!" className="footer__list-link">Terms & Conditions</a>
+                  <Link to={'/'} className="footer__list-link">Terms & Conditions</Link>
                </li>
 
                <li className="footer__list-item">
-                  <a href="#!" className="footer__list-link">Returns & Exchanges</a>
+                  <Link to={'/'} className="footer__list-link">Returns & Exchanges</Link>
                </li>
 
                <li className="footer__list-item">
-                  <a href="#!" className="footer__list-link">Shipping & Delivery</a>
+                  <Link to={'/'} className="footer__list-link">Shipping & Delivery</Link>
                </li>
 
                <li className="footer__list-item">
-                  <a href="#!" className="footer__list-link">Privacy Policy</a>
+                  <Link to={'/'} className="footer__list-link">Privacy Policy</Link>
                </li>
             </ul>
 
@@ -111,31 +113,31 @@ const Footer: FC = () => {
 
             <div className="footer__payments">
                <div className="footer__payments-item">
-                  <img src="/images/footer_payments-1.png" className="footer__payments-img" alt="payment"></img>
+                  <img src={`${path}/images/footer_payments-1.png`} className="footer__payments-img" alt="payment"></img>
                </div>
 
                <div className="footer__payments-item">
-                  <img src="/images/footer_payments-2.png" className="footer__payments-img" alt="payment"></img>
+                  <img src={`${path}/images/footer_payments-2.png`} className="footer__payments-img" alt="payment"></img>
                </div>
 
                <div className="footer__payments-item">
-                  <img src="/images/footer_payments-3.png" className="footer__payments-img" alt="payment"></img>
+                  <img src={`${path}/images/footer_payments-3.png`} className="footer__payments-img" alt="payment"></img>
                </div>
 
                <div className="footer__payments-item">
-                  <img src="/images/footer_payments-4.png" className="footer__payments-img" alt="payment"></img>
+                  <img src={`${path}/images/footer_payments-4.png`} className="footer__payments-img" alt="payment"></img>
                </div>
 
                <div className="footer__payments-item">
-                  <img src="/images/footer_payments-5.png" className="footer__payments-img" alt="payment"></img>
+                  <img src={`${path}/images/footer_payments-5.png`} className="footer__payments-img" alt="payment"></img>
                </div>
 
                <div className="footer__payments-item">
-                  <img src="/images/footer_payments-6.png" className="footer__payments-img" alt="payment"></img>
+                  <img src={`${path}/images/footer_payments-6.png`} className="footer__payments-img" alt="payment"></img>
                </div>
 
                <div className="footer__payments-item">
-                  <img src="/images/footer_payments-7.png" className="footer__payments-img" alt="payment"></img>
+                  <img src={`${path}/images/footer_payments-7.png`} className="footer__payments-img" alt="payment"></img>
                </div>
             </div>
 

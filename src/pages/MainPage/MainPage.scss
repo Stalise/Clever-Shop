@@ -29,11 +29,90 @@
             width: 50%;
             max-height: 490px;
             padding-right: 15px;
-            .catalog__slider-img {
-               display: block;
-               width: 100%;
-               height: 100%;
-               object-fit: cover;
+            .swiper {
+               position: relative;
+               .swiper-slide {
+                  max-width: 100%;
+                  width: 100%;
+                  height: 100%;
+                  // background-color: green;
+                  .swiper-slide__img {
+                     display: block;
+                     width: 100%;
+                     height: 100%;
+                     object-fit: contain;
+                  }
+                  .swiper-slide__banner {
+                     max-width: 290px;
+                     width: 100%;
+                     height: 100px;
+                     background-color: #ffffff;
+                     display: flex;
+                     flex-direction: column;
+                     justify-content: center;
+                     align-items: center;
+                     position: absolute;
+                     top: 50%;
+                     left: 50%;
+                     transform: translate(-50%, -50%);
+                     .swiper-slide__title {
+                        margin-bottom: 10px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.06em;
+                        color: gray;
+                     }
+                     .swiper-slide__subtle {
+                        text-transform: uppercase;
+                        letter-spacing: 0.06em;
+                        font-weight: 600;
+                        font-size: 22px;
+                     }
+                  }
+               }
+               .swiper-button-prev {
+                  margin-top: -20px;
+                  width: 40px;
+                  height: 40px;
+                  left: 10px;
+                  z-index: 2;
+                  background-color: #fff;
+                  border-radius: 50%;
+                  &:after {
+                     font-family: "IcoFont";
+                     content: "\eab5";
+                     font-size: 25px;
+                     color: #2d2d2d;
+                     transition: 0.3s;
+                     position: absolute;
+                     top: 8px;
+                     left: 7px;
+                  }
+                  &:hover:after {
+                     transform: scale(1.3, 1.3);
+                  }
+               }
+               .swiper-button-next {
+                  margin-top: -20px;
+                  width: 40px;
+                  height: 40px;
+                  right: 10px;
+                  z-index: 2;
+                  border-radius: 50%;
+                  background-color: #fff;
+                  &:after {
+                     font-family: "IcoFont";
+                     content: "\eab8";
+                     font-size: 25px;
+                     color: #2d2d2d;
+                     transition: 0.3s;
+                     position: absolute;
+                     top: 8px;
+                     left: 9px;
+                  }
+                  &:hover:after {
+                     transform: scale(1.3, 1.3);
+                  }
+               }
             }
          }
          .catalog-products {
@@ -422,6 +501,7 @@
 @media (max-width: 992px) {
    .main-page {
       .advantages {
+         padding: 100px 15px 30px 15px;
          .advantages__container {
             flex-direction: column;
             align-items: center;
@@ -440,6 +520,25 @@
 
 @media (max-width: 900px) {
    .main-page {
+      .catalog {
+         .catalog__container {
+            .catalog__slider {
+               .swiper {
+                  .swiper-slide {
+                     .swiper-slide__banner {
+                        max-width: 220px;
+                        height: 80px;
+                        .swiper-slide__title {
+                        }
+                        .swiper-slide__subtle {
+                           font-size: 16px;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
       .products {
          .products__container {
             .products__top {
@@ -550,6 +649,26 @@
 
 @media (max-width: 480px) {
    .main-page {
+      .catalog {
+         .catalog__container {
+            .catalog__slider {
+               .swiper {
+                  .swiper-slide {
+                     .swiper-slide__banner {
+                        max-width: 180px;
+                        height: 60px;
+                        .swiper-slide__title {
+                           font-size: 12px;
+                        }
+                        .swiper-slide__subtle {
+                           font-size: 14px;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
       .blog {
          .blog__container {
             .blog__top {

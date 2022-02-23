@@ -1,31 +1,32 @@
 import { FC } from 'react';
 import './MainPage.scss';
 import ProductsItems from '../../components/Common/ProductItems/ProductsItems';
+import CatalogSlider from '../../components/MainPage/CatalogSlider'; 
 
 const MainPage: FC = () => {
+
+   const path = process.env.REACT_APP_GITHUB_PATH
 
    return (
       <div className="main-page" data-test-id='app'>
          <section className="catalog">
             <div className="catalog__container">
-               <div className="catalog__slider">
-                  <img className="catalog__slider-img" src="./images/slider_image.jpg" alt="girl"></img>
-               </div>
+               <CatalogSlider />
 
                <div className="catalog__products catalog-products">
                   <div className="catalog-products__top">
                      <div className="catalog-products__item">
-                        <img className="catalog-products__item-img" src="./images/catalog_girl.jpg" alt="products"></img>
+                        <img className="catalog-products__item-img" src={`${path}/images/catalog_girl.jpg`} alt="products"></img>
                         <button className="catalog-products__item-button" type="button">WOMEN</button>
                      </div>
                      <div className="catalog-products__item">
-                        <img className="catalog-products__item-img" src="images/catalog_man.jpg" alt="products"></img>
+                        <img className="catalog-products__item-img" src={`${path}/images/catalog_man.jpg`} alt="products"></img>
                         <button className="catalog-products__item-button" type="button">MEN</button>
                      </div>
                   </div>
                   <div className="catalog-products__bottom">
                      <div className="catalog-products__item">
-                        <img className="catalog-products__item-img" src="images/catalog_bag.jpg" alt="products"></img>
+                        <img className="catalog-products__item-img" src={`${path}/images/catalog_bag.jpg`} alt="products"></img>
                         <button className="catalog-products__item-button" type="button">ACCESSORIES</button>
                      </div>
                   </div>
@@ -36,7 +37,7 @@ const MainPage: FC = () => {
          <section className="advantages">
             <div className="advantages__container">
                <div className="advantages__item">
-                  <img className="advantages__img" src="images/advantages_img-1.png" alt="logo_img"></img>
+                  <img className="advantages__img" src={`${path}/images/advantages_img-1.png`} alt="logo_img"></img>
                   <div className="advantages__text">
                      <p className="advantages__title">FREE SHIPPING</p>
                      <p className="advantages__subtitle">On all UA order or order above $100</p>
@@ -44,7 +45,7 @@ const MainPage: FC = () => {
                </div>
 
                <div className="advantages__item">
-                  <img className="advantages__img" src="images/advantages_img-2.png" alt="logo_img"></img>
+                  <img className="advantages__img" src={`${path}/images/advantages_img-2.png`} alt="logo_img"></img>
                   <div className="advantages__text">
                      <p className="advantages__title">30 DAYS RETURN</p>
                      <p className="advantages__subtitle">Simply return it within 30 days for an exchange</p>
@@ -52,7 +53,7 @@ const MainPage: FC = () => {
                </div>
 
                <div className="advantages__item">
-                  <img className="advantages__img" src="images/advantages_img-3.png" alt="logo_img"></img>
+                  <img className="advantages__img" src={`${path}/images/advantages_img-3.png`} alt="logo_img"></img>
                   <div className="advantages__text">
                      <p className="advantages__title">SUPPORT 24/7</p>
                      <p className="advantages__subtitle">Contact us 24 hours a day, 7 days a week</p>
@@ -115,7 +116,7 @@ const MainPage: FC = () => {
             <div className="news__container">
                <div className="news__item news-item">
                   <div className="news-item__img-container">
-                     <img className="news-item__img" src="images/news_item-1.jpg" alt="news"></img>
+                     <img className="news-item__img" src={`${path}/images/news_item-1.jpg`} alt="news"></img>
                   </div>
                   <div className="news-item__button">
                      <p className="news-item__button-title">New Season</p>
@@ -125,7 +126,7 @@ const MainPage: FC = () => {
 
                <div className="news__item news-item">
                   <div className="news-item__img-container">
-                     <img className="news-item__img" src="images/news_item-2.jpg" alt="news"></img>
+                     <img className="news-item__img" src={`${path}/images/news_item-1.jpg`} alt="news"></img>
                   </div>
                   <div className="news-item__button">
                      <p className="news-item__button-title">Sale</p>

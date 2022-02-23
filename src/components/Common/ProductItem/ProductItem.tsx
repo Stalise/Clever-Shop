@@ -10,6 +10,7 @@ interface IProps {
 
 const ProductItem: FC<IProps> = ({ dataProduct, category }) => {
 
+   const path = process.env.REACT_APP_GITHUB_PATH
    const [priceSale, setPriceSale] = useState<number>(0)
 
    useEffect(() => {
@@ -23,7 +24,7 @@ const ProductItem: FC<IProps> = ({ dataProduct, category }) => {
       <div className="products__item products-item" data-test-id={`clothes-card-${category}`}>
          <Link to={`/category/${category}/${dataProduct.id}`} className="products-item__link">
             <div className="products-item__img-container">
-               <img className="products-item__img" src={`/images/${dataProduct.img}`} alt="product"></img>
+               <img className="products-item__img" src={`${path}/images/${dataProduct.img}`} alt="product"></img>
                {dataProduct.sale ? <div className="products-item__label">{dataProduct.sale}%</div> : null}
             </div>
 
@@ -35,7 +36,7 @@ const ProductItem: FC<IProps> = ({ dataProduct, category }) => {
                   {dataProduct.sale !== 0 ? <p className="products-item__price-old">$ {dataProduct.price}</p> : null}
                </div>
                <div className="products-item__rating">
-                  <img className="products-item__rating-img" src="/images/rating.png" alt="rating"></img>
+                  <img className="products-item__rating-img" src={`${path}/images/rating.png`} alt="rating"></img>
                </div>
             </div>
          </Link>

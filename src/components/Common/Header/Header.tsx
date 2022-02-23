@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom';
 
 const Header: FC = () => {
 
+   const path = process.env.REACT_APP_GITHUB_PATH
    const [burger, setBurger] = useState<boolean>(false)
 
    const changeBurger = () => {
+
+      !burger ? document.body.style.overflow = "hidden" : document.body.style.overflow = "visible"
+
       setBurger(!burger)
    }
 
@@ -30,39 +34,39 @@ const Header: FC = () => {
 
          <div className="header__bottom-container">
             <div className="header__bottom">
-               <div className="header__burger-icon" onClick={() => changeBurger()}>
+               <div className="header__burger-icon" onClick={() => changeBurger()} data-test-id={'burger-menu-btn'}>
                   <span className="header__burger-line"></span>
                </div>
 
                <Link to="/" className="header__logo" data-test-id='header-logo-link'>CleverShop</Link>
 
-               <nav className="header__navigate header-navigate" data-test-id='menu'>
+               <nav className="header__navigate header-navigate" data-test-id='burger-menu'>
                   <ul className="header-navigate__list">
-                     <li className="header-navigate__item">
+                     <li className="header-navigate__item" onClick={() => changeBurger()}>
                         <Link to="/" className="header-navigate__link" data-test-id={`menu-link-about`}>About Us</Link>
                      </li>
 
-                     <li className="header-navigate__item">
+                     <li className="header-navigate__item" onClick={() => changeBurger()}>
                         <Link to={'/category/women'} className="header-navigate__link" data-test-id={`menu-link-women`}>Women</Link>
                      </li>
 
-                     <li className="header-navigate__item">
+                     <li className="header-navigate__item" onClick={() => changeBurger()}>
                         <Link to="/category/men" className="header-navigate__link" data-test-id={`menu-link-men`}>Men</Link>
                      </li>
 
-                     <li className="header-navigate__item">
+                     <li className="header-navigate__item" onClick={() => changeBurger()}>
                         <Link to="/" className="header-navigate__link" data-test-id={`menu-link-beauty`}>Beauty</Link>
                      </li>
 
-                     <li className="header-navigate__item">
+                     <li className="header-navigate__item" onClick={() => changeBurger()}>
                         <Link to="/" className="header-navigate__link" data-test-id={`menu-link-accessories`}>Accessories</Link>
                      </li>
 
-                     <li className="header-navigate__item">
+                     <li className="header-navigate__item" onClick={() => changeBurger()}>
                         <Link to="/" className="header-navigate__link" data-test-id={`menu-link-blog`}>Blog</Link>
                      </li>
 
-                     <li className="header-navigate__item">
+                     <li className="header-navigate__item" onClick={() => changeBurger()}>
                         <Link to="/" className="header-navigate__link" data-test-id={`menu-link-contact`}>Contact</Link>
                      </li>
                   </ul>
@@ -70,16 +74,16 @@ const Header: FC = () => {
 
                <div className="header__actions">
                   <div className="header__search">
-                     <img className="header__search-img" src="/images/search.png"></img>
+                     <img className="header__search-img" src={`${path}/images/search.png`}></img>
                   </div>
                   <div className="header__globe">
-                     <img className="header__search-img" src="/images/globe.png"></img>
+                     <img className="header__search-img" src={`${path}/images/globe.png`}></img>
                   </div>
                   <div className="header__user">
-                     <img className="header__search-img" src="/images/user.png"></img>
+                     <img className="header__search-img" src={`${path}/images/user.png`}></img>
                   </div>
                   <div className="header__cart">
-                     <img className="header__search-img" src="/images/cart.png"></img>
+                     <img className="header__search-img" src={`${path}/images/cart.png`}></img>
                   </div>
                </div>
             </div>
