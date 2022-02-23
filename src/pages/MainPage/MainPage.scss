@@ -147,6 +147,9 @@
                      font-weight: 600;
                      background-color: #fff;
                      letter-spacing: 1px;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
                   }
                }
             }
@@ -578,14 +581,26 @@
       .products {
          .products__container {
             .products__top {
+               // .products__tabs {
+               //    overflow: auto;
+               //    height: 30px;
+               //    .products__tabs-list {
+               //       white-space: nowrap;
+               //       .products__tabs-item {
+               //          &:not(:last-child) {
+               //             margin-right: 25px;
+               //          }
+               //       }
+               //    }
+               // }
                .products__tabs {
-                  overflow: auto;
-                  height: 30px;
                   .products__tabs-list {
-                     white-space: nowrap;
+                     flex-direction: column;
+                     align-items: center;
                      .products__tabs-item {
                         &:not(:last-child) {
-                           margin-right: 25px;
+                           margin-right: 0;
+                           margin-bottom: 20px;
                         }
                      }
                   }

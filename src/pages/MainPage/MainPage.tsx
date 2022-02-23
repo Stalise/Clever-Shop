@@ -1,7 +1,8 @@
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import './MainPage.scss';
 import ProductsItems from '../../components/Common/ProductItems/ProductsItems';
-import CatalogSlider from '../../components/MainPage/CatalogSlider'; 
+import CatalogSlider from '../../components/MainPage/CatalogSlider';
 
 const MainPage: FC = () => {
 
@@ -17,11 +18,11 @@ const MainPage: FC = () => {
                   <div className="catalog-products__top">
                      <div className="catalog-products__item">
                         <img className="catalog-products__item-img" src={`${path}/images/catalog_girl.jpg`} alt="products"></img>
-                        <button className="catalog-products__item-button" type="button">WOMEN</button>
+                        <Link to={'/category/women'} className="catalog-products__item-button" type="button">WOMEN</Link>
                      </div>
                      <div className="catalog-products__item">
                         <img className="catalog-products__item-img" src={`${path}/images/catalog_man.jpg`} alt="products"></img>
-                        <button className="catalog-products__item-button" type="button">MEN</button>
+                        <Link to={'/category/men'} className="catalog-products__item-button" type="button">MEN</Link>
                      </div>
                   </div>
                   <div className="catalog-products__bottom">
@@ -126,7 +127,7 @@ const MainPage: FC = () => {
 
                <div className="news__item news-item">
                   <div className="news-item__img-container">
-                     <img className="news-item__img" src={`${path}/images/news_item-1.jpg`} alt="news"></img>
+                     <img className="news-item__img" src={`${path}/images/news_item-2.jpg`} alt="news"></img>
                   </div>
                   <div className="news-item__button">
                      <p className="news-item__button-title">Sale</p>

@@ -10,8 +10,14 @@ const Header: FC = () => {
    const changeBurger = () => {
 
       !burger ? document.body.style.overflow = "hidden" : document.body.style.overflow = "visible"
-
       setBurger(!burger)
+   }
+
+   const clickMenuLink = () => {
+      if (burger === true) {
+         document.body.style.overflow = "visible"
+         setBurger(false)
+      }
    }
 
    return (
@@ -42,31 +48,31 @@ const Header: FC = () => {
 
                <nav className="header__navigate header-navigate" data-test-id='burger-menu'>
                   <ul className="header-navigate__list">
-                     <li className="header-navigate__item" onClick={() => changeBurger()}>
+                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
                         <Link to="/" className="header-navigate__link" data-test-id={`menu-link-about`}>About Us</Link>
                      </li>
 
-                     <li className="header-navigate__item" onClick={() => changeBurger()}>
+                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
                         <Link to={'/category/women'} className="header-navigate__link" data-test-id={`menu-link-women`}>Women</Link>
                      </li>
 
-                     <li className="header-navigate__item" onClick={() => changeBurger()}>
+                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
                         <Link to="/category/men" className="header-navigate__link" data-test-id={`menu-link-men`}>Men</Link>
                      </li>
 
-                     <li className="header-navigate__item" onClick={() => changeBurger()}>
+                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
                         <Link to="/" className="header-navigate__link" data-test-id={`menu-link-beauty`}>Beauty</Link>
                      </li>
 
-                     <li className="header-navigate__item" onClick={() => changeBurger()}>
+                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
                         <Link to="/" className="header-navigate__link" data-test-id={`menu-link-accessories`}>Accessories</Link>
                      </li>
 
-                     <li className="header-navigate__item" onClick={() => changeBurger()}>
+                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
                         <Link to="/" className="header-navigate__link" data-test-id={`menu-link-blog`}>Blog</Link>
                      </li>
 
-                     <li className="header-navigate__item" onClick={() => changeBurger()}>
+                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
                         <Link to="/" className="header-navigate__link" data-test-id={`menu-link-contact`}>Contact</Link>
                      </li>
                   </ul>

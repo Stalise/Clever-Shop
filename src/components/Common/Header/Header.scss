@@ -285,12 +285,12 @@
                left: 0;
                z-index: 12;
                // border: 1px solid red;
-               overflow-y: auto;
+               // overflow-y: auto;
                display: none;
                .header-navigate__list {
                   flex-direction: column;
-                  overflow-y: auto;
-                  max-height: calc(100vh - 130px);
+                  // overflow-y: auto;
+                  // max-height: calc(100vh - 130px);
                   .header-navigate__item {
                      &:not(:last-child) {
                         margin-bottom: 20px;
