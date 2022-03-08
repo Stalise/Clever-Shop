@@ -1,0 +1,115 @@
+.react-select {
+   position: relative;
+   &:before {
+   }
+   .react-select__control {
+      background-color: transparent;
+      min-height: 0;
+      font-weight: 500;
+      border-radius: 0;
+      border: none;
+      // font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: none;
+      padding-right: 18px;
+      &:hover {
+         box-shadow: none;
+         border: none;
+         .react-select__value-container {
+            .react-select__single-value {
+               text-decoration: none;
+            }
+         }
+         &:after {
+            color: #121212;
+         }
+      }
+      &:after {
+         font-family: "IcoFont";
+         content: "\eab2";
+         position: absolute;
+         right: 0;
+         top: 0;
+         color: #c0c0c0;
+         transition: color 0.3s;
+      }
+      &--menu-is-open {
+      }
+      .react-select__value-container {
+         padding: 0;
+         justify-content: center;
+         .react-select__single-value {
+            letter-spacing: 0.06em;
+            background-color: transparent;
+            text-transform: uppercase;
+            color: #c0c0c0;
+            font-size: 16px;
+            transition: color 0.3s;
+            &:hover {
+               color: #121212;
+            }
+         }
+      }
+      .react-select__indicators {
+         display: none;
+      }
+   }
+   .react-select__menu {
+      width: 100%;
+      min-width: 150px;
+      position: absolute;
+      top: 25px;
+      right: 0;
+      color: hsl(0, 0%, 50%);
+      font-weight: 500;
+      border: 0px;
+      font-size: 16px;
+      border-radius: 10px;
+      overflow: hidden;
+      .react-select__menu-list {
+         padding: 0;
+         .react-select__option {
+            cursor: pointer;
+            padding: 10px 10px;
+            line-height: 18px;
+         }
+         .react-select__option--is-focused {
+            background-color: #fff;
+            &:hover {
+               background-color: #f5f5f5;
+            }
+         }
+         .react-select__option--is-selected {
+            background-color: #f5f5f5 !important;
+            color: gray;
+         }
+      }
+   }
+}
+
+@media (max-width: 480px) {
+   .react-select {
+      .react-select__control {
+         max-width: 130px;
+         padding-right: 14px;
+         .react-select__value-container {
+            .react-select__single-value {
+               font-size: 12px;
+               padding-top: 1px;
+            }
+         }
+      }
+      .react-select__menu {
+         max-width: 130px;
+         min-width: 110px;
+         font-size: 12px;
+         top: 17px;
+         .react-select__menu-list {
+            .react-select__option {
+               line-height: 14px;
+            }
+         }
+      }
+   }
+}

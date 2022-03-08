@@ -1,16 +1,24 @@
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
 import { Navigation, Autoplay, Controller, Thumbs } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/scss';
 // import 'swiper/scss/navigation';
 
 interface IProps {
-   setFirstSwiper: any
+   sortedImages: IImages[],
+   secondarySlider: any,
+   setMainSlider: any,
+   mainSlider: any,
+   setSecondarySlider: any,
 }
 
-const SecondarySlider: FC<IProps> = ({ setFirstSwiper }) => {
+interface IImages {
+   color: string,
+   url: string,
+   id: string,
+}
 
-   const path = process.env.REACT_APP_GITHUB_PATH
+const SecondarySlider: FC<IProps> = ({ sortedImages, secondarySlider, mainSlider, setMainSlider, setSecondarySlider }) => {
 
    return (
       <div className="product__secondary-slider secondary-slider" data-test-id={'related-slider'}>
@@ -25,24 +33,17 @@ const SecondarySlider: FC<IProps> = ({ setFirstSwiper }) => {
             speed={1000}
             spaceBetween={15}
             slidesPerView={4}
-            onSlideChange={() => console.log('change')}
-            onSwiper={setFirstSwiper}
+            observer={true}
+            onSwiper={setSecondarySlider}
+         // controller={{ control: mainSlider }}
          >
-            <SwiperSlide className="swiper-slide">
-               <img className="swiper-slide__img" src={`${path}/images/product-slider_img-1.jpg`} alt="product"></img>
-            </SwiperSlide>
-
-            <SwiperSlide className="swiper-slide">
-               <img className="swiper-slide__img" src={`${path}/images/product-slider_img-1.jpg`} alt="product"></img>
-            </SwiperSlide>
-
-            <SwiperSlide className="swiper-slide">
-               <img className="swiper-slide__img" src={`${path}/images/product-slider_img-1.jpg`} alt="product"></img>
-            </SwiperSlide>
-
-            <SwiperSlide className="swiper-slide">
-               <img className="swiper-slide__img" src={`${path}/images/product-slider_img-1.jpg`} alt="product"></img>
-            </SwiperSlide>
+            {sortedImages.map((elem, index) => {
+               return (
+                  <SwiperSlide className={`swiper-slide`} key={elem.id}>
+                     <img className="swiper-slide__img" src={`https://training.cleverland.by/shop${elem.url}`} alt="product"></img>
+                  </SwiperSlide>
+               )
+            })}
 
             <div className="btn-container">
                <div className="btn-prev"></div>

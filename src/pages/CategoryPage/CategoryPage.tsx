@@ -2,15 +2,23 @@ import { FC, useEffect, useState } from "react";
 import './CategoryPage.scss';
 import ProductsItems from "../../components/Common/ProductItems/ProductsItems";
 import { Link, useParams } from "react-router-dom";
+import MySelectProducts from "../../components/CategoryPage/MySelectProducts/MySelectProducts";
+import ProductsFilter from "../../components/CategoryPage/Filter";
 
 const CategoryPage: FC = () => {
 
    const [categoryName, setCategoryName] = useState<string>('')
    const params = useParams()
 
+   const [isFilter, setIsFilter] = useState<boolean>(false)
+
    useEffect(() => {
       if (params.category) {
          setCategoryName(params.category)
+      }
+
+      return () => {
+         console.log('unmount CategoryPage')
       }
    }, [params.category])
 
@@ -36,22 +44,24 @@ const CategoryPage: FC = () => {
          <section className="products">
             <div className="products__container">
                <div className="products__actions">
-                  <div className="products__filter">
-                     <button className="products__filter-button">Filter</button>
-                     <div className="products__filter-menu"></div>
+                  <div className="products__actions-top">
+                     <div className={`products__filter ${isFilter ? '_active' : ''}`} data-test-id={'filter-button'}>
+                        <button onClick={() => setIsFilter(!isFilter)} className="products__filter-button">Filter</button>
+                        <div className="products__filter-menu"></div>
+                     </div>
+
+                     <div className="products__tabs">
+                        <button className="products__tabs-item"></button>
+                        <button className="products__tabs-item"></button>
+                     </div>
+
+                     {categoryName && <MySelectProducts categoryName={categoryName} />}
                   </div>
 
-                  <div className="products__tabs">
-                     <button className="products__tabs-item"></button>
-                     <button className="products__tabs-item"></button>
-                  </div>
-
-                  <div className="products__select">Bestsellers</div>
+                  {categoryName && <ProductsFilter isFilter={isFilter} category={categoryName} />}
                </div>
 
-               <ProductsItems
-                  category={categoryName}
-               />
+               {categoryName && <ProductsItems category={categoryName} />}
 
                <div className="products__bottom">
                   <div className="products__loader"></div>

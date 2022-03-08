@@ -50,14 +50,11 @@
             justify-content: space-between;
             .introduction__rating {
                display: flex;
-               .introduction__rating-img {
-                  display: block;
-                  margin-right: 10px;
-               }
                .introduction__reviews {
                   color: #121212;
                   font-weight: 500;
                   opacity: 0.6;
+                  margin-left: 10px;
                }
             }
             .introduction__info {
@@ -108,6 +105,7 @@
                         overflow: hidden;
                         opacity: 0.3;
                         transition: opacity 0.3s;
+                        cursor: pointer;
                         .swiper-slide__img {
                            width: 100%;
                            height: auto;
@@ -115,6 +113,9 @@
                            object-fit: contain;
                         }
                      }
+                     // .swiper-slide-active {
+                     //    opacity: 1;
+                     // }
                      .swiper-slide-thumb-active {
                         opacity: 1;
                      }
@@ -130,6 +131,7 @@
                      display: flex;
                      justify-content: space-between;
                      z-index: 100;
+                     background-color: #f8f8f8;
                      .btn-prev {
                         // border: 1px solid red;
                         max-width: 40px;
@@ -190,6 +192,7 @@
                         max-height: 560px;
                         height: 100%;
                         overflow: hidden;
+                        cursor: grab;
                         .swiper-slide__img {
                            display: block;
                            width: 100%;
@@ -332,6 +335,18 @@
                         max-height: 65px;
                         height: 100%;
                         overflow: hidden;
+                        cursor: pointer;
+                        border: 2px solid transparent;
+                        transition: border 0.3s;
+                        &._active {
+                           border: 2px solid #2d2d2d;
+                           &:hover {
+                              border: 2px solid #2d2d2d;
+                           }
+                        }
+                        &:hover {
+                           border: 2px solid lightgray;
+                        }
                         &:not(:last-child) {
                            margin-right: 15px;
                         }
@@ -357,12 +372,16 @@
                   .tabs-size__content {
                      margin-bottom: 15px;
                      .tabs-size__button-size {
-                        width: 40px;
-                        height: 40px;
+                        // width: 40px;
+                        // height: 40px;
+                        padding: 10px 10px;
                         font-weight: 600;
                         color: darkgray;
                         font-size: 14px;
                         transition-duration: 0.3s;
+                        &._active {
+                           color: #121212;
+                        }
                         &:not(:last-child) {
                            margin-right: 10px;
                         }
@@ -471,16 +490,17 @@
                      padding-left: 30px;
                      // border: 1px solid red;
                      color: darkgray;
+                     font-size: 13px;
                      &:before {
                         content: url("../../../public/images/product_advantages-1.png");
                         opacity: 0.6;
                         position: absolute;
-                        top: 0;
+                        top: -4px;
                         left: 1px;
                         transition-duration: 0.3s;
                      }
                      &:nth-child(2):before {
-                        top: -5px;
+                        top: -7px;
                         content: url("../../../public/images/product_advantages-2.png");
                      }
                      &:nth-child(3):before {
@@ -572,15 +592,12 @@
                   width: 100%;
                   display: flex;
                   justify-content: space-between;
-                  margin-bottom: 30px;
+                  // margin-bottom: 30px;
                   .reviews-actions__rating {
                      display: flex;
-                     .reviews-actions__rating-img {
-                        display: block;
-                        margin-right: 10px;
-                     }
                      .reviews-actions__rating-title {
                         color: darkgray;
+                        margin-left: 10px;
                      }
                   }
                   .reviews-actions__message {
@@ -608,6 +625,7 @@
                }
                .product__reviews-content {
                   width: 100%;
+                  margin-top: 30px;
                   .reviews-item {
                      .reviews-item__top {
                         display: flex;

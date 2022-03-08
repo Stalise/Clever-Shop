@@ -23,7 +23,7 @@ const CatalogSlider: FC = () => {
             speed={1000}
             spaceBetween={0}
             slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
+            onSlideChange={() => null}
             onSwiper={(swiper) => null}
          >
             <SwiperSlide className="swiper-slide">

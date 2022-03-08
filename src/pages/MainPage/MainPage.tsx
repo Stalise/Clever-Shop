@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './MainPage.scss';
 import ProductsItems from '../../components/Common/ProductItems/ProductsItems';
 import CatalogSlider from '../../components/MainPage/CatalogSlider';
+import ProductsContainer from '../../components/MainPage/ProductsContainer';
 
 const MainPage: FC = () => {
 
@@ -63,55 +64,17 @@ const MainPage: FC = () => {
             </div>
          </section>
 
-         <section className="products" data-test-id={`clothes-women`}>
-            <div className="products__container">
-               <div className="products__top">
-                  <p className="products__title">MEN’S</p>
-                  <div className="products__tabs">
-                     <ul className="products__tabs-list">
-                        <li className="products__tabs-item">NEW ARRIVALS</li>
-                        <li className="products__tabs-item">SPECIALS</li>
-                        <li className="products__tabs-item">BESTSELLERS</li>
-                        <li className="products__tabs-item">MOST VIEWED</li>
-                        <li className="products__tabs-item">FEATURED PRODUCTS</li>
-                     </ul>
-                  </div>
-               </div>
+         <ProductsContainer
+            dataTestId={'clothes-women'}
+            title={'WOMEN’S'}
+            category={'women'}
+         />
 
-               <ProductsItems
-                  category={'women'}
-               />
-
-               <div className="products__bottom">
-                  <a href="!#" className="products__bottom-button">SEE ALL</a>
-               </div>
-            </div>
-         </section>
-
-         <section className="products" data-test-id={`clothes-men`}>
-            <div className="products__container">
-               <div className="products__top">
-                  <p className="products__title">MEN’S</p>
-                  <div className="products__tabs">
-                     <ul className="products__tabs-list">
-                        <li className="products__tabs-item">NEW ARRIVALS</li>
-                        <li className="products__tabs-item">SPECIALS</li>
-                        <li className="products__tabs-item">BESTSELLERS</li>
-                        <li className="products__tabs-item">MOST VIEWED</li>
-                        <li className="products__tabs-item">FEATURED PRODUCTS</li>
-                     </ul>
-                  </div>
-               </div>
-
-               <ProductsItems
-                  category={'men'}
-               />
-
-               <div className="products__bottom">
-                  <a href="!#" className="products__bottom-button">SEE ALL</a>
-               </div>
-            </div>
-         </section>
+         <ProductsContainer
+            dataTestId={'clothes-men'}
+            title={'MEN’S'}
+            category={'men'}
+         />
 
          <section className="news">
             <div className="news__container">

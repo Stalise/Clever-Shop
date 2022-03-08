@@ -253,6 +253,10 @@
                      opacity: 0.6;
                      letter-spacing: 0.06em;
                      cursor: pointer;
+                     transition: opacity 0.3s;
+                     &._active {
+                        opacity: 1;
+                     }
                   }
                }
             }

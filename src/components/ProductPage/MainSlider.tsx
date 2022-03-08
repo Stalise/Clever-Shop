@@ -1,22 +1,29 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Navigation, Autoplay, Controller, Thumbs } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/scss';
 // import 'swiper/scss/navigation';
 
 interface IProps {
-   firstSwiper: any
+   sortedImages: IImages[]
+   mainSlider: any,
+   setMainSlider: any,
+   setSecondarySlider: any,
+   secondarySlider: any,
 }
 
-const MainSlider: FC<IProps> = ({ firstSwiper }) => {
+interface IImages {
+   color: string,
+   url: string,
+   id: string,
+}
 
-   const path = process.env.REACT_APP_GITHUB_PATH
+const MainSlider: FC<IProps> = ({ sortedImages, mainSlider, secondarySlider, setMainSlider }) => {
 
    return (
       <div className="product__main-slider main-slider">
          <Swiper
             modules={[Navigation, Autoplay, Controller, Thumbs]}
-            // navigation
             navigation={{
                nextEl: '.btn-next',
                prevEl: '.btn-prev',
@@ -24,24 +31,21 @@ const MainSlider: FC<IProps> = ({ firstSwiper }) => {
             speed={1000}
             spaceBetween={0}
             slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
-            thumbs={{ swiper: firstSwiper }}
+            watchSlidesProgress
+            observer={true}
+            onSwiper={setMainSlider}
+            // controller={{ control: secondarySlider }}
+            thumbs={{ swiper: secondarySlider }}
          >
-            <SwiperSlide className="swiper-slide">
-               <img className="swiper-slide__img" src={`${path}/images/product-slider_img-1.jpg`} alt="product"></img>
-            </SwiperSlide>
 
-            <SwiperSlide className="swiper-slide">
-               <img className="swiper-slide__img" src={`${path}/images/product-slider_img-1.jpg`} alt="product"></img>
-            </SwiperSlide>
+            {sortedImages.map((elem, index) => {
 
-            <SwiperSlide className="swiper-slide">
-               <img className="swiper-slide__img" src={`${path}/images/product-slider_img-1.jpg`} alt="product"></img>
-            </SwiperSlide>
-
-            <SwiperSlide className="swiper-slide">
-               <img className="swiper-slide__img" src={`${path}/images/product-slider_img-1.jpg`} alt="product"></img>
-            </SwiperSlide>
+               return (
+                  <SwiperSlide className="swiper-slide" key={elem.id}>
+                     <img className="swiper-slide__img" src={`https://training.cleverland.by/shop${elem.url}`} alt="product"></img>
+                  </SwiperSlide>
+               )
+            })}
 
             <div className="btn-container">
                <div className="btn-prev"></div>

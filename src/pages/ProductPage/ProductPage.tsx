@@ -2,24 +2,31 @@ import './ProductPage.scss';
 import { FC, useEffect, useState } from "react";
 import { Link, useParams } from 'react-router-dom';
 import { IProductsItem } from '../../types/typesProductsItem';
-import { fakeDataProducts } from '../../tempProducts';
+import { dataProducts } from '../../products';
 import ProductSliders from '../../components/ProductPage/ProductSliders';
 import SimilarSlider from '../../components/ProductPage/SimilarSlideer';
+import Sizes from '../../components/ProductPage/Sizes';
+import Colors from '../../components/ProductPage/Colors';
+import Rating from '../../components/Common/Rating/Rating';
+import Reviews from '../../components/ProductPage/Reviews';
 
 const ProductPage: FC = () => {
 
    const path = process.env.REACT_APP_GITHUB_PATH
    const [currentProduct, setCurrentProduct] = useState<IProductsItem>()
+   const [currentColor, setCurrentColor] = useState<string>('')
 
    const params = useParams()
-   const getProducts: IProductsItem[] = fakeDataProducts[params.category as keyof typeof fakeDataProducts]
-
-   //id объекта минус 1, для поиска товара в массиве с нулевого индекса
-   const idProduct = Number(params.id) - 1
+   const getProducts: IProductsItem[] = dataProducts[params.category as keyof typeof dataProducts]
 
    useEffect(() => {
-      setCurrentProduct(getProducts[idProduct])
-   }, [currentProduct])
+      // фильтруем массив с товарами для получения текущего при didMount
+      const currentProduct = getProducts.filter((elem) => elem.id === params.id)[0]
+      setCurrentProduct(currentProduct)
+
+      // устанавливаем дефолтный цвет для картинок в продукте
+      setCurrentColor(currentProduct.images[0].color)
+   }, [params])
 
    return (
       <div className="product-page" data-test-id={`product-page-${params.category}`}>
@@ -41,8 +48,10 @@ const ProductPage: FC = () => {
 
                <div className="introduction__bottom">
                   <div className="introduction__rating">
-                     <img src={`${path}/images/rating.png`} className="introduction__rating-img" alt="rating"></img>
-                     <a href="#!" className="introduction__reviews">2 Reviews</a>
+                     <Rating
+                        rating={currentProduct?.reviews ? currentProduct?.reviews.reduce((t, e, i, a) => (t += e.rating), 0) / currentProduct?.reviews.length : 0}
+                     />
+                     <a href="#!" className="introduction__reviews">{currentProduct?.reviews ? currentProduct?.reviews.length : 0} Reviews</a>
                   </div>
 
                   <div className="introduction__info">
@@ -55,48 +64,21 @@ const ProductPage: FC = () => {
 
          <section className="product">
             <div className="product__container">
-               <ProductSliders />
+               {currentColor.length > 0 && currentProduct && <ProductSliders currentColor={currentColor} currentProduct={currentProduct} />}
 
                <div className="product__content">
                   <div className="product__tabs">
-                     <div className="product__tabs-color tabs-color">
-                        <p className="tabs-color__text">COLOR: <span>Blue</span> </p>
+                     <Colors
+                        images={currentProduct?.images}
+                        currentColor={currentColor}
+                        setCurrentColor={setCurrentColor}
+                     />
 
-                        <div className="tabs-color__content">
-                           <div className="tabs-color__item">
-                              <img className="tabs-color__item-img" src={`${path}/images/product-slider_img-1.jpg`} alt="wear"></img>
-                           </div>
-
-                           <div className="tabs-color__item">
-                              <img className="tabs-color__item-img" src={`${path}/images/product_tab-1.jpg`} alt="wear"></img>
-                           </div>
-
-                           <div className="tabs-color__item">
-                              <img className="tabs-color__item-img" src={`${path}/images/product_tab-2.jpg`} alt="wear"></img>
-                           </div>
-
-                           <div className="tabs-color__item">
-                              <img className="tabs-color__item-img" src={`${path}/images/product_tab-3.jpg`} alt="wear"></img>
-                           </div>
-                        </div>
-                     </div>
-
-                     <div className="product__tabs-size tabs-size">
-                        <p className="tabs-size__text">SIZE: <span>Blue</span> </p>
-
-                        <div className="tabs-size__content">
-                           <button type="button" className="tabs-size__button-size">XS</button>
-                           <button type="button" className="tabs-size__button-size">S</button>
-                           <button type="button" className="tabs-size__button-size">M</button>
-                           <button type="button" className="tabs-size__button-size">L</button>
-                        </div>
-
-                        <button className="tabs-size__button-check">Size guide</button>
-                     </div>
+                     <Sizes sizesList={currentProduct?.sizes} />
                   </div>
 
                   <div className="product__actions">
-                     <p className="product__price">$ 379.99</p>
+                     <p className="product__price">$ {currentProduct?.price}</p>
                      <button className="product__button-cart" type="button">ADD TO CART</button>
                      <button className="product__button-favourites" type="button"></button>
                      <button className="product__button-compare" type="button"></button>
@@ -156,59 +138,20 @@ const ProductPage: FC = () => {
 
                      <ul className="product__available-list">
                         <li className="product__available-item">
-                           Color: <span>Blue, White, Black, Grey</span>
+                           Color: <span>{new Set(currentProduct?.images.map((elem) => elem.color + '. '))}</span>
                         </li>
 
                         <li className="product__available-item">
-                           Size: <span>XS, S, M, L</span>
+                           Size: <span>{currentProduct?.sizes.map((elem, index, arr) => index < (arr.length - 1) ? elem + ', ' : elem)}</span>
                         </li>
 
                         <li className="product__available-item">
-                           Material: <span>100% Polyester</span>
+                           Material: <span>{currentProduct?.material}</span>
                         </li>
                      </ul>
                   </div>
 
-                  <div className="product__reviews">
-                     <p className="product__reviews-title">Reviews</p>
-
-                     <div className="product__reviews-actions reviews-actions">
-                        <div className="reviews-actions__rating">
-                           <img className="reviews-actions__rating-img" src={`${path}/images/rating.png`} alt="rating"></img>
-                           <a href="#!" className="reviews-actions__rating-title">2 reviews</a>
-                        </div>
-
-                        <p className="reviews-actions__message">Write a review</p>
-                     </div>
-
-                     <div className="product__reviews-content">
-                        <div className="product__reviews-item reviews-item">
-                           <div className="reviews-item__top">
-                              <p className="reviews-item__name">Oleh Chabanov</p>
-
-                              <div className="reviews-item__info">
-                                 <p className="reviews-item__date">3 months ago</p>
-                                 <img className="reviews-item__img" src={`${path}/images/rating.png`} alt="rating"></img>
-                              </div>
-                           </div>
-
-                           <p className="reviews-item__text">On the other hand, we denounce with righteous indignation and like men who are so beguiled and demoralized by the charms of pleasure of the moment</p>
-                        </div>
-
-                        <div className="product__reviews-item reviews-item">
-                           <div className="reviews-item__top">
-                              <p className="reviews-item__name">Max Podolski</p>
-
-                              <div className="reviews-item__info">
-                                 <p className="reviews-item__date">2 months ago</p>
-                                 <img className="reviews-item__img" src={`${path}/images/rating.png`} alt="rating"></img>
-                              </div>
-                           </div>
-
-                           <p className="reviews-item__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti</p>
-                        </div>
-                     </div>
-                  </div>
+                  <Reviews currentProduct={currentProduct} />
                </div>
             </div>
          </section>
