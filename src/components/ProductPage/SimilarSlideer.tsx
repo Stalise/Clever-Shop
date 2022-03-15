@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
-import { IProductsItem } from '../../types/typesProductsItem';
+import { IProductsItem } from '../../types/productsItem';
 import ProductItem from '../Common/ProductItem/ProductItem';
 
 interface IParams {

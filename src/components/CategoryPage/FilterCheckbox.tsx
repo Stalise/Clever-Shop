@@ -15,7 +15,7 @@ const FilterCheckbox: FC<IProps> = ({ type, text, currentParams, category }) => 
    const [isChecked, setIsChecked] = useState(false)
 
    const changeParams = () => {
-      // разворачиваем текущие параметры из стейта в редакс
+      // разворачиваем текущие параметры из редакс, чтобы можно было их изменить
       let getParams = [...currentParams]
 
       // в зависимости от статуса чекбокса мы меняем данные в редакс. Добавляя или убирая параметр в массиве значений.
@@ -24,14 +24,14 @@ const FilterCheckbox: FC<IProps> = ({ type, text, currentParams, category }) => 
 
          setIsChecked(true)
 
-         dispatch(changeParamsAction(getParams, category, type))
+         dispatch(changeParamsAction(getParams, category, type.toLowerCase()))
 
       } else {
          getParams = getParams.filter((elem) => elem !== text)
 
          setIsChecked(false)
 
-         dispatch(changeParamsAction(getParams, category, type))
+         dispatch(changeParamsAction(getParams, category, type.toLowerCase()))
 
       }
    }

@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import FilterList from "./FilterList";
 import { dataProducts } from '../../products';
-import { IProductsItem } from '../../types/typesProductsItem';
+import { IProductsItem } from '../../types/productsItem';
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useDispatch } from "react-redux";
 import { clearSortedAction } from '../../store/reducers/sortedReducer/sortedReducer';
@@ -54,7 +54,7 @@ const Filter: FC<IProps> = ({ isFilter, category }) => {
          brands: Array.from(uniqBrands)
       })
 
-      // очищает значения фильтров в редакс при смене категории товаров, чтобы не оставалось старых значений
+      // очищает значения фильтров в редакс при смене категории товаров (c men на women напрмиер), чтобы не оставалось старых значений
       dispatch(clearSortedAction(category))
 
    }, [category])

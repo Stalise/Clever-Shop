@@ -1,4 +1,4 @@
-import { IProductsItem } from '../../../types/typesProductsItem';
+import { IProductsItem } from '../../../types/productsItem';
 
 //! типы для стейта
 interface ICategory {

@@ -1,29 +1,31 @@
 import { FC, useEffect, useState } from "react";
+import { ICurrentParams } from '../../pages/ProductPage/ProductPage';
 
 interface IProps {
    sizesList: string[] | undefined,
+   currentParams: ICurrentParams,
+   setCurrentParams: (obj: ICurrentParams) => void
 }
 
-const Sizes: FC<IProps> = ({ sizesList }) => {
+const Sizes: FC<IProps> = ({ sizesList, currentParams, setCurrentParams }) => {
 
-   const [currentSize, setSize] = useState<string>('')
-
+   // при загрузке нового товара или с первой отрисовкой ставится первый нужный размер
    useEffect(() => {
-      if (sizesList && currentSize === '') {
-         setSize(sizesList[0])
+      if (sizesList && currentParams.size === '') {
+         setCurrentParams({ ...currentParams, size: sizesList[0] })
       }
    }, [sizesList])
 
    return (
       <div className="product__tabs-size tabs-size">
-         <p className="tabs-size__text">SIZE: <span>{currentSize}</span> </p>
+         <p className="tabs-size__text">SIZE: <span>{currentParams.size}</span> </p>
 
          <div className="tabs-size__content">
             {sizesList?.map((elem) => {
                return <button
-                  onClick={() => setSize(elem)}
+                  onClick={() => setCurrentParams({ ...currentParams, size: elem })}
                   type="button"
-                  className={currentSize === elem ? "tabs-size__button-size _active" : "tabs-size__button-size"}
+                  className={currentParams.size === elem ? "tabs-size__button-size _active" : "tabs-size__button-size"}
                   key={elem}>{elem}</button>
             })}
          </div>

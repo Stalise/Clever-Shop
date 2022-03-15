@@ -1,4 +1,4 @@
-import { IProductsItem } from '../types/typesProductsItem';
+import { IProductsItem } from '../types/productsItem';
 
 interface IProps {
    (
@@ -16,7 +16,7 @@ export enum tabsNames {
    SPECIALS = 'isSpecial',
    BESTSELLERS = 'isBestseller',
    MOSTVIEWED = 'isMostViewed',
-   FEATURED = 'isFeatured',
+   FEATUREDPRODUCTS = 'isFeatured',
 }
 
 // функция хелпер сортирует общий список товаров при изменении любого значения фильтра.
@@ -29,7 +29,7 @@ export const productsSortedHandler: IProps = (products, tab, color, size, brand,
       return elem.particulars[updateTab as keyof typeof elem.particulars] === true
    })
 
-   //! проверяем массив товаров на каждый фильтр при его наличии.
+   // проверяем массив товаров на каждый фильтр при его наличии в передаваемых массивах.
    if (color?.length > 0) {
       result = result.filter((elem) => {
          for (let i of elem.images) {
@@ -94,5 +94,6 @@ export const productsSortedHandler: IProps = (products, tab, color, size, brand,
       })
    }
 
+   // возвращаем отфильтрованный список товаров.
    return result
 }

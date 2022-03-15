@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { IProductsItem } from "../../types/typesProductsItem";
+import { IProductsItem } from "../../types/productsItem";
 import Rating from "../Common/Rating/Rating";
 
 interface IProps {

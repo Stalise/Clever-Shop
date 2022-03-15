@@ -1,4 +1,4 @@
-//! main interface
+//! product который приходит с запроса от сервера
 export interface IProductsItem {
    particulars: IProductsParticulars,
    name: string,

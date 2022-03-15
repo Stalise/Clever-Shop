@@ -1,5 +1,5 @@
-import { IState, sortedActionTypes, SortedActions } from './typesSortedReducer';
-import { IProductsItem } from '../../../types/typesProductsItem';
+import { IState, sortedActionTypes, SortedActions } from './types';
+import { IProductsItem } from '../../../types/productsItem';
 
 
 const initialState: IState = {
@@ -21,25 +21,55 @@ const initialState: IState = {
    },
 }
 
+// console.log(initialState.men.products)
+
 export const sortedReducer = (state = initialState, action: SortedActions): IState => {
+
    // получаем категорию (men или women) товаров, и выбранный тип для неё, чтобы изменить значения фильтра.
    switch (action.type) {
       case sortedActionTypes.CHANGE_PRODUCTS:
          // получаем категорию (men или women) товаров, и список отсортерованных товаров для неё.
-         return { ...state, [action.payload.category]: { ...state[action.payload.category as keyof IState], products: [...action.payload.products] } }
+         return {
+            ...state,
+            [action.payload.category]: {
+               ...state[action.payload.category as keyof IState],
+               products: [...action.payload.products]
+            }
+         }
       case sortedActionTypes.CHANGE_TAB:
-         return { ...state, [action.payload.category]: { ...state[action.payload.category as keyof IState], tab: action.payload.tab } };
-      // пример: category: men, type: color, params: [...]
+         return {
+            ...state,
+            [action.payload.category]: {
+               ...state[action.payload.category as keyof IState],
+               tab: action.payload.tab
+            }
+         };
+      // пример - category: men, type: color, params: [...]
       case sortedActionTypes.CHANGE_PARAMS:
-         return { ...state, [action.payload.category]: { ...state[action.payload.category as keyof IState], [action.payload.type.toLowerCase()]: [...action.payload.params] } }
+         return {
+            ...state,
+            [action.payload.category]: {
+               ...state[action.payload.category as keyof IState],
+               [action.payload.type]: [...action.payload.params]
+            }
+         }
       case sortedActionTypes.CLEAR_SORTED:
-         return { ...state, [action.payload.category]: { ...state[action.payload.category as keyof IState], color: [], size: [], brand: [], price: [] } }
+         return {
+            ...state,
+            [action.payload.category]: {
+               ...state[action.payload.category as keyof IState],
+               color: [],
+               size: [],
+               brand: [],
+               price: []
+            }
+         }
       default:
          return state
    }
 }
 
-//! экшены
+//! экшены в функциях вызова
 export const changeProductsAction = (products: IProductsItem[], category: string) => {
    return { type: sortedActionTypes.CHANGE_PRODUCTS, payload: { products, category } }
 };

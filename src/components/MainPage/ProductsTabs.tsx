@@ -21,8 +21,6 @@ const ProductsTabs: FC<IProps> = ({ category }) => {
    const { tab } = useTypedSelector(state => state.sorted[category as keyof typeof state.sorted])
    const dispatch = useDispatch()
 
-   console.log(checkValues["NEW ARRIVALS"])
-
    const changeTab = (tabName: string) => {
       dispatch(changeTabAction(tabName, category))
    }

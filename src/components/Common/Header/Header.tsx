@@ -1,27 +1,18 @@
 import './Header.scss';
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Burger from './Burger';
+import Navigate from './Navigate';
+import Cart from './Cart/Cart';
 
 const Header: FC = () => {
 
    const path = process.env.REACT_APP_GITHUB_PATH
+   // состояние бургера поднято, ибо на него влияют и компонент Burger, и Navigate
    const [burger, setBurger] = useState<boolean>(false)
 
-   const changeBurger = () => {
-
-      !burger ? document.body.style.overflow = "hidden" : document.body.style.overflow = "visible"
-      setBurger(!burger)
-   }
-
-   const clickMenuLink = () => {
-      if (burger === true) {
-         document.body.style.overflow = "visible"
-         setBurger(false)
-      }
-   }
-
    return (
-      <header className={burger ? "header _active" : "header"} data-test-id='header'>
+      <header className={"header"} data-test-id='header'>
          <div className="header__top-container">
             <div className="header__top">
                <div className="header__info">
@@ -40,60 +31,28 @@ const Header: FC = () => {
 
          <div className="header__bottom-container">
             <div className="header__bottom">
-               <div className="header__burger-icon" onClick={() => changeBurger()} data-test-id={'burger-menu-btn'}>
-                  <span className="header__burger-line"></span>
-               </div>
+               <Burger burger={burger} setBurger={setBurger} />
 
                <Link to="/" className="header__logo" data-test-id='header-logo-link'>CleverShop</Link>
 
-               <nav className="header__navigate header-navigate" data-test-id='burger-menu'>
-                  <ul className="header-navigate__list">
-                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
-                        <Link to="/" className="header-navigate__link" data-test-id={`menu-link-about`}>About Us</Link>
-                     </li>
+               <Navigate burger={burger} setBurger={setBurger} />
 
-                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
-                        <Link to={'/category/women'} className="header-navigate__link" data-test-id={`menu-link-women`}>Women</Link>
-                     </li>
-
-                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
-                        <Link to="/category/men" className="header-navigate__link" data-test-id={`menu-link-men`}>Men</Link>
-                     </li>
-
-                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
-                        <Link to="/" className="header-navigate__link" data-test-id={`menu-link-beauty`}>Beauty</Link>
-                     </li>
-
-                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
-                        <Link to="/" className="header-navigate__link" data-test-id={`menu-link-accessories`}>Accessories</Link>
-                     </li>
-
-                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
-                        <Link to="/" className="header-navigate__link" data-test-id={`menu-link-blog`}>Blog</Link>
-                     </li>
-
-                     <li className="header-navigate__item" onClick={() => clickMenuLink()}>
-                        <Link to="/" className="header-navigate__link" data-test-id={`menu-link-contact`}>Contact</Link>
-                     </li>
-                  </ul>
-               </nav>
-
-               <div className="header__actions">
+               <div className={`header__actions ${burger ? '_active' : ''}`}>
                   <div className="header__search">
                      <img className="header__search-img" src={`${path}/images/search.png`}></img>
                   </div>
+
                   <div className="header__globe">
                      <img className="header__search-img" src={`${path}/images/globe.png`}></img>
                   </div>
+
                   <div className="header__user">
                      <img className="header__search-img" src={`${path}/images/user.png`}></img>
                   </div>
-                  <div className="header__cart">
-                     <img className="header__search-img" src={`${path}/images/cart.png`}></img>
-                  </div>
+
+                  <Cart />
                </div>
             </div>
-            <div className="header__burger"></div>
          </div>
       </header>
    );

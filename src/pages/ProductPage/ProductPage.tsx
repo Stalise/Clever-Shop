@@ -1,7 +1,7 @@
 import './ProductPage.scss';
 import { FC, useEffect, useState } from "react";
 import { Link, useParams } from 'react-router-dom';
-import { IProductsItem } from '../../types/typesProductsItem';
+import { IProductsItem } from '../../types/productsItem';
 import { dataProducts } from '../../products';
 import ProductSliders from '../../components/ProductPage/ProductSliders';
 import SimilarSlider from '../../components/ProductPage/SimilarSlideer';
@@ -9,12 +9,22 @@ import Sizes from '../../components/ProductPage/Sizes';
 import Colors from '../../components/ProductPage/Colors';
 import Rating from '../../components/Common/Rating/Rating';
 import Reviews from '../../components/ProductPage/Reviews';
+import Actions from '../../components/ProductPage/Actions';
+
+export interface ICurrentParams {
+   color: string,
+   size: string
+}
 
 const ProductPage: FC = () => {
 
    const path = process.env.REACT_APP_GITHUB_PATH
    const [currentProduct, setCurrentProduct] = useState<IProductsItem>()
-   const [currentColor, setCurrentColor] = useState<string>('')
+   // const [currentColor, setCurrentColor] = useState<string>('')
+   const [currentParams, setCurrentParams] = useState<ICurrentParams>({
+      color: '',
+      size: '',
+   })
 
    const params = useParams()
    const getProducts: IProductsItem[] = dataProducts[params.category as keyof typeof dataProducts]
@@ -24,8 +34,12 @@ const ProductPage: FC = () => {
       const currentProduct = getProducts.filter((elem) => elem.id === params.id)[0]
       setCurrentProduct(currentProduct)
 
-      // устанавливаем дефолтный цвет для картинок в продукте
-      setCurrentColor(currentProduct.images[0].color)
+      // устанавливаем дефолтный цвет и размер для картинок в продукте при смене или 1 загрузке
+      setCurrentParams({
+         ...currentParams,
+         color: currentProduct.images[0].color,
+         size: currentProduct.sizes[0]
+      })
    }, [params])
 
    return (
@@ -64,25 +78,28 @@ const ProductPage: FC = () => {
 
          <section className="product">
             <div className="product__container">
-               {currentColor.length > 0 && currentProduct && <ProductSliders currentColor={currentColor} currentProduct={currentProduct} />}
+               {currentParams.color.length > 0 && currentProduct && <ProductSliders currentParams={currentParams} currentProduct={currentProduct} />}
 
                <div className="product__content">
                   <div className="product__tabs">
                      <Colors
                         images={currentProduct?.images}
-                        currentColor={currentColor}
-                        setCurrentColor={setCurrentColor}
+                        currentParams={currentParams}
+                        setCurrentParams={setCurrentParams}
                      />
 
-                     <Sizes sizesList={currentProduct?.sizes} />
+                     <Sizes
+                        sizesList={currentProduct?.sizes}
+                        currentParams={currentParams}
+                        setCurrentParams={setCurrentParams}
+                     />
                   </div>
 
-                  <div className="product__actions">
-                     <p className="product__price">$ {currentProduct?.price}</p>
-                     <button className="product__button-cart" type="button">ADD TO CART</button>
-                     <button className="product__button-favourites" type="button"></button>
-                     <button className="product__button-compare" type="button"></button>
-                  </div>
+                  {currentProduct &&
+                     <Actions
+                        currentProduct={currentProduct}
+                        currentParams={currentParams}
+                     />}
 
                   <div className="product__info product-info">
                      <div className="product-info__features">

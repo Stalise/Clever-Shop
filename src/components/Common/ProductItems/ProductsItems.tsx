@@ -1,6 +1,6 @@
 import './ProductsItems.scss';
 import { FC, useEffect, memo } from "react";
-import { IProductsItem } from '../../../types/typesProductsItem';
+import { IProductsItem } from '../../../types/productsItem';
 import { dataProducts } from '../../../products';
 import ProductItem from '../ProductItem/ProductItem';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
@@ -21,18 +21,24 @@ const ProductsItems: FC<IProps> = ({ category }) => {
    useEffect(() => {
       // в функции хелпер мы фильтруем массив по заданным типам
       const getSortedProducts = productsSortedHandler(getProducts, tab, color, size, brand, price)
+
       dispatch(changeProductsAction(getSortedProducts, category))
 
    }, [category, tab, color, size, brand, price])
+
 
    return (
       <div className="products__items">
          {products.length
             ?
-            products.map((elem: any, index: any) => {
+            products.map((elem, index) => {
                if (index < 8) {
                   return (
-                     <ProductItem dataProduct={elem} category={category} key={elem.id} />
+                     <ProductItem
+                        dataProduct={elem}
+                        category={category}
+                        key={elem.id}
+                     />
                   )
                }
             })
@@ -43,4 +49,4 @@ const ProductsItems: FC<IProps> = ({ category }) => {
    );
 }
 
-export default memo(ProductsItems);
+export default ProductsItems;
