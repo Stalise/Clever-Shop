@@ -2,15 +2,16 @@ import { FC, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { IProductsItem } from '../../types/productsItem';
 import { ICurrentParams } from '../../pages/ProductPage/ProductPage';
-import { addCartAction } from '../../store/reducers/cartReducer/cartReducer';
+import { addCartAction, deleteCartAction } from '../../store/reducers/cartReducer/cartReducer';
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 
 interface IProps {
    currentProduct: IProductsItem;
    currentParams: ICurrentParams;
+   category: string,
 }
 
-const Actions: FC<IProps> = ({ currentProduct, currentParams }) => {
+const Actions: FC<IProps> = ({ currentProduct, currentParams, category }) => {
 
    const [cartStatus, setCartStatus] = useState<boolean>(false)
    const { productsCart } = useTypedSelector(state => state.cart)
@@ -20,22 +21,28 @@ const Actions: FC<IProps> = ({ currentProduct, currentParams }) => {
       // формируем уникальное id для товара с определнными характеристиками.
       const idProductCart = currentProduct?.id + currentParams.color + currentParams.size;
 
-      // получаем url картинки по цвету для товара в корзине.
-      const currentImg = currentProduct.images.filter((elem) => elem.color === currentParams.color)[0].url
+      // в зависимости от статуса товара в корзине, добавляем или удаляем его по клику на кнопку
+      if (cartStatus === false) {
+         // получаем url картинки по цвету для товара в корзине.
+         const currentImg = currentProduct.images.filter((elem) => elem.color === currentParams.color)[0].url
 
-      // данные товара для объекта в корзине
-      const productData = {
-         idCart: idProductCart,
-         img: currentImg,
-         name: currentProduct?.name,
-         color: currentParams.color,
-         size: currentParams.size,
-         price: currentProduct?.price,
-         count: 1,
-         totalPrice: currentProduct?.price,
+         // данные товара для объекта в корзине
+         const productData = {
+            category,
+            idCart: idProductCart,
+            img: currentImg,
+            name: currentProduct?.name,
+            color: currentParams.color,
+            size: currentParams.size,
+            price: currentProduct?.price,
+            count: 1,
+            totalPrice: currentProduct?.price,
+         }
+
+         dispatch(addCartAction(productData))
+      } else {
+         dispatch(deleteCartAction(idProductCart))
       }
-
-      dispatch(addCartAction(productData))
    }
 
    useEffect(() => {

@@ -30,7 +30,7 @@ const ProductPage: FC = () => {
    const getProducts: IProductsItem[] = dataProducts[params.category as keyof typeof dataProducts]
 
    useEffect(() => {
-      // фильтруем массив с товарами для получения текущего при didMount
+      // фильтруем массив с товарами для получения текущего при didMount, по id из useParams
       const currentProduct = getProducts.filter((elem) => elem.id === params.id)[0]
       setCurrentProduct(currentProduct)
 
@@ -95,10 +95,11 @@ const ProductPage: FC = () => {
                      />
                   </div>
 
-                  {currentProduct &&
+                  {currentProduct && params.category &&
                      <Actions
                         currentProduct={currentProduct}
                         currentParams={currentParams}
+                        category={params.category}
                      />}
 
                   <div className="product__info product-info">
@@ -159,7 +160,7 @@ const ProductPage: FC = () => {
                         </li>
 
                         <li className="product__available-item">
-                           Size: <span>{currentProduct?.sizes.map((elem, index, arr) => index < (arr.length - 1) ? elem + ', ' : elem)}</span>
+                           Size: <span>{currentProduct?.sizes.join(', ')}</span>
                         </li>
 
                         <li className="product__available-item">

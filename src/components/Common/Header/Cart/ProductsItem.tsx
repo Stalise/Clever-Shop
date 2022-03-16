@@ -1,6 +1,8 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import { IProductCart } from '../../../../types/cartItem';
-import { deleteCartAction, changeCountCartAction } from '../../../../store/reducers/cartReducer/cartReducer';
+import { deleteCartAction, changeCountCartAction }
+   from '../../../../store/reducers/cartReducer/cartReducer';
 import { useDispatch } from "react-redux";
 
 interface IProps {
@@ -11,14 +13,16 @@ const ProductsItem: FC<IProps> = ({ product }) => {
 
    const dispatch = useDispatch()
 
+   // удаляем товар из корзины по его id в ней.
    const deleteCart = () => {
       dispatch(deleteCartAction(product.idCart))
    }
 
+   // в зависимости от передачи + или -, мы меняем количество определенного товара в заказе
    const changeCount = (operator: string) => {
       const copyProduct = { ...product }
 
-      if (operator === '+' && product.count < 10 && product.count >= 1) {
+      if (operator === '+' && product.count < 100 && product.count >= 1) {
          copyProduct.count += 1
          // если получается большое число, то обрезаем до 2-десятой, и убираем лишние дробные нули через Number
          copyProduct.totalPrice = Number((copyProduct.totalPrice + copyProduct.price).toFixed(2))
@@ -33,9 +37,11 @@ const ProductsItem: FC<IProps> = ({ product }) => {
 
    return (
       <div className="cart__product cart-product" data-test-id={'cart-card'}>
-         <div className="cart-product__img-container">
-            <img src={`https://training.cleverland.by/shop${product.img}`} alt="product" className="cart-product__img" />
-         </div>
+         <Link to={`/category/${product.category}/${product.idCart.split(`${product.color}`)[0]}`}>
+            <div className="cart-product__img-container">
+               <img src={`https://training.cleverland.by/shop${product.img}`} alt="product" className="cart-product__img" />
+            </div>
+         </Link>
          <div className="cart-product__content">
             <div className="cart-product__info">
                <p className="cart-product__name">{product.name}</p>

@@ -422,6 +422,9 @@
                      padding: 20px 20px;
                      height: 100%;
                      max-height: 200px;
+                     display: flex;
+                     flex-direction: column;
+                     justify-content: flex-end;
                      .cart__bottom-text {
                         max-width: 100%;
                         width: 100%;

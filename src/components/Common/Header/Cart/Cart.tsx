@@ -19,7 +19,7 @@ const Cart: FC = () => {
       // подставляем общее количество заказов в content: attr() в css, взятое в data-count.
       <div
          className={`header__cart cart ${viewCart ? '_active' : ''}`}
-         data-count={productsCart.reduce((accum, elem) => accum + elem.count, 0)}
+         data-count={productsCart.length}
       >
          <img onClick={() => changeViewCart()} className="header__search-img" src={`${path}/images/cart.png`} data-test-id={'cart-button'}></img>
          <div onClick={() => changeViewCart()} className="cart__background">
@@ -40,16 +40,18 @@ const Cart: FC = () => {
                <Products />
             </div>
             <div className="cart__bottom">
-               <div className="cart__bottom-text">
-                  <p className="cart__bottom-total">Total</p>
-                  <p className="cart__bottom-price">$ {
-                     // если получается большое число, то обрезаем до 2-десятой, и убираем лишние дробные нули через Number
-                     Number(productsCart.reduce((accum, elem) => accum + elem.totalPrice, 0).toFixed(1))
-                  }</p>
-               </div>
+               {productsCart.length > 0 &&
+                  <div className="cart__bottom-text">
+                     <p className="cart__bottom-total">Total</p>
+                     <p className="cart__bottom-price">$ {
+                        // если получается большое число, то обрезаем до 2-десятой, и убираем лишние дробные нули через Number
+                        Number(productsCart.reduce((accum, elem) => accum + elem.totalPrice, 0).toFixed(1))
+                     }</p>
+                  </div>
+               }
                <div className="cart__bottom-buttons">
-                  <button type="button" className="cart__bottom-further">Further</button>
-                  <button onClick={() => changeViewCart()} type="button" className="cart__bottom-view">View cart</button>
+                  {productsCart.length > 0 && <button type="button" className="cart__bottom-further">Further</button>}
+                  <button onClick={() => changeViewCart()} type="button" className="cart__bottom-view">Back to shopping</button>
                </div>
             </div>
          </div>
