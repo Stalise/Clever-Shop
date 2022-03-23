@@ -1,0 +1,10 @@
+.error__container {
+   max-width: 100%;
+   width: 100%;
+   padding: 10px;
+   .error__message {
+      font-size: 20px;
+      color: lightcoral;
+      text-align: center;
+   }
+}

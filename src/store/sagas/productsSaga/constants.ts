@@ -1,0 +1,5 @@
+
+export enum actionTypes {
+   REQUEST_PRODUCTS = 'REQUEST_PRODUCTS',
+   REQUEST_PRODUCT = 'REQUEST_PRODUCT'
+}

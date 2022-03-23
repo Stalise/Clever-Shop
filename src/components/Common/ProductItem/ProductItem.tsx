@@ -1,5 +1,5 @@
-import "./ProductItem.scss"
-import { FC, useEffect, useState } from "react";
+import "./ProductItem.scss";
+import { FC } from "react";
 import { IProductsItem } from '../../../types/productsItem';
 import { Link } from "react-router-dom";
 import Rating from '../Rating/Rating';

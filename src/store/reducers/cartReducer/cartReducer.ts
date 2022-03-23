@@ -8,24 +8,24 @@ const initialState: IState = {
 
 export const cartReducer = (state = initialState, action: CartActions): IState => {
    switch (action.type) {
-      case cartActionTypes.ADD_PRODUCT:
+      case cartActionTypes.ADD_PRODUCT_CART:
          return {
             ...state,
             productsCart: [...state.productsCart, action.payload.product]
          }
-      case cartActionTypes.DELETE_PRODUCT:
+      case cartActionTypes.DELETE_PRODUCT_CART:
          return {
             ...action,
             productsCart: state.productsCart.filter(elem => elem.idCart !== action.payload.id)
          }
-      case cartActionTypes.CHANGE_COUNT:
+      case cartActionTypes.CHANGE_COUNT_CART:
          return {
             ...action,
             productsCart: state.productsCart.map(elem => {
                // приходит измененный объект, и если он совпадает с тем что из стейта, то заменяем
                if (elem.idCart === action.payload.product.idCart) { return action.payload.product }
 
-               return elem 
+               return elem
             })
          }
       default:
@@ -34,13 +34,13 @@ export const cartReducer = (state = initialState, action: CartActions): IState =
 }
 
 export const addCartAction = (product: IProductCart) => {
-   return { type: cartActionTypes.ADD_PRODUCT, payload: { product } }
+   return { type: cartActionTypes.ADD_PRODUCT_CART, payload: { product } }
 }
 
 export const deleteCartAction = (id: string) => {
-   return { type: cartActionTypes.DELETE_PRODUCT, payload: { id } }
+   return { type: cartActionTypes.DELETE_PRODUCT_CART, payload: { id } }
 }
 
 export const changeCountCartAction = (product: IProductCart) => {
-   return { type: cartActionTypes.CHANGE_COUNT, payload: { product } }
+   return { type: cartActionTypes.CHANGE_COUNT_CART, payload: { product } }
 }

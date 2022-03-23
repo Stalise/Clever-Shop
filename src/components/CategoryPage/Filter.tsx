@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+
 import FilterList from "./FilterList";
-import { dataProducts } from '../../products';
 import { IProductsItem } from '../../types/productsItem';
 import { useTypedSelector } from "../../hooks/useTypedSelector";
-import { useDispatch } from "react-redux";
 import { clearSortedAction } from '../../store/reducers/sortedReducer/sortedReducer';
 
 interface IProps {
@@ -14,9 +14,10 @@ interface IProps {
 const Filter: FC<IProps> = ({ isFilter, category }) => {
 
    const dispatch = useDispatch()
-   const { products, tab, color, size, brand, price } = useTypedSelector(state => state.sorted[category as keyof typeof state.sorted])
+   const { productsSorted, tab, color, size, brand, price } = useTypedSelector(state => state.sorted[category as keyof typeof state.sorted])
+   const { products } = useTypedSelector(state => state.products)
 
-   const getProducts: IProductsItem[] = dataProducts[category as keyof typeof dataProducts]
+   const categoryProducts: IProductsItem[] = products[category as keyof typeof products]
 
    const [filterParams, setFilterParams] = useState<any>({
       colors: [],
@@ -35,7 +36,7 @@ const Filter: FC<IProps> = ({ isFilter, category }) => {
       const uniqBrands = new Set()
 
       // обходим все товары, и добавляем уникальные значения типов (цвет, бренд, размер) для фильтра
-      getProducts.map((elem) => {
+      categoryProducts.map((elem) => {
          for (let i of elem.images) {
             uniqColors.add(i.color)
          }
@@ -93,7 +94,7 @@ const Filter: FC<IProps> = ({ isFilter, category }) => {
                />
             </div>
             <div className="filter__result">
-               <span className="filter__result-item">{products.length} items found</span>
+               <span className="filter__result-item">{productsSorted.length} items found</span>
                {color.length > 0 && <span className="filter__result-item">Color: {color.map((elem) => elem + '. ')}</span>}
                {size.length > 0 && <span className="filter__result-item">Size: {size.map((elem) => elem + '. ')}</span>}
                {brand.length > 0 && <span className="filter__result-item">Brand: {brand.map((elem) => elem + '. ')}</span>}

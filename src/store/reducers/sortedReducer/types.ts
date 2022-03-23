@@ -2,7 +2,7 @@ import { IProductsItem } from '../../../types/productsItem';
 
 //! типы для стейта
 interface ICategory {
-   products: IProductsItem[],
+   productsSorted: IProductsItem[],
    tab: string,
    color: string[],
    size: string[],

@@ -4,7 +4,7 @@ import { IProductsItem } from '../../../types/productsItem';
 
 const initialState: IState = {
    men: {
-      products: [],
+      productsSorted: [],
       tab: 'NEW ARRIVALS',
       color: [],
       size: [],
@@ -12,7 +12,7 @@ const initialState: IState = {
       price: [],
    },
    women: {
-      products: [],
+      productsSorted: [],
       tab: 'NEW ARRIVALS',
       color: [],
       size: [],
@@ -33,7 +33,7 @@ export const sortedReducer = (state = initialState, action: SortedActions): ISta
             ...state,
             [action.payload.category]: {
                ...state[action.payload.category as keyof IState],
-               products: [...action.payload.products]
+               productsSorted: [...action.payload.products]
             }
          }
       case sortedActionTypes.CHANGE_TAB:

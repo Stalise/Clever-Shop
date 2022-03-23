@@ -9,9 +9,9 @@ export interface IState {
 
 //! enum для названий экшенов
 export enum cartActionTypes {
-   ADD_PRODUCT = "ADD_PRODUCT",
-   DELETE_PRODUCT = "DELETE_PRODUCT",
-   CHANGE_COUNT = "CHANGE_COUNT"
+   ADD_PRODUCT_CART = "ADD_PRODUCT_CART",
+   DELETE_PRODUCT_CART = "DELETE_PRODUCT_CART",
+   CHANGE_COUNT_CART = "CHANGE_COUNT_CART"
 }
 
 //! типизация payload 
@@ -29,17 +29,17 @@ interface IChangeCountCartPayload {
 
 //! типы для экшенов
 interface IAddCartAction {
-   type: cartActionTypes.ADD_PRODUCT,
+   type: cartActionTypes.ADD_PRODUCT_CART,
    payload: IAddCartPayload
 }
 
 interface IDeleteCartAction {
-   type: cartActionTypes.DELETE_PRODUCT,
+   type: cartActionTypes.DELETE_PRODUCT_CART,
    payload: IDeleteCartPayload
 }
 
 interface IChangeCountCartAction {
-   type: cartActionTypes.CHANGE_COUNT,
+   type: cartActionTypes.CHANGE_COUNT_CART,
    payload: IChangeCountCartPayload
 }
 
