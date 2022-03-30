@@ -26,6 +26,14 @@ export const productsReducer = (state = initialState, action: CartActions) => {
             },
             isLoading: action.payload.loadingStatus
          }
+      case productsActionTypes.REPLACE_PRODUCTS:
+         return {
+            ...state,
+            products: {
+               ...state.products,
+               [action.payload.category]: action.payload.products
+            }
+         }
       case productsActionTypes.CHANGE_LOADING:
          return {
             ...state,

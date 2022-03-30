@@ -1,0 +1,60 @@
+import { FC, useState } from "react";
+import { useForm, SubmitHandler } from 'react-hook-form';
+
+import { emailRequest } from '../../api/api';
+
+interface IFormData {
+   email: string
+}
+
+const EmailForm: FC = () => {
+
+   const [isLoading, setIsLoading] = useState(false)
+   const [isError, setIsError] = useState('')
+
+   const {
+      register,
+      formState: { errors, isValid },
+      handleSubmit,
+      reset
+   } = useForm<IFormData>({ mode: "onChange" })
+
+   const onSubmit: SubmitHandler<IFormData> = async (data) => {
+      setIsLoading(true)
+      const response = await emailRequest(data.email)
+      response === 200 ? setIsError('_success') : setIsError('_error')
+
+      setTimeout(() => {
+         setIsError('')
+      }, 3500)
+
+      setIsLoading(false)
+      reset()
+   }
+
+   return (
+      <form onSubmit={handleSubmit(onSubmit)} className="subscribe__form subscribe-form">
+         <label className='subscribe-form__input-label' data-test-id={'main-subscribe-mail-field'}>
+            <p className={`subscribe-form__input-error ${errors?.email?.message ? '_active' : ''}`}>
+               {errors?.email?.message}
+            </p>
+            <input
+               {...register('email', {
+                  required: true,
+                  pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i, message: "Некорректный email" },
+               })}
+               className='subscribe-form__input' type="email" placeholder="Enter your email"
+            />
+         </label>
+
+         <button
+            type="submit"
+            disabled={!isValid}
+            className={`subscribe-form__submit-button ${isLoading ? '_loading' : ''} ${isError}`}
+            data-test-id={'main-subscribe-mail-button'}
+         >Subscribe</button>
+      </form>
+   );
+}
+
+export default EmailForm;

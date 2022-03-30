@@ -2,6 +2,8 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.scss';
 
+import EmailForm from './EmailForm';
+
 const Footer: FC = () => {
 
    const path = process.env.REACT_APP_GITHUB_PATH
@@ -12,10 +14,7 @@ const Footer: FC = () => {
             <div className="footer__top-container">
                <p className="footer__title">BE IN TOUCH WITH US:</p>
 
-               <form className="footer__form">
-                  <input className="footer__form-input" placeholder="Enter your email"></input>
-                  <button type="button" className="footer__form-button">Join us</button>
-               </form>
+               <EmailForm />
 
                <div className="footer__social">
                   <a href="#!" className="footer__social-facebook"></a>

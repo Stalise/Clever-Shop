@@ -8,7 +8,7 @@ interface IProps {
 const ErrorMessage: FC<IProps> = ({ text }) => {
 
    return (
-      <div className="error__container">
+      <div className="error__container" data-test-id='error'>
          <p className="error__message">{text}</p>
       </div>
    );

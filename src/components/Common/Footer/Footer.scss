@@ -22,34 +22,68 @@
             font-size: 12px;
             white-space: nowrap;
          }
-         .footer__form {
+         .footer-form {
             max-width: 510px;
             width: 100%;
             display: flex;
-            .footer__form-input {
+            .footer-form__input-label {
                max-width: 400px;
                width: 100%;
                height: 32px;
-               background-color: #414141;
-               padding-left: 15px;
+               display: inline-block;
                margin-right: 10px;
-               letter-spacing: 0.06em;
-               color: #fff;
-               font-size: 14px;
-               border: 1px solid transparent;
-               transition: border 0.3s;
-               &::placeholder {
+               position: relative;
+               .footer-form__input-error {
+                  max-width: 340px;
+                  font-weight: 400;
+                  color: #f25c5c;
+                  position: absolute;
+                  top: -30px;
+                  left: 0;
                   font-size: 14px;
-                  letter-spacing: 0.06em;
+                  padding-left: 20px;
+                  display: none;
+                  &._active {
+                     display: block;
+                  }
+                  &:before {
+                     font-family: "IcoFont";
+                     content: "\ef1b";
+                     position: absolute;
+                     font-size: 16px;
+                     color: #f25c5c;
+                     top: -2px;
+                     left: 0px;
+                     transition-duration: 0.3s;
+                  }
                }
-               &:focus {
-                  border: 1px solid #fff;
+               .footer-form__input {
+                  max-width: 400px;
+                  width: 100%;
+                  height: 32px;
+                  background-color: #414141;
+                  padding-left: 15px;
+                  margin-right: 10px;
+                  letter-spacing: 0.06em;
+                  color: #fff;
+                  font-size: 14px;
+                  border: 1px solid transparent;
+                  transition: border 0.3s;
+                  &::placeholder {
+                     font-size: 14px;
+                     letter-spacing: 0.06em;
+                  }
+                  &:focus {
+                     border: 1px solid #fff;
+                  }
                }
             }
-            .footer__form-button {
+            .footer-form__submit-button {
                max-width: 100px;
                width: 100%;
+               position: relative;
                font-size: 12px;
+               padding: 3px 0 0 0;
                background-color: transparent;
                color: #fff;
                border: 1px solid #fff;
@@ -60,6 +94,65 @@
                &:hover {
                   background-color: #fff;
                   color: #000;
+               }
+               &:disabled {
+                  border: 1px solid dimgray;
+                  color: dimgray;
+                  pointer-events: none;
+               }
+               &._loading {
+                  pointer-events: none;
+                  color: #121212;
+                  &:before {
+                     font-family: "IcoFont";
+                     content: "\eff6";
+                     position: absolute;
+                     font-size: 20px;
+                     color: #fff;
+                     top: 4px;
+                     left: calc(50% - 10px);
+                     transition-duration: 0.3s;
+                     animation-name: rotation;
+                     animation-duration: 10s;
+                     animation-timing-function: linear;
+                     animation-iteration-count: infinite;
+                     @keyframes rotation {
+                        0% {
+                           transform: rotate(0deg);
+                        }
+                        100% {
+                           transform: rotate(540deg);
+                        }
+                     }
+                  }
+               }
+               &._error {
+                  &:before {
+                     content: "Ошибка при отправке формы";
+                     display: inline-block;
+                     max-width: 340px;
+                     position: absolute;
+                     bottom: -30px;
+                     right: 0;
+                     // text-align: left;
+                     font-size: 13px;
+                     color: #f25c5c;
+                     text-transform: uppercase;
+                  }
+               }
+               &._success {
+                  &:before {
+                     content: "Форма отправлена успешно";
+                     display: inline-block;
+                     max-width: 340px;
+                     position: absolute;
+                     bottom: -30px;
+                     right: 0;
+                     // text-align: left;
+                     font-size: 13px;
+                     color: green;
+                     text-transform: uppercase;
+                  }
                }
             }
          }
@@ -244,9 +337,21 @@
                order: 2;
                margin-right: 15px;
             }
-            .footer__form {
+            .footer-form {
                order: 1;
                margin-bottom: 15px;
+               .footer-form__submit-button {
+                  &._error {
+                     &:before {
+                        bottom: -65px;
+                     }
+                  }
+                  &._success {
+                     &:before {
+                        bottom: -65px;
+                     }
+                  }
+               }
             }
             .footer__social {
                order: 3;

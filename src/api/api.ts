@@ -1,5 +1,7 @@
 import axios from 'axios';
+
 import { IProductsItem } from '../types/productsItem';
+import { IResultData } from '../components/ProductPage/ReviewsForm/ReviewsForm'
 
 const instance = axios.create({
    baseURL: 'https://training.cleverland.by/shop/',
@@ -14,5 +16,31 @@ export const productsRequests = {
    getProduct: async (id: string): Promise<IProductsItem> => {
       const request = await instance.get(`product/${id}`);
       return request.data
+   }
+}
+
+export const emailRequest = async (email: string) => {
+   try {
+      const request = await instance.post('email', {
+         "mail": email
+      })
+
+      return request.status
+
+   } catch (error) {
+      return 400
+   }
+}
+
+export const reviewRequest = async (data: IResultData) => {
+   try {
+      const request = await instance.post('product/review', {
+         ...data
+      })
+
+      return { status: request.status, data: request.data }
+
+   } catch (error) {
+      return { status: 400 }
    }
 }

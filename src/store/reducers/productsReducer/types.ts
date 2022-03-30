@@ -18,6 +18,7 @@ export interface IProducts {
 export enum productsActionTypes {
    ADD_PRODUCTS = "ADD_PRODUCTS",
    ADD_PRODUCT = "ADD_PRODUCT",
+   REPLACE_PRODUCTS = "REPLACE_PRODUCTS",
    CHANGE_LOADING = "CHANGE_LOADING",
    CHANGE_ERROR = "CHANGE_ERROR"
 }
@@ -32,6 +33,11 @@ interface IAddProductPayload {
    product: IProductsItem,
    category: string,
    loadingStatus: boolean,
+}
+
+interface IReplaceProductsPayload {
+   products: IProductsItem[],
+   category: string,
 }
 
 interface IChangeLoadingPayload {
@@ -54,6 +60,11 @@ interface IAddProductAction {
    payload: IAddProductPayload
 }
 
+interface IReplaceProducts {
+   type: productsActionTypes.REPLACE_PRODUCTS,
+   payload: IReplaceProductsPayload
+}
+
 interface IChangeLoadingAction {
    type: productsActionTypes.CHANGE_LOADING,
    payload: IChangeLoadingPayload
@@ -68,5 +79,6 @@ interface IChangeErrorAction {
 export type CartActions =
    IAddProductsAction |
    IAddProductAction |
+   IReplaceProducts |
    IChangeLoadingAction |
    IChangeErrorAction

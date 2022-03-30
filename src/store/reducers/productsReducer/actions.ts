@@ -9,6 +9,10 @@ export const addProductAction = (product: IProductsItem, category: string, loadi
    return { type: productsActionTypes.ADD_PRODUCT, payload: { product, category, loadingStatus } }
 }
 
+export const replaceProductsAction = (products: IProductsItem[], category: string) => {
+   return { type: productsActionTypes.REPLACE_PRODUCTS, payload: { products, category } }
+}
+
 export const changeLoadingAction = (loadingStatus: boolean) => {
    return { type: productsActionTypes.CHANGE_LOADING, payload: { loadingStatus } }
 }
