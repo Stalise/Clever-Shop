@@ -19,11 +19,11 @@ const MainPage: FC = () => {
                   <div className="catalog-products__top">
                      <div className="catalog-products__item">
                         <img className="catalog-products__item-img" src={`${path}/images/catalog_girl.jpg`} alt="products"></img>
-                        <Link to={'/category/women'} className="catalog-products__item-button" type="button">WOMEN</Link>
+                        <Link to={'/women'} className="catalog-products__item-button" type="button">WOMEN</Link>
                      </div>
                      <div className="catalog-products__item">
                         <img className="catalog-products__item-img" src={`${path}/images/catalog_man.jpg`} alt="products"></img>
-                        <Link to={'/category/men'} className="catalog-products__item-button" type="button">MEN</Link>
+                        <Link to={'/men'} className="catalog-products__item-button" type="button">MEN</Link>
                      </div>
                   </div>
                   <div className="catalog-products__bottom">

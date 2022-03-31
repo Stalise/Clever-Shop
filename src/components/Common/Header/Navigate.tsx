@@ -8,8 +8,8 @@ interface IProps {
 
 const navigateItems = [
    { text: 'About Us', path: "/" },
-   { text: 'Women', path: "/category/women" },
-   { text: 'Men', path: "/category/men" },
+   { text: 'Women', path: "/women" },
+   { text: 'Men', path: "/men" },
    { text: 'Beauty', path: "/" },
    { text: 'Accessories', path: "/" },
    { text: 'Blog', path: "/" },

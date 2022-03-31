@@ -17,6 +17,8 @@ interface IProps {
 
 const SimilarSlider: FC<IProps> = ({ getProducts, params }) => {
 
+   console.log(params)
+
    const path = process.env.REACT_APP_GITHUB_PATH
 
    return (

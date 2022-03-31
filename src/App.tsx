@@ -13,7 +13,7 @@ const App: FC = () => {
    useEffect(() => {
       const getIdProduct = currentUrl.split('/')[3]
 
-      if (currentUrl.split('/').length === 4) {
+      if (currentUrl.split('/').length === 3) {
          dispatch({
             type: actionTypes.REQUEST_PRODUCT,
             id: getIdProduct

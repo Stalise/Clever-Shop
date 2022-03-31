@@ -11,11 +11,10 @@ interface IProps {
 
 const ProductItem: FC<IProps> = ({ dataProduct, category }) => {
 
-   const path = process.env.REACT_APP_GITHUB_PATH
 
    return (
       <div className="products__item products-item" data-test-id={`clothes-card-${category}`}>
-         <Link to={`/category/${category}/${dataProduct.id}`} className="products-item__link">
+         <Link to={`/${category}/${dataProduct.id}`} className="products-item__link">
             <div className="products-item__img-container">
                <img className="products-item__img" src={`https://training.cleverland.by/shop${dataProduct.images[0].url}`} alt="product"></img>
                {dataProduct.discount ? <div className="products-item__label">{dataProduct.discount}</div> : null}

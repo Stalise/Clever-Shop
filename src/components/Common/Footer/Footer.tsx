@@ -30,11 +30,11 @@ const Footer: FC = () => {
                <li className="footer__list-item">Categories</li>
 
                <li className="footer__list-item">
-                  <Link to={'/category/men'} className="footer__list-link" data-test-id={'footer-nav-link-men'}>Men</Link>
+                  <Link to={'/men'} className="footer__list-link" data-test-id={'footer-nav-link-men'}>Men</Link>
                </li>
 
                <li className="footer__list-item">
-                  <Link to={'/category/women'} className="footer__list-link" data-test-id={'footer-nav-link-women'}>Women</Link>
+                  <Link to={'/women'} className="footer__list-link" data-test-id={'footer-nav-link-women'}>Women</Link>
                </li>
 
                <li className="footer__list-item">

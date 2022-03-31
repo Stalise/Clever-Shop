@@ -24,6 +24,8 @@ const ProductPage: FC = () => {
 
    const params = useParams()
 
+   console.log(params)
+
    const [currentProduct, setCurrentProduct] = useState<IProductsItem>()
    const [currentParams, setCurrentParams] = useState<ICurrentParams>({
       color: '',

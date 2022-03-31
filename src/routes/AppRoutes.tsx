@@ -11,8 +11,8 @@ const AppRoutes: FC = () => {
       <Routes>
          <Route path='/' element={<OutletLayout />}>
             <Route index element={<MainPage />} />
-            <Route path='/category/:category' element={<CategoryPage />} />
-            <Route path='/category/:category/:id' element={<ProductPage />} />
+            <Route path='/:category' element={<CategoryPage />} />
+            <Route path='/:category/:id' element={<ProductPage />} />
             <Route path='*' element={<MainPage />} />
          </Route>
          {/* <Route path='/autho' element={<AuthorizationPage />} /> */}

@@ -61,17 +61,17 @@ const ReviewsForm: FC<IProps> = ({ currentProduct, setIsModal }) => {
 
          dispatch(replaceProductsAction(updateProducts, currentProduct.category))
          setIsModal(false)
+         setIsRating(1)
+         reset()
       } else {
          setIsError('_error')
       }
 
       setTimeout(() => {
          setIsError('')
-      }, 3500)
+      }, 4000)
 
       setIsLoading(false)
-      setIsRating(1)
-      reset()
    }
 
    useEffect(() => {

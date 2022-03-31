@@ -21,16 +21,20 @@ const EmailForm: FC = () => {
 
    const onSubmit: SubmitHandler<IFormData> = async (data) => {
       setIsLoading(true)
-
       const response = await emailRequest(data.email)
-      response === 200 ? setIsError('_success') : setIsError('_error')
+
+      if (response === 200) {
+         setIsError('_success')
+         reset()
+      } else {
+         setIsError('_error')
+      }
 
       setTimeout(() => {
          setIsError('')
-      }, 3500)
+      }, 4000)
 
       setIsLoading(false)
-      reset()
    }
 
    return (

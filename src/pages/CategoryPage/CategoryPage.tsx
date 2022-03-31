@@ -12,6 +12,8 @@ const CategoryPage: FC = () => {
 
    const [isFilter, setIsFilter] = useState<boolean>(false)
 
+   console.log(params)
+
    useEffect(() => {
       if (params.category) {
          setCategoryName(params.category)
