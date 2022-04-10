@@ -4,7 +4,7 @@ import { IProductsItem } from '../../../types/productsItem';
 import { actionTypes } from './constants';
 import { productsRequests } from "../../../api/api";
 import { IProducts } from '../../reducers/productsReducer/types';
-import { addProductstAction, addProductAction, changeLoadingAction, changeErrorAction } from '../../reducers/productsReducer/actions';
+import { addProductstAction, addProductAction, changeLoadingAction, changeErrorAction } from '../../../actions/productsReducer';
 
 function* workerProducts(): any {
    try {

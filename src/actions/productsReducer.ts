@@ -1,5 +1,5 @@
-import { IProductsItem } from '../../../types/productsItem';
-import { IProducts, productsActionTypes } from './types';
+import { IProductsItem } from '../types/productsItem';
+import { IProducts, productsActionTypes } from '../store/reducers/productsReducer/types';
 
 export const addProductstAction = (products: IProducts, loadingStatus: boolean) => {
    return { type: productsActionTypes.ADD_PRODUCTS, payload: { products, loadingStatus } }

@@ -1,6 +1,6 @@
 import { IProductsItem } from '../types/productsItem';
 
-interface IProps {
+interface IArguments {
    (
       products: IProductsItem[],
       tab: string,
@@ -11,22 +11,11 @@ interface IProps {
    ): IProductsItem[],
 }
 
-export enum tabsNames {
-   NEWARRIVALS = "isNewArrivals",
-   SPECIALS = 'isSpecial',
-   BESTSELLERS = 'isBestseller',
-   MOSTVIEWED = 'isMostViewed',
-   FEATUREDPRODUCTS = 'isFeatured',
-}
-
 // функция хелпер сортирует общий список товаров при изменении любого значения фильтра.
-export const productsSortedHandler: IProps = (products, tab, color, size, brand, price) => {
-
-   // склеиваем из NEW ARRIVALS в NEWARRIVALS, чтобы получить значение из enum tabsNames для удобного поиска в товаре
-   const updateTab = tabsNames[tab?.split(' ').join('') as keyof typeof tabsNames]
+export const productsSortedHandler: IArguments = (products, tab, color, size, brand, price) => {
 
    let result = products.filter((elem) => {
-      return elem.particulars[updateTab as keyof typeof elem.particulars] === true
+      return elem.particulars[tab] === true
    })
 
    // проверяем массив товаров на каждый фильтр при его наличии в передаваемых массивах.

@@ -1,13 +1,13 @@
-import './ReviewsForm.scss'
 import { FC, useEffect, useState } from "react";
+import { useDispatch } from 'react-redux';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
+import './ReviewsForm.scss'
 import { IProductsItem } from '../../../types/productsItem';
 import StarsRating from './StarsRating';
 import { reviewRequest } from '../../../api/api';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import { useDispatch } from 'react-redux';
-import { replaceProductsAction } from '../../../store/reducers/productsReducer/actions';
+import { replaceProductsAction } from '../../../actions/productsReducer';
 
 interface IProps {
    currentProduct: IProductsItem,

@@ -1,5 +1,4 @@
 import { IState, cartActionTypes } from './types';
-import { IProductCart } from '../../../types/cartItem';
 import { CartActions } from './types';
 
 const initialState: IState = {
@@ -23,7 +22,9 @@ export const cartReducer = (state = initialState, action: CartActions): IState =
             ...action,
             productsCart: state.productsCart.map(elem => {
                // приходит измененный объект, и если он совпадает с тем что из стейта, то заменяем
-               if (elem.idCart === action.payload.product.idCart) { return action.payload.product }
+               if (elem.idCart === action.payload.product.idCart) {
+                  return action.payload.product
+               }
 
                return elem
             })
@@ -31,16 +32,4 @@ export const cartReducer = (state = initialState, action: CartActions): IState =
       default:
          return state
    }
-}
-
-export const addCartAction = (product: IProductCart) => {
-   return { type: cartActionTypes.ADD_PRODUCT_CART, payload: { product } }
-}
-
-export const deleteCartAction = (id: string) => {
-   return { type: cartActionTypes.DELETE_PRODUCT_CART, payload: { id } }
-}
-
-export const changeCountCartAction = (product: IProductCart) => {
-   return { type: cartActionTypes.CHANGE_COUNT_CART, payload: { product } }
 }

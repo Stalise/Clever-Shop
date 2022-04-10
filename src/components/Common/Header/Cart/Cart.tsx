@@ -1,8 +1,11 @@
 import { FC, useState } from "react";
+
 import { useTypedSelector } from "../../../../hooks/useTypedSelector";
 import Products from "./Products";
 
 const Cart: FC = () => {
+
+   const path = process.env.REACT_APP_GITHUB_PATH
 
    const [viewCart, setViewCart] = useState(false)
 
@@ -12,8 +15,6 @@ const Cart: FC = () => {
       !viewCart ? document.body.style.overflow = "hidden" : document.body.style.overflow = "visible"
       setViewCart(!viewCart)
    }
-
-   const path = process.env.REACT_APP_GITHUB_PATH
 
    return (
       // подставляем общее количество заказов в content: attr() в css, взятое в data-count.

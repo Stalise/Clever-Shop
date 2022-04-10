@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from 'redux-devtools-extension';
+
 import { sortedReducer } from "./reducers/sortedReducer/sortedReducer";
 import { cartReducer } from "./reducers/cartReducer/cartReducer";
 import { productsReducer } from "./reducers/productsReducer/productsReducer";

@@ -1,3 +1,5 @@
+import { KeyType } from "./keyType";
+
 //! product который приходит с запроса от сервера
 export interface IProductsItem {
    particulars: IProductsParticulars,
@@ -14,7 +16,7 @@ export interface IProductsItem {
    id: string,
 }
 
-interface IProductsParticulars {
+interface IProductsParticulars extends KeyType<boolean> {
    isNewArrivals: boolean,
    isSpecial: boolean,
    isBestseller: boolean,

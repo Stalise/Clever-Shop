@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { useDispatch } from "react-redux";
-import { changeParamsAction } from '../../store/reducers/sortedReducer/sortedReducer';
+import { changeParamsAction } from '../../actions/sortedReducer';
 
 interface IProps {
    type: string,

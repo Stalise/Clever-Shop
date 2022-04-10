@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/scss';
 import { IProductsItem } from '../../types/productsItem';
 import ProductItem from '../Common/ProductItem/ProductItem';
@@ -16,10 +17,6 @@ interface IProps {
 }
 
 const SimilarSlider: FC<IProps> = ({ getProducts, params }) => {
-
-   console.log(params)
-
-   const path = process.env.REACT_APP_GITHUB_PATH
 
    return (
       <div className="similar__content">

@@ -11,7 +11,7 @@ const App: FC = () => {
    const currentUrl = useUrl()
 
    useEffect(() => {
-      const getIdProduct = currentUrl.split('/')[3]
+      const getIdProduct: string = currentUrl.split('/')[2]
 
       if (currentUrl.split('/').length === 3) {
          dispatch({

@@ -1,4 +1,5 @@
 import { IProductsItem } from "../../../types/productsItem";
+import { KeyType } from "../../../types/keyType";
 
 //! типы для стейта
 export interface IState {
@@ -7,7 +8,7 @@ export interface IState {
    isError: boolean,
 }
 
-export interface IProducts {
+export interface IProducts extends KeyType<IProductsItem[]> {
    men: IProductsItem[],
    women: IProductsItem[]
 }

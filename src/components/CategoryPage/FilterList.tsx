@@ -1,4 +1,5 @@
 import { FC } from "react";
+
 import FilterCheckbox from "./FilterCheckbox";
 
 interface IProps {

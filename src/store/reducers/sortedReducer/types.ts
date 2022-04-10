@@ -1,4 +1,5 @@
 import { IProductsItem } from '../../../types/productsItem';
+import { KeyType } from '../../../types/keyType';
 
 //! типы для стейта
 interface ICategory {
@@ -10,11 +11,10 @@ interface ICategory {
    price: string[],
 }
 
-export interface IState {
+export interface IState extends KeyType<ICategory> {
    men: ICategory,
-   women: ICategory,
+   women: ICategory
 }
-
 /*----------------------------------------------*/
 
 //! enum для названий экшенов

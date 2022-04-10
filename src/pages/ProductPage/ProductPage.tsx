@@ -24,9 +24,8 @@ const ProductPage: FC = () => {
 
    const params = useParams()
 
-   console.log(params)
-
    const [currentProduct, setCurrentProduct] = useState<IProductsItem>()
+
    const [currentParams, setCurrentParams] = useState<ICurrentParams>({
       color: '',
       size: '',
@@ -91,7 +90,9 @@ const ProductPage: FC = () => {
             ?
             <section className="product">
                <div className="product__container">
-                  {currentParams.color.length > 0 && currentProduct && <ProductSliders currentParams={currentParams} currentProduct={currentProduct} />}
+                  {currentParams.color.length > 0
+                     && currentProduct
+                     && <ProductSliders currentParams={currentParams} currentProduct={currentProduct} />}
 
                   <div className="product__content">
                      <div className="product__tabs">

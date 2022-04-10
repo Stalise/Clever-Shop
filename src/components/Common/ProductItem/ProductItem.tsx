@@ -1,7 +1,8 @@
-import "./ProductItem.scss";
 import { FC } from "react";
-import { IProductsItem } from '../../../types/productsItem';
 import { Link } from "react-router-dom";
+
+import "./ProductItem.scss";
+import { IProductsItem } from '../../../types/productsItem';
 import Rating from '../Rating/Rating';
 
 interface IProps {

@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import './MainPage.scss';
+
 import CatalogSlider from '../../components/MainPage/CatalogSlider';
 import ProductsContainer from '../../components/MainPage/ProductsContainer';
 import EmailForm from '../../components/MainPage/EmailForm';

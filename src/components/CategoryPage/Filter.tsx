@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import FilterList from "./FilterList";
 import { IProductsItem } from '../../types/productsItem';
 import { useTypedSelector } from "../../hooks/useTypedSelector";
-import { clearSortedAction } from '../../store/reducers/sortedReducer/sortedReducer';
+import { clearSortedAction } from '../../actions/sortedReducer';
 
 interface IProps {
    isFilter: boolean,
@@ -14,10 +14,10 @@ interface IProps {
 const Filter: FC<IProps> = ({ isFilter, category }) => {
 
    const dispatch = useDispatch()
-   const { productsSorted, tab, color, size, brand, price } = useTypedSelector(state => state.sorted[category as keyof typeof state.sorted])
+   const { productsSorted, color, size, brand, price } = useTypedSelector(state => state.sorted[category])
    const { products } = useTypedSelector(state => state.products)
 
-   const categoryProducts: IProductsItem[] = products[category as keyof typeof products]
+   const categoryProducts: IProductsItem[] = products[category]
 
    const [filterParams, setFilterParams] = useState<any>({
       colors: [],
@@ -29,21 +29,19 @@ const Filter: FC<IProps> = ({ isFilter, category }) => {
    // формирует поля в фильтре на основе значений в товарах.
    useEffect(() => {
 
-      console.log(color, size)
-
       const uniqColors = new Set()
       const uniqSizes = new Set()
       const uniqBrands = new Set()
 
       // обходим все товары, и добавляем уникальные значения типов (цвет, бренд, размер) для фильтра
       categoryProducts.map((elem) => {
-         for (let i of elem.images) {
-            uniqColors.add(i.color)
-         }
+         elem.images.forEach((elem) => {
+            uniqColors.add(elem.color)
+         })
 
-         for (let i of elem.sizes) {
-            uniqSizes.add(i)
-         }
+         elem.sizes.forEach((elem) => {
+            uniqColors.add(elem)
+         })
 
          uniqBrands.add(elem.brand)
       })

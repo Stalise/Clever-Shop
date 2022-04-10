@@ -1,9 +1,10 @@
 import { FC, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { IProductsItem } from '../../types/productsItem';
 import { ICurrentParams } from '../../pages/ProductPage/ProductPage';
-import { addCartAction, deleteCartAction } from '../../store/reducers/cartReducer/cartReducer';
 import { useTypedSelector } from "../../hooks/useTypedSelector";
+import { addCart } from '../../utils/cartActions';
 
 interface IProps {
    currentProduct: IProductsItem;
@@ -13,58 +14,30 @@ interface IProps {
 
 const Actions: FC<IProps> = ({ currentProduct, currentParams, category }) => {
 
-   const [cartStatus, setCartStatus] = useState<boolean>(false)
-   const { productsCart } = useTypedSelector(state => state.cart)
    const dispatch = useDispatch()
+   const { productsCart } = useTypedSelector(state => state.cart)
 
-   const cartAdd = () => {
-      // формируем уникальное id для товара с определнными характеристиками.
-      const idProductCart = currentProduct?.id + currentParams.color + currentParams.size;
-
-      // в зависимости от статуса товара в корзине, добавляем или удаляем его по клику на кнопку
-      if (cartStatus === false) {
-         // получаем url картинки по цвету для товара в корзине.
-         const currentImg = currentProduct.images.filter((elem) => elem.color === currentParams.color)[0].url
-
-         // данные товара для объекта в корзине
-         const productData = {
-            category,
-            idCart: idProductCart,
-            img: currentImg,
-            name: currentProduct?.name,
-            color: currentParams.color,
-            size: currentParams.size,
-            price: currentProduct?.price,
-            count: 1,
-            totalPrice: currentProduct?.price,
-         }
-
-         dispatch(addCartAction(productData))
-      } else {
-         dispatch(deleteCartAction(idProductCart))
-      }
-   }
+   const [cartStatus, setCartStatus] = useState<boolean>(false)
 
    useEffect(() => {
-
       // формируем уникальное id для товара с определнными характеристиками.
-      const idProductCart = currentProduct?.id + currentParams.color + currentParams.size;
+      const idProductCart = currentProduct.id + currentParams.color + currentParams.size;
 
       setCartStatus(false)
       // проверяем есть ли указанный товар в корзине при первой отрисовке и смене товаров или смене размера
-      for (let i of productsCart) {
-         // console.log(productsCart)
-         if (i.idCart === idProductCart) {
+      productsCart.forEach(elem => {
+         if (elem.idCart === idProductCart) {
             setCartStatus(true)
          }
-      }
+      })
+
    }, [productsCart, currentProduct, currentParams])
 
    return (
       <div className="product__actions">
          <p className="product__price">$ {currentProduct?.price}</p>
          <button
-            onClick={() => cartAdd()}
+            onClick={() => addCart(currentProduct, currentParams, cartStatus, category, dispatch)}
             className="product__button-cart"
             type="button"
             data-test-id={'add-cart-button'}

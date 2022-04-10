@@ -1,28 +1,32 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { useDispatch } from "react-redux";
-import { changeTabAction } from '../../store/reducers/sortedReducer/sortedReducer';
+
+import { changeTabAction } from '../../actions/sortedReducer';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { KeyType } from '../../types/keyType';
 
 interface IProps {
    category: string,
 }
 
-enum checkValues {
-   'NEW ARRIVALS' = 'isNewArrivals',
-   'SPECIALS' = 'isSpecial',
-   'BESTSELLERS' = 'isBestseller',
-   'MOST VIEWED' = 'isMostViewed',
-   'FEATURED PRODUCTS' = 'isFeatured'
+// для сортировки товаров нужны их значения из полученных данных, а не названия
+const tabsValues: KeyType<string> = {
+   'NEW ARRIVALS': 'isNewArrivals',
+   'SPECIALS': 'isSpecial',
+   'BESTSELLERS': 'isBestseller',
+   'MOST VIEWED': 'isMostViewed',
+   'FEATURED PRODUCTS': 'isFeatured'
 }
 
 const ProductsTabs: FC<IProps> = ({ category }) => {
 
-   const tabsArr = ['NEW ARRIVALS', 'SPECIALS', 'BESTSELLERS', 'MOST VIEWED', 'FEATURED PRODUCTS']
-   const { tab } = useTypedSelector(state => state.sorted[category as keyof typeof state.sorted])
    const dispatch = useDispatch()
+   const { tab } = useTypedSelector(state => state.sorted[category])
+
+   const tabsArr = ['NEW ARRIVALS', 'SPECIALS', 'BESTSELLERS', 'MOST VIEWED', 'FEATURED PRODUCTS']
 
    const changeTab = (tabName: string) => {
-      dispatch(changeTabAction(tabName, category))
+      dispatch(changeTabAction(tabsValues[tabName], category))
    }
 
    return (
@@ -32,9 +36,8 @@ const ProductsTabs: FC<IProps> = ({ category }) => {
                return (
                   <li
                      onClick={() => changeTab(elem)}
-                     className={tab === elem ? "products__tabs-item _active" : "products__tabs-item"}
+                     className={tab === tabsValues[elem] ? "products__tabs-item _active" : "products__tabs-item"}
                      key={elem}
-                     data-test-id={`clothes-${category}-${checkValues[elem as keyof typeof checkValues]}`}
                   >
                      {elem}
                   </li>

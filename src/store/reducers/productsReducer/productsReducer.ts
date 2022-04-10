@@ -1,4 +1,4 @@
-import { IState, IProducts, productsActionTypes, CartActions } from './types';
+import { IState, productsActionTypes, CartActions } from './types';
 
 const initialState: IState = {
    products: {

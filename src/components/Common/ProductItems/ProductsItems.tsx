@@ -6,9 +6,8 @@ import { IProductsItem } from '../../../types/productsItem';
 import ProductItem from '../ProductItem/ProductItem';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { productsSortedHandler } from '../../../utils/productsSortedHandler';
-import { changeProductsAction } from '../../../store/reducers/sortedReducer/sortedReducer';
+import { changeProductsAction } from '../../../actions/sortedReducer';
 import ErrorMessage from '../../Common/ErrorMessage/ErrorMessage';
-
 import Loader from '../Loader/Loader';
 
 interface IProps {
@@ -18,10 +17,10 @@ interface IProps {
 const ProductsItems: FC<IProps> = ({ category }) => {
    const dispatch = useDispatch()
 
-   const { productsSorted, tab, color, size, brand, price } = useTypedSelector(state => state.sorted[category as keyof typeof state.sorted])
+   const { productsSorted, tab, color, size, brand, price } = useTypedSelector(state => state.sorted[category])
    const { products, isLoading, isError } = useTypedSelector(state => state.products)
 
-   const getProducts: IProductsItem[] = products[category as keyof typeof products]
+   const getProducts: IProductsItem[] = products[category]
 
    useEffect(() => {
 
