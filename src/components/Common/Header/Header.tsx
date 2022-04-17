@@ -3,7 +3,7 @@ import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Burger from './Burger';
 import Navigate from './Navigate';
-import Cart from './Cart/Cart';
+import Cart from '../Cart/Cart';
 
 const Header: FC = () => {
 

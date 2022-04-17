@@ -1,12 +1,11 @@
-import { call, put, takeEvery, spawn } from "redux-saga/effects";
+import { call, put, spawn } from "redux-saga/effects";
 
+import { addProductstAction, addProductAction, changeLoadingAction, changeErrorAction } from '../../../actions/productsReducer';
 import { IProductsItem } from '../../../types/productsItem';
-import { actionTypes } from './constants';
 import { productsRequests } from "../../../api/api";
 import { IProducts } from '../../reducers/productsReducer/types';
-import { addProductstAction, addProductAction, changeLoadingAction, changeErrorAction } from '../../../actions/productsReducer';
 
-function* workerProducts(): any {
+export function* workerProducts(): any {
    try {
       yield put(changeLoadingAction(false))
 
@@ -19,7 +18,7 @@ function* workerProducts(): any {
    }
 }
 
-function* workerProduct(data: any): any {
+export function* workerProduct(data: any): any {
    try {
       yield put(changeLoadingAction(false))
 
@@ -32,15 +31,7 @@ function* workerProduct(data: any): any {
 }
 
 // сначала гружу один продукт, но если он вызывал ошибку, я все равно загружу все товары
-function* workerProductMiddleware(data: any) {
+export function* workerProductMiddleware(data: any) {
    yield spawn(workerProduct, data)
    yield spawn(workerProducts)
-}
-
-export function* watcherProducts() {
-   yield takeEvery(actionTypes.REQUEST_PRODUCTS, workerProducts)
-}
-
-export function* watcherProduct() {
-   yield takeEvery(actionTypes.REQUEST_PRODUCT, workerProductMiddleware)
 }

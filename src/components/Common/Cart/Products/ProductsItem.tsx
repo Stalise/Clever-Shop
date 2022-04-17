@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { IProductCart } from '../../../../types/cartItem';
+import { IProductCart } from '../../../../types/cart';
 import { deleteCart, changeCount } from '../../../../utils/cartActions';
 
 interface IProps {

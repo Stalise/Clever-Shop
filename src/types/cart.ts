@@ -10,3 +10,14 @@ export interface IProductCart {
    count: number,
    totalPrice: number,
 }
+
+export interface IDeliveryCountryCart {
+   _id: string,
+   name: string,
+}
+
+export interface IDeliveryAdressCart {
+   _id: string,
+   city: string,
+   country: string,
+}

@@ -1,7 +1,8 @@
-import { IProductCart } from '../types/cartItem';
+import { IProductCart } from '../types/cart';
 import { IProductsItem } from '../types/productsItem';
+import { IValidateDataDelivery, IValidateDataPayment } from '../store/reducers/cartReducer/types';
 import { ICurrentParams } from '../pages/ProductPage/ProductPage';
-import { addCartAction, deleteCartAction, changeCountCartAction } from '../actions/cartReducer';
+import { addProductCartAction, deleteProductCartAction, changeCountProductCartAction } from '../actions/cartReducer';
 
 interface IChangeArguments {
    (
@@ -28,6 +29,16 @@ interface IAddArguments {
    ): void,
 }
 
+interface IPreparationOrder {
+   (
+      productsCart: IProductCart[],
+      validateDelivery: IValidateDataDelivery,
+      validatePayment: IValidateDataPayment,
+      deliveryMethod: string,
+      paymentMethod: string,
+   ): void,
+}
+
 export const addCart: IAddArguments = (currentProduct, currentParams, cartStatus, category, dispatch) => {
    // формируем уникальное id для товара с определнными характеристиками.
    const idProductCart = currentProduct.id + currentParams.color + currentParams.size;
@@ -50,14 +61,14 @@ export const addCart: IAddArguments = (currentProduct, currentParams, cartStatus
          totalPrice: currentProduct?.price,
       }
 
-      dispatch(addCartAction(productData))
+      dispatch(addProductCartAction(productData))
    } else {
-      dispatch(deleteCartAction(idProductCart))
+      dispatch(deleteProductCartAction(idProductCart))
    }
 }
 
 export const deleteCart: IDeleteArguments = (idCart, dispatch) => {
-   dispatch(deleteCartAction(idCart))
+   dispatch(deleteProductCartAction(idCart))
 }
 
 export const changeCount: IChangeArguments = (operator, product, dispatch) => {
@@ -73,5 +84,42 @@ export const changeCount: IChangeArguments = (operator, product, dispatch) => {
       copyProduct.totalPrice = Number((copyProduct.totalPrice - copyProduct.price).toFixed(2))
    }
 
-   dispatch(changeCountCartAction(copyProduct))
+   dispatch(changeCountProductCartAction(copyProduct))
+}
+
+export const preparationOrder: IPreparationOrder = (productsCart, validateDelivery, validatePayment, deliveryMethod, paymentMethod) => {
+   const cartItems = productsCart.map((elem) => {
+      return ({
+         name: elem.name,
+         size: elem.size,
+         color: elem.color,
+         quantity: elem.count,
+      })
+   })
+
+   const totalCost = Number(productsCart.reduce((accum, elem) => accum + elem.totalPrice, 0).toFixed(1))
+
+   // const transformPhone = validateDelivery.phone.replaceAll('-', '').replaceAll
+
+   const order = {
+      products: cartItems,
+      deliveryMethod,
+      paymentMethod,
+      totalPrice: totalCost,
+      phone: validateDelivery.phone,
+      email: validateDelivery.email,
+      country: validateDelivery.shopAdress.length > 0 ? validateDelivery.shopCountry : validateDelivery.country,
+      cashEmail: validatePayment.email,
+      city: validateDelivery.city,
+      street: validateDelivery.street,
+      house: validateDelivery.house,
+      apartment: validateDelivery.apartment,
+      postcode: validateDelivery.postcode.split(' ')[1],
+      storeAddress: validateDelivery.shopAdress,
+      card: validatePayment.card,
+      cardDate: validatePayment.cardDate,
+      cardCVV: validatePayment.cardCVV,
+   }
+
+   return order
 }

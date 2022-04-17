@@ -19,6 +19,28 @@ export const productsRequests = {
    }
 }
 
+export const cartRequests = {
+   getCountries: async () => {
+      const request = await instance.get('countries');
+      return request.data
+   },
+
+   getAdress: async (data: { country: string, adress: string }) => {
+      const request = await instance.post('search/cities', {
+         "city": data.adress,
+         "country": data.country,
+      })
+
+      return request.data
+   },
+
+   sendOrder: async (data: any) => {
+      const request = await instance.post('cart', data)
+
+      return request.data.message
+   }
+}
+
 export const emailRequest = async (email: string) => {
    try {
       const request = await instance.post('email', {

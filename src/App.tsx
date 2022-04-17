@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { actionTypes } from './store/sagas/productsSaga/constants';
+import { sagasConstants } from './constants/saga';
 import useUrl from './hooks/useUrl';
 import AppRoutes from "./routes/AppRoutes";
 
@@ -15,11 +15,11 @@ const App: FC = () => {
 
       if (currentUrl.split('/').length === 3) {
          dispatch({
-            type: actionTypes.REQUEST_PRODUCT,
+            type: sagasConstants.REQUEST_PRODUCT_SAGA,
             id: getIdProduct
          })
       } else {
-         dispatch({ type: actionTypes.REQUEST_PRODUCTS })
+         dispatch({ type: sagasConstants.REQUEST_PRODUCTS_SAGA })
       }
    }, [])
 
