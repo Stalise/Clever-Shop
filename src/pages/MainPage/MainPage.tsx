@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import './MainPage.scss';
 
+
+import './MainPage.scss';
 import CatalogSlider from '../../components/MainPage/CatalogSlider';
 import ProductsContainer from '../../components/MainPage/ProductsContainer';
 import EmailForm from '../../components/MainPage/EmailForm';
@@ -108,6 +109,7 @@ const MainPage: FC = () => {
                      <p className="subscribe__title">Special Offer</p>
                      <p className="subscribe__subtitle">Subscribe <br></br> And <span>Get 10% Off</span></p>
                   </div>
+                  
                   <EmailForm />
                </div>
             </div>
@@ -117,7 +119,7 @@ const MainPage: FC = () => {
             <div className="blog__container">
                <div className="blog__top">
                   <p className="blog__title">LATEST FROM BLOG</p>
-                  <a href="#!" className="blog__link">See all</a>
+                  <Link to="/" className="blog__link">See all</Link>
                </div>
 
                <div className="blog__content">

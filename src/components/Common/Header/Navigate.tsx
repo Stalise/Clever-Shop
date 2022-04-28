@@ -1,20 +1,12 @@
 import { FC } from "react";
 import { Link } from 'react-router-dom';
 
+import { navigateItems } from '../../../constants/header';
+
 interface IProps {
    burger: boolean,
    setBurger: (arg: boolean) => void,
 }
-
-const navigateItems = [
-   { text: 'About Us', path: "/" },
-   { text: 'Women', path: "/women" },
-   { text: 'Men', path: "/men" },
-   { text: 'Beauty', path: "/" },
-   { text: 'Accessories', path: "/" },
-   { text: 'Blog', path: "/" },
-   { text: 'Contact', path: "/" },
-]
 
 const Navigate: FC<IProps> = ({ burger, setBurger }) => {
 
@@ -31,7 +23,12 @@ const Navigate: FC<IProps> = ({ burger, setBurger }) => {
             {navigateItems.map((elem) => {
                return (
                   <li className="header-navigate__item" onClick={() => clickMenuLink()} key={elem.text}>
-                     <Link to={elem.path} className="header-navigate__link">{elem.text}</Link>
+                     <Link
+                        to={elem.path}
+                        className="header-navigate__link"
+                     >
+                        {elem.text}
+                     </Link>
                   </li>
                )
             })}

@@ -26,7 +26,7 @@ const PaypalFields: FC<IProps> = ({ register, errors, validatePayment }) => {
          />
 
          <p className={`payment-form__input-error ${errors?.email ? '_active' : ''}`}>
-            {errors?.email?.message || 'Обязательное поле.'}
+            {errors?.email?.message || 'Поле должно быть заполнено'}
          </p>
       </label>
    );

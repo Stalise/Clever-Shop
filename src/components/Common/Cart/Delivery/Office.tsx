@@ -25,7 +25,7 @@ const DeliveryOffice: FC<IProps> = ({ register, errors, validateDelivery }) => {
                defaultValue={validateDelivery.country}
             />
             <p className={`delivery-form__input-error ${errors?.country ? '_active' : ''}`}>
-               {errors?.country?.message || 'Обязательное поле.'}
+               {errors?.country?.message || 'Поле должно быть заполнено'}
             </p>
          </label>
 
@@ -40,7 +40,7 @@ const DeliveryOffice: FC<IProps> = ({ register, errors, validateDelivery }) => {
                defaultValue={validateDelivery.city}
             />
             <p className={`delivery-form__input-error ${errors?.city ? '_active' : ''}`}>
-               {errors?.city?.message || 'Обязательное поле.'}
+               {errors?.city?.message || 'Поле должно быть заполнено'}
             </p>
          </label>
 
@@ -55,7 +55,7 @@ const DeliveryOffice: FC<IProps> = ({ register, errors, validateDelivery }) => {
                defaultValue={validateDelivery.street}
             />
             <p className={`delivery-form__input-error ${errors?.street ? '_active' : ''}`}>
-               {errors?.street?.message || 'Обязательное поле.'}
+               {errors?.street?.message || 'Поле должно быть заполнено'}
             </p>
          </label>
 
@@ -71,7 +71,7 @@ const DeliveryOffice: FC<IProps> = ({ register, errors, validateDelivery }) => {
                   defaultValue={validateDelivery.house}
                />
                <p className={`delivery-form__input-error ${errors?.house ? '_active' : ''}`}>
-                  {errors?.house?.message || 'Обязательное поле.'}
+                  {errors?.house?.message || 'Поле должно быть заполнено'}
                </p>
             </label>
 
@@ -102,7 +102,7 @@ const DeliveryOffice: FC<IProps> = ({ register, errors, validateDelivery }) => {
                })}
             />
             <p className={`delivery-form__input-error ${errors?.postcode ? '_active' : ''}`}>
-               {errors?.postcode?.message || 'Обязательное поле.'}
+               {errors?.postcode?.message || 'Поле должно быть заполнено'}
             </p>
          </label>
       </>

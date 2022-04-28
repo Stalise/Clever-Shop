@@ -48,11 +48,12 @@ const DeliveryStore: FC<IProps> = ({ register, errors }) => {
                className={`delivery-form__select ${validateDelivery.shopCountry.length ? '' : ' _default'}`}
                {...register('shopCountry', {
                   required: true,
-                  pattern: { value: /^((?!Country).)*$/ },
+                  pattern: { value: /^((?!Country).)*$/, message: 'Поле должно быть заполнено' },
                })}
                onChange={(e) => dispatch(changeDeliveryShopCountryAction(e.target.value))}
             >
                <option className="delivery-form__option" value="Country" disabled hidden>Country</option>
+
                {deliveryCountries.map((elem) => {
                   return (
                      <option className="delivery-form__option" value={elem.name} key={elem._id}>
@@ -62,8 +63,8 @@ const DeliveryStore: FC<IProps> = ({ register, errors }) => {
                })}
             </select>
 
-            <p className={`delivery-form__input-error ${errors?.storeCountry ? '_active' : ''}`}>
-               {errors?.storeCountry?.message || 'Обязательное поле.'}
+            <p className={`delivery-form__input-error ${errors?.shopCountry ? '_active' : ''}`}>
+               {errors?.shopCountry?.message || 'Обязательное поле.'}
             </p>
          </label>
 
@@ -91,7 +92,7 @@ const DeliveryStore: FC<IProps> = ({ register, errors }) => {
             </datalist>
 
             <p className={`delivery-form__input-error ${errors?.shopAdress ? '_active' : ''}`}>
-               {errors?.shopAdress?.message || 'Обязательное поле.'}
+               {errors?.shopAdress?.message || 'Поле должно быть заполнено'}
             </p>
          </label>
       </>

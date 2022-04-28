@@ -40,7 +40,7 @@ const Filter: FC<IProps> = ({ isFilter, category }) => {
          })
 
          elem.sizes.forEach((elem) => {
-            uniqColors.add(elem)
+            uniqSizes.add(elem)
          })
 
          uniqBrands.add(elem.brand)
@@ -56,7 +56,7 @@ const Filter: FC<IProps> = ({ isFilter, category }) => {
       // очищает значения фильтров в редакс при смене категории товаров (c men на women напрмиер), чтобы не оставалось старых значений
       dispatch(clearSortedAction(category))
 
-   }, [category])
+   }, [category, categoryProducts])
 
 
    return (

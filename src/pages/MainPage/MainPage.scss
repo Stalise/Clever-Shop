@@ -150,6 +150,11 @@
                      display: flex;
                      justify-content: center;
                      align-items: center;
+                     transition-duration: 0.3s;
+
+                     &:hover {
+                        background-color: rgba($color: #ffffff, $alpha: 0.5);
+                     }
                   }
                }
             }
@@ -170,11 +175,16 @@
                      position: absolute;
                      top: calc(50% - 27px);
                      left: calc(50% - 80px);
-                     padding: 13px 24px;
+                     padding: 15px 24px 11px 24px;
                      color: #121212;
                      font-weight: 600;
                      background-color: #fff;
                      letter-spacing: 1px;
+                     transition-duration: 0.3s;
+
+                     &:hover {
+                        background-color: rgba($color: #ffffff, $alpha: 0.5);
+                     }
                   }
                }
             }
@@ -254,6 +264,10 @@
                      letter-spacing: 0.06em;
                      cursor: pointer;
                      transition: opacity 0.3s;
+
+                     &:hover {
+                        opacity: 0.8;
+                     }
                      &._active {
                         opacity: 1;
                      }

@@ -72,7 +72,7 @@ const DeliveryForm: FC<IProps> = ({ furtherButton, setCurrentTab }) => {
             />
 
             <p className={`delivery-form__input-error ${errors?.phone ? '_active' : ''}`}>
-               {errors?.phone?.message || 'Обязательное поле.'}
+               {errors?.phone?.message || 'Поле должно быть заполнено'}
             </p>
          </label>
 
@@ -85,11 +85,11 @@ const DeliveryForm: FC<IProps> = ({ furtherButton, setCurrentTab }) => {
                })}
                className='delivery-form__input'
                type="email"
-               placeholder="Enter your email"
+               placeholder="e-mail"
                defaultValue={validateDelivery.email}
             />
             <p className={`delivery-form__input-error ${errors?.email ? '_active' : ''}`}>
-               {errors?.email?.message || 'Обязательное поле.'}
+               {errors?.email?.message || 'Поле должно быть заполнено'}
             </p>
          </label>
 
@@ -126,9 +126,11 @@ const DeliveryForm: FC<IProps> = ({ furtherButton, setCurrentTab }) => {
                   required: true,
                })}
             />
+
             <span className="delivery-form__privacy-text">I agree to the processing of my personal information</span>
+
             <p className={`delivery-form__input-error ${errors?.privacy ? '_active' : ''}`}>
-               {errors?.privacy?.message || 'Обязательное поле.'}
+               {errors?.privacy?.message || 'Вы должны согласиться на обработку личной информации'}
             </p>
          </label>
       </form>

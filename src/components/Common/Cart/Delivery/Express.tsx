@@ -24,7 +24,7 @@ const DeliveryExpress: FC<IProps> = ({ register, errors, validateDelivery }) => 
                defaultValue={validateDelivery.country}
             />
             <p className={`delivery-form__input-error ${errors?.country ? '_active' : ''}`}>
-               {errors?.country?.message || 'Обязательное поле.'}
+               {errors?.country?.message || 'Поле должно быть заполнено'}
             </p>
          </label>
 
@@ -39,7 +39,7 @@ const DeliveryExpress: FC<IProps> = ({ register, errors, validateDelivery }) => 
                defaultValue={validateDelivery.city}
             />
             <p className={`delivery-form__input-error ${errors?.city ? '_active' : ''}`}>
-               {errors?.city?.message || 'Обязательное поле.'}
+               {errors?.city?.message || 'Поле должно быть заполнено'}
             </p>
          </label>
 
@@ -54,7 +54,7 @@ const DeliveryExpress: FC<IProps> = ({ register, errors, validateDelivery }) => 
                defaultValue={validateDelivery.street}
             />
             <p className={`delivery-form__input-error ${errors?.street ? '_active' : ''}`}>
-               {errors?.street?.message || 'Обязательное поле.'}
+               {errors?.street?.message || 'Поле должно быть заполнено'}
             </p>
          </label>
 
@@ -70,7 +70,7 @@ const DeliveryExpress: FC<IProps> = ({ register, errors, validateDelivery }) => 
                   defaultValue={validateDelivery.house}
                />
                <p className={`delivery-form__input-error ${errors?.house ? '_active' : ''}`}>
-                  {errors?.house?.message || 'Обязательное поле.'}
+                  {errors?.house?.message || 'Поле должно быть заполнено'}
                </p>
             </label>
 
@@ -83,7 +83,7 @@ const DeliveryExpress: FC<IProps> = ({ register, errors, validateDelivery }) => 
                   defaultValue={validateDelivery.city}
                />
                <p className={`delivery-form__input-error ${errors?.apartment ? '_active' : ''}`}>
-                  {errors?.apartment?.message || 'Обязательное поле.'}
+                  {errors?.apartment?.message || 'Поле должно быть заполнено'}
                </p>
             </label>
          </div>

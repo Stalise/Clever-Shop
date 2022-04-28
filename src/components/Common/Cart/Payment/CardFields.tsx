@@ -31,7 +31,7 @@ const CardFields: FC<IProps> = ({ register, errors, validatePayment }) => {
             />
 
             <p className={`payment-form__input-error ${errors?.card ? '_active' : ''}`}>
-               {errors?.card?.message || 'Обязательное поле'}
+               {errors?.card?.message || 'Поле должно быть заполнено'}
             </p>
          </label>
 
@@ -46,13 +46,13 @@ const CardFields: FC<IProps> = ({ register, errors, validatePayment }) => {
                      required: true,
                      pattern: { value: /^(0\d|1[0-2])\/\d{2}$/, message: "Некорректная дата" },
                      validate: {
-                        checkDate: (value: string) => currentDate() < enteredDate(value) || 'Некорректный дата',
+                        checkDate: (value: string) => currentDate() < enteredDate(value) || 'Некорректная дата',
                      }
                   })}
                />
 
                <p className={`payment-form__input-error ${errors?.cardDate ? '_active' : ''}`}>
-                  {errors?.cardDate?.message || 'Обязательное поле'}
+                  {errors?.cardDate?.message || 'Поле должно быть заполнено'}
                </p>
             </label>
 
@@ -75,7 +75,7 @@ const CardFields: FC<IProps> = ({ register, errors, validatePayment }) => {
                </button>
 
                <p className={`payment-form__input-error ${errors?.cardCVV ? '_active' : ''}`}>
-                  {errors?.cardCVV?.message || 'Обязательное поле.'}
+                  {errors?.cardCVV?.message || 'Поле должно быть заполнено'}
                </p>
             </label>
          </div>

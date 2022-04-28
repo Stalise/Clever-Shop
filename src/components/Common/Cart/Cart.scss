@@ -424,22 +424,22 @@
                position: absolute;
                bottom: -17px;
                left: 0;
-               font-size: 14px;
-               padding-left: 20px;
+               font-size: 11px;
+               // padding-left: 20px;
                display: none;
                &._active {
                   display: block;
                }
-               &:before {
-                  font-family: "IcoFont";
-                  content: "\ef1b";
-                  position: absolute;
-                  font-size: 16px;
-                  color: #f25c5c;
-                  top: -2px;
-                  left: 0px;
-                  transition-duration: 0.3s;
-               }
+               // &:before {
+               //    font-family: "IcoFont";
+               //    content: "\ef1b";
+               //    position: absolute;
+               //    font-size: 16px;
+               //    color: #f25c5c;
+               //    top: -2px;
+               //    left: 0px;
+               //    transition-duration: 0.3s;
+               // }
             }
          }
          .delivery-form__adress-container {
@@ -478,22 +478,22 @@
                position: absolute;
                bottom: -17px;
                left: 0;
-               font-size: 14px;
-               padding-left: 20px;
+               font-size: 11px;
+               // padding-left: 20px;
                display: none;
                &._active {
                   display: block;
                }
-               &:before {
-                  font-family: "IcoFont";
-                  content: "\ef1b";
-                  position: absolute;
-                  font-size: 16px;
-                  color: #f25c5c;
-                  top: -2px;
-                  left: 0px;
-                  transition-duration: 0.3s;
-               }
+               // &:before {
+               //    font-family: "IcoFont";
+               //    content: "\ef1b";
+               //    position: absolute;
+               //    font-size: 16px;
+               //    color: #f25c5c;
+               //    top: -2px;
+               //    left: 0px;
+               //    transition-duration: 0.3s;
+               // }
             }
          }
          .delivery-form__select {
@@ -527,7 +527,6 @@
       }
    }
    .cart-delivery__actions {
-      border: 1px solid blue;
       padding: 20px 20px;
       height: 200px;
       display: flex;

@@ -174,7 +174,9 @@ interface IRequestDeliveryAdressAction {
 
 interface ISetErrorAction {
    type: cartActionTypes.SET_ERROR_CART,
-   payload: ISetErrorPayload,
+   payload: {
+      message: string
+   },
 }
 
 //! общий тип для экшенов, чтобы экспортировать в одном значении

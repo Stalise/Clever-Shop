@@ -3,7 +3,7 @@ import './CategoryPage.scss';
 import ProductsItems from "../../components/Common/ProductItems/ProductsItems";
 import { Link, useParams } from "react-router-dom";
 import MySelectProducts from "../../components/CategoryPage/MySelectProducts/MySelectProducts";
-import ProductsFilter from "../../components/CategoryPage/Filter";
+import Filter from "../../components/CategoryPage/Filter";
 
 const CategoryPage: FC = () => {
 
@@ -12,15 +12,9 @@ const CategoryPage: FC = () => {
 
    const [isFilter, setIsFilter] = useState<boolean>(false)
 
-   console.log(params)
-
    useEffect(() => {
       if (params.category) {
          setCategoryName(params.category)
-      }
-
-      return () => {
-         console.log('unmount CategoryPage')
       }
    }, [params.category])
 
@@ -60,7 +54,7 @@ const CategoryPage: FC = () => {
                      {categoryName && <MySelectProducts categoryName={categoryName} />}
                   </div>
 
-                  {categoryName && <ProductsFilter isFilter={isFilter} category={categoryName} />}
+                  {categoryName && <Filter isFilter={isFilter} category={categoryName} />}
                </div>
 
                {categoryName && <ProductsItems category={categoryName} />}

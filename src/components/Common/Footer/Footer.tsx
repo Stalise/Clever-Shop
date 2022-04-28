@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import './Footer.scss';
 
+import './Footer.scss';
+import { socialLinks, categories, information, useful, paymentsImages } from '../../../constants/footer'
 import EmailForm from './EmailForm';
 
 const Footer: FC = () => {
@@ -17,10 +18,9 @@ const Footer: FC = () => {
                <EmailForm />
 
                <div className="footer__social">
-                  <a href="#!" className="footer__social-facebook"></a>
-                  <a href="#!" className="footer__social-twitter"></a>
-                  <a href="#!" className="footer__social-instagram"></a>
-                  <a href="#!" className="footer__social-pinterest"></a>
+                  {socialLinks.map(elem => {
+                     return <Link to={elem.link} className={elem.class} key={elem.class} />
+                  })}
                </div>
             </div>
          </div>
@@ -29,61 +29,37 @@ const Footer: FC = () => {
             <ul className="footer__list">
                <li className="footer__list-item">Categories</li>
 
-               <li className="footer__list-item">
-                  <Link to={'/men'} className="footer__list-link" data-test-id={'footer-nav-link-men'}>Men</Link>
-               </li>
-
-               <li className="footer__list-item">
-                  <Link to={'/women'} className="footer__list-link" data-test-id={'footer-nav-link-women'}>Women</Link>
-               </li>
-
-               <li className="footer__list-item">
-                  <Link to={'/'} className="footer__list-link" data-test-id={'footer-nav-link-accessories'}>Accessories</Link>
-               </li>
-
-               <li className="footer__list-item">
-                  <Link to={'/'} className="footer__list-link" data-test-id={'footer-nav-link-beauty'}>Beauty</Link>
-               </li>
+               {categories.map(elem => {
+                  return (
+                     <li className="footer__list-item" key={elem.text}>
+                        <Link to={elem.link} className="footer__list-link">{elem.text}</Link>
+                     </li>
+                  )
+               })}
             </ul>
 
             <ul className="footer__list">
                <li className="footer__list-item">Infomation</li>
 
-               <li className="footer__list-item">
-                  <Link to={'/'} className="footer__list-link">About Us</Link>
-               </li>
-
-               <li className="footer__list-item">
-                  <Link to={'/'} className="footer__list-link">Contact Us</Link>
-               </li>
-
-               <li className="footer__list-item">
-                  <Link to={'/'} className="footer__list-link">Blog</Link>
-               </li>
-
-               <li className="footer__list-item">
-                  <Link to={'/'} className="footer__list-link">FAQ</Link>
-               </li>
+               {information.map(elem => {
+                  return (
+                     <li className="footer__list-item" key={elem.text}>
+                        <Link to={elem.link} className="footer__list-link">{elem.text}</Link>
+                     </li>
+                  )
+               })}
             </ul>
 
             <ul className="footer__list">
                <li className="footer__list-item">Useful links</li>
 
-               <li className="footer__list-item">
-                  <Link to={'/'} className="footer__list-link">Terms & Conditions</Link>
-               </li>
-
-               <li className="footer__list-item">
-                  <Link to={'/'} className="footer__list-link">Returns & Exchanges</Link>
-               </li>
-
-               <li className="footer__list-item">
-                  <Link to={'/'} className="footer__list-link">Shipping & Delivery</Link>
-               </li>
-
-               <li className="footer__list-item">
-                  <Link to={'/'} className="footer__list-link">Privacy Policy</Link>
-               </li>
+               {useful.map(elem => {
+                  return (
+                     <li className="footer__list-item" key={elem.text}>
+                        <Link to={elem.link} className="footer__list-link">{elem.text}</Link>
+                     </li>
+                  )
+               })}
             </ul>
 
             <ul className="footer__list footer__list-info">
@@ -111,33 +87,13 @@ const Footer: FC = () => {
             <p className="footer__copyright">Copyright © 2032 all rights reserved</p>
 
             <div className="footer__payments">
-               <div className="footer__payments-item">
-                  <img src={`${path}/images/footer_payments-1.png`} className="footer__payments-img" alt="payment"></img>
-               </div>
-
-               <div className="footer__payments-item">
-                  <img src={`${path}/images/footer_payments-2.png`} className="footer__payments-img" alt="payment"></img>
-               </div>
-
-               <div className="footer__payments-item">
-                  <img src={`${path}/images/footer_payments-3.png`} className="footer__payments-img" alt="payment"></img>
-               </div>
-
-               <div className="footer__payments-item">
-                  <img src={`${path}/images/footer_payments-4.png`} className="footer__payments-img" alt="payment"></img>
-               </div>
-
-               <div className="footer__payments-item">
-                  <img src={`${path}/images/footer_payments-5.png`} className="footer__payments-img" alt="payment"></img>
-               </div>
-
-               <div className="footer__payments-item">
-                  <img src={`${path}/images/footer_payments-6.png`} className="footer__payments-img" alt="payment"></img>
-               </div>
-
-               <div className="footer__payments-item">
-                  <img src={`${path}/images/footer_payments-7.png`} className="footer__payments-img" alt="payment"></img>
-               </div>
+               {paymentsImages.map((elem, index) => {
+                  return (
+                     <div className="footer__payments-item" key={index}>
+                        <img src={`${path}${elem}`} className="footer__payments-img" alt="payment"></img>
+                     </div>
+                  )
+               })}
             </div>
 
             <a className="footer__bottom-link">Clevertec.ru/training</a>

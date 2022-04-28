@@ -4,7 +4,7 @@ import { IValidateDataDelivery, IValidateDataPayment } from '../store/reducers/c
 import { ICurrentParams } from '../pages/ProductPage/ProductPage';
 import { addProductCartAction, deleteProductCartAction, changeCountProductCartAction } from '../actions/cartReducer';
 
-interface IChangeArguments {
+interface IChangeCartArguments {
    (
       operator: string,
       product: IProductCart,
@@ -12,14 +12,14 @@ interface IChangeArguments {
    ): void,
 }
 
-interface IDeleteArguments {
+interface IDeleteCartArguments {
    (
       idCart: string,
       dispatch: any,
    ): void,
 }
 
-interface IAddArguments {
+interface IAddCartArguments {
    (
       currentProduct: IProductsItem,
       currentParams: ICurrentParams,
@@ -39,7 +39,7 @@ interface IPreparationOrder {
    ): void,
 }
 
-export const addCart: IAddArguments = (currentProduct, currentParams, cartStatus, category, dispatch) => {
+export const addCart: IAddCartArguments = (currentProduct, currentParams, cartStatus, category, dispatch) => {
    // формируем уникальное id для товара с определнными характеристиками.
    const idProductCart = currentProduct.id + currentParams.color + currentParams.size;
 
@@ -49,16 +49,16 @@ export const addCart: IAddArguments = (currentProduct, currentParams, cartStatus
       const currentImg = currentProduct.images.filter((elem) => elem.color === currentParams.color)[0].url
 
       // данные товара для объекта в корзине
-      const productData = {
+      const productData: IProductCart = {
          category,
          idCart: idProductCart,
          img: currentImg,
-         name: currentProduct?.name,
+         name: currentProduct.name,
          color: currentParams.color,
          size: currentParams.size,
-         price: currentProduct?.price,
+         price: currentProduct.price,
          count: 1,
-         totalPrice: currentProduct?.price,
+         totalPrice: currentProduct.price,
       }
 
       dispatch(addProductCartAction(productData))
@@ -67,11 +67,11 @@ export const addCart: IAddArguments = (currentProduct, currentParams, cartStatus
    }
 }
 
-export const deleteCart: IDeleteArguments = (idCart, dispatch) => {
+export const deleteCart: IDeleteCartArguments = (idCart, dispatch) => {
    dispatch(deleteProductCartAction(idCart))
 }
 
-export const changeCount: IChangeArguments = (operator, product, dispatch) => {
+export const changeCount: IChangeCartArguments = (operator, product, dispatch) => {
    const copyProduct = { ...product }
 
    if (operator === '+' && product.count < 100 && product.count >= 1) {

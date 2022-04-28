@@ -1,6 +1,8 @@
-import './Header.scss';
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import './Header.scss';
+import { socialLinks } from '../../../constants/header';
 import Burger from './Burger';
 import Navigate from './Navigate';
 import Cart from '../Cart/Cart';
@@ -20,11 +22,10 @@ const Header: FC = () => {
                   <p className="header__info-adress">Belarus, Gomel, Lange 17</p>
                   <p className="header__info-time">All week 24/7</p>
                </div>
-               <div className="header__social">
-                  <a href="#!" className="header__social-facebook"></a>
-                  <a href="#!" className="header__social-twitter"></a>
-                  <a href="#!" className="header__social-instagram"></a>
-                  <a href="#!" className="header__social-pinterest"></a>
+               <div className='header__social'>
+                  {socialLinks.map(elem => {
+                     return <Link to={elem.href} className={elem.class} key={elem.class} />
+                  })}
                </div>
             </div>
          </div>
