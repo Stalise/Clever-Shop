@@ -53,14 +53,13 @@ const Filter: FC<IProps> = ({ isFilter, category }) => {
          brands: Array.from(uniqBrands)
       })
 
-      // очищает значения фильтров в редакс при смене категории товаров (c men на women напрмиер), чтобы не оставалось старых значений
-      dispatch(clearSortedAction(category))
-
+      return () => {
+         dispatch(clearSortedAction(category))
+      }
    }, [category, categoryProducts])
 
-
    return (
-      <div className={`products__actions-bottom filter ${isFilter ? '_active' : ''}`} data-test-id={`filters-${category}`}>
+      <div className={`products__actions-bottom filter ${isFilter ? '_active' : ''}`}>
          <div className="filter__container">
             <div className="filter__lists">
                <FilterList

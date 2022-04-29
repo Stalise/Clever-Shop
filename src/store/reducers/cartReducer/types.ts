@@ -54,79 +54,40 @@ export enum cartActionTypes {
    SET_ERROR_CART = "SET_ERROR_CART",
 }
 
-//! типизация payload 
-interface IAddCartPayload {
-   product: IProductCart,
-}
-
-interface IDeleteCartPayload {
-   id: string,
-}
-
-interface IChangeCountCartPayload {
-   product: IProductCart,
-}
-
-interface IChangeDeliveryDataPayload {
-   deliveryData: IValidateDataDelivery,
-}
-
-interface IChangePaymentDataPayload {
-   paymentData: IValidateDataPayment,
-}
-
-interface IChangeDeliveryMethodPayload {
-   method: string,
-}
-
-interface IChangePaymentMethodPayload {
-   method: string,
-}
-
-interface IChangeDeliveryShopCountryPayload {
-   country: string,
-}
-
-interface IChangeDeliveryShopAdressPayload {
-   adress: string,
-}
-
-interface IRequestDeliveryCountriesPayload {
-   countries: IDeliveryCountryCart[],
-}
-
-interface IRequestDeliveryAdressPayload {
-   adresses: IDeliveryAdressCart[],
-}
-
-interface ISetErrorPayload {
-   message: string,
-}
-
 //! типы для экшенов
 interface IAddProductAction {
    type: cartActionTypes.ADD_PRODUCT_CART,
-   payload: IAddCartPayload
+   payload: {
+      product: IProductCart,
+   },
 }
 
 interface IDeleteProductAction {
    type: cartActionTypes.DELETE_PRODUCT_CART,
-   payload: IDeleteCartPayload
+   payload: {
+      id: string,
+   },
 }
 
 interface IChangeCountProductAction {
    type: cartActionTypes.CHANGE_COUNT_PRODUCT_CART,
-   payload: IChangeCountCartPayload
+   payload: {
+      product: IProductCart,
+   },
 }
 
 interface IChangeDeliveryDataAction {
    type: cartActionTypes.CHANGE_DELIVERY_DATA_CART,
-   payload: IChangeDeliveryDataPayload
+   payload: {
+      deliveryData: IValidateDataDelivery,
+   },
 }
 
 interface IChangePaymentDataAction {
    type: cartActionTypes.CHANGE_PAYMENT_DATA_CART,
-   payload: IChangePaymentDataPayload
+   payload: {
+      paymentData: IValidateDataPayment,
+   }
 }
 
 interface IClearValidateDataAction {
@@ -137,39 +98,46 @@ interface IClearAllAction {
    type: cartActionTypes.CLEAR_ALL_CART,
 }
 
-interface IChangeDeliveryMethodAction {
-   type: cartActionTypes.CHANGE_DELIVERY_METHOD_CART,
-   payload: IChangeDeliveryMethodPayload,
-}
-
 interface IChangePaymentMethodAction {
    type: cartActionTypes.CHANGE_PAYMENT_METHOD_CART,
-   payload: IChangePaymentMethodPayload,
+   payload: {
+      method: string,
+   },
 }
 
 interface IChangeDeliveryMethodAction {
    type: cartActionTypes.CHANGE_DELIVERY_METHOD_CART,
-   payload: IChangeDeliveryMethodPayload,
+   payload: {
+      method: string,
+   },
 }
 
 interface IChangeDeliveryShopCountryAction {
    type: cartActionTypes.CHANGE_DELIVERY_SHOP_COUNTRY_CART,
-   payload: IChangeDeliveryShopCountryPayload,
+   payload: {
+      country: string,
+   },
 }
 
 interface IChangeDeliveryShopAdressAction {
    type: cartActionTypes.CHANGE_DELIVERY_SHOP_ADRESS_CART,
-   payload: IChangeDeliveryShopAdressPayload,
+   payload: {
+      adress: string,
+   },
 }
 
 interface IRequestDeliveryCountriesAction {
    type: cartActionTypes.REQUEST_DELIVERY_COUNTRIES_CART,
-   payload: IRequestDeliveryCountriesPayload,
+   payload: {
+      countries: IDeliveryCountryCart[],
+   },
 }
 
 interface IRequestDeliveryAdressAction {
    type: cartActionTypes.REQUEST_DELIVERY_ADRESS_CART,
-   payload: IRequestDeliveryAdressPayload,
+   payload: {
+      adresses: IDeliveryAdressCart[],
+   },
 }
 
 interface ISetErrorAction {

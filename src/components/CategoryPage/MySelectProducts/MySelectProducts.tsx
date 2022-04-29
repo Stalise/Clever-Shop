@@ -1,9 +1,11 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Select from "react-select";
 
 import './MySelectProducts.scss';
+import { optionsSelectItems } from '../../../constants/select';
 import { changeTabAction } from "../../../actions/sortedReducer";
+import { useTypedSelector } from "../../../hooks/useTypedSelector";
 
 interface IProps {
    categoryName: string;
@@ -12,25 +14,24 @@ interface IProps {
 const MySelectProducts: FC<IProps> = ({ categoryName }) => {
 
    const dispatch = useDispatch()
+   const { tab } = useTypedSelector(state => state.sorted[categoryName])
 
-   const options: Array<{ value: string, label: string }> = [
-      { value: 'isNewArrivals', label: 'NEW ARRIVALS' },
-      { value: 'isSpecial', label: 'SPECIALS' },
-      { value: 'isBestseller', label: 'BESTSELLERS' },
-      { value: 'isMostViewed', label: 'MOST VIEWED' },
-      { value: 'isFeatured', label: 'FEATURED PRODUCTS' }
-   ]
+   const options: Array<{ value: string, label: string }> = Object.values(optionsSelectItems).map(elem => elem)
 
    // при смене выбранной сортировки, меняется значение в редаксе
    const selectChange = (option: any) => {
       dispatch(changeTabAction(option.value, categoryName))
    }
 
+   useEffect(() => {
+
+   }, [])
+
    return (
       <div className="products__select">
          <Select
             options={options}
-            defaultValue={options[0]}
+            defaultValue={options.filter(elem => elem.value === tab)}
             onChange={option => selectChange(option)}
             isSearchable={false}
             className={'react-select'}

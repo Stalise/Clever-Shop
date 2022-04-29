@@ -24,7 +24,7 @@ const ProductsItems: FC<IProps> = ({ category }) => {
 
    useEffect(() => {
 
-      // в функции хелпер мы фильтруем массив по заданным типам
+      // в функции хелпер мы фильтруем массив по заданным параметрам
       const getSortedProducts = productsSortedHandler(getProducts, tab, color, size, brand, price)
 
       dispatch(changeProductsAction(getSortedProducts, category))
