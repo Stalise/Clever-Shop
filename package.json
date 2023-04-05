@@ -1,5 +1,8 @@
 {
   "name": "clever-shop",
   "version": "1.0.0",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^8.0.3"
+  }
 }
