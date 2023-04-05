@@ -13,13 +13,36 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "import", "check-file"],
   "rules": {
     // NEST
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    // IMPORT
+    "import/no-useless-path-segments": ["error", { "commonjs": true }],
+    "import/no-cycle": "error",
+    "import/no-duplicates": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-self-import": "error",
+    "import/no-deprecated": "warn",
+    "import/no-empty-named-blocks": "error",
+    // FOLDERS & FILES
+    "check-file/filename-naming-convention": [
+      "error",
+      {
+        "**/*.{js,ts}": "KEBAB_CASE"
+      },
+      { "ignoreMiddleExtensions": true }
+    ],
+    "check-file/folder-naming-convention": [
+      "error",
+      {
+        "src/**/": "KEBAB_CASE"
+      }
+    ],
     // OTHER
     "no-console": "warn"
   },
