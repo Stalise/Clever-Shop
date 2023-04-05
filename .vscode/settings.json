@@ -19,5 +19,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
+  },
+  "files.associations": {
+    "*styles.ts": "typescriptreact"
   }
 }
