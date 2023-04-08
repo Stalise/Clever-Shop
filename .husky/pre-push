@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# PROJECT
+# branch-name-lint
+
+# FRONTEND
+if [ -d client/node_modules ]
+then
+cd client
+yarn lint
+yarn styles
+cd ..
+fi
+
+# BACKEND
+if [ -d server/node_modules ]
+then
+cd server
+yarn lint
+fi
+
+exit 0
