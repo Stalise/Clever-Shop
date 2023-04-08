@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "devDependencies": {
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1"
   }
 }

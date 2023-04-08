@@ -17,7 +17,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "format": "prettier --write \"src/**/*\" \"test/**/*\"",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --max-warnings=0 .",
+    "lint": "eslint --max-warnings=0 \"{src,apps,libs,test}/**/*.{js,ts}\"",
     "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
