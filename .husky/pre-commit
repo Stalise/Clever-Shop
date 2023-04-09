@@ -3,6 +3,8 @@
 
 exec >/dev/tty 2>&1
 
+echo
+echo 🚀 Checking files that have been modified
 yarn lint-staged
 
 exit 0

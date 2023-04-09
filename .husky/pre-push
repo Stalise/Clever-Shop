@@ -2,12 +2,16 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # PROJECT
+echo
+echo 🚀 Checking the name of the last commit
 yarn commit
 # branch-name-lint
 
 # FRONTEND
 if [ -d client/node_modules ]
 then
+echo
+echo 🚀 Running linters for client
 cd client
 yarn lint
 yarn styles
@@ -17,6 +21,8 @@ fi
 # BACKEND
 if [ -d server/node_modules ]
 then
+echo
+echo 🚀 Running linters for server
 cd server
 yarn lint
 fi
