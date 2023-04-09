@@ -5,7 +5,9 @@
 echo
 echo 🚀 Checking the name of the last commit
 yarn commit
-# branch-name-lint
+echo
+echo 🚀 Checking the name of branch
+yarn branch-name-lint branch-name-lint.json
 
 # FRONTEND
 if [ -d client/node_modules ]

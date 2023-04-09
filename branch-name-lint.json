@@ -1,0 +1,20 @@
+{
+  "branchNameLinter": {
+    "prefixes": ["feat", "fix", "refactor"],
+    "suggestions": {
+      "features": "feat",
+      "feature": "feat",
+      "hotfix": "fix",
+      "bug": "fix",
+      "ref": "refactor"
+    },
+    "banned": [],
+    "skip": ["skip-ci"],
+    "disallowed": ["main"],
+    "msgBranchBanned": "🚫 Branches with the name \"%s\" are not allowed. 🪵",
+    "msgBranchDisallowed": "🚫 Pushing to \"%s\" is not allowed, use git-flow. 🪵",
+    "msgPrefixNotAllowed": "🚫 Branch prefix \"%s\" is not allowed. 🪵",
+    "msgPrefixSuggestion": "🚫 Instead of \"%s\" try \"%s\". 🪵",
+    "msgseparatorRequired": "🚫 Branch \"%s\" must contain a separator \"%s\". 🪵"
+  }
+}
