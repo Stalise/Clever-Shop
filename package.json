@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "prepare": "husky install",
     "commit": "commitlint --edit ${1}"
   },
   "devDependencies": {
