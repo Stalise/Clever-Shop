@@ -2,7 +2,13 @@
   "name": "clever-shop",
   "version": "1.0.0",
   "license": "MIT",
+  "scripts": {
+    "commit": "commitlint --edit ${1}"
+  },
   "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
+    "commitlint": "^17.5.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.1"
   }
