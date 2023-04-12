@@ -1,13 +1,13 @@
-import {FC} from 'react';
+import React, { FC } from 'react';
 
-import {Wrapper} from './styles';
+import { Wrapper } from './styles';
 
 interface IProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
-export const Layout: FC<IProps> = ({children}) => (
-  <>
-    <Wrapper>{children}</Wrapper>
-  </>
+export const Layout: FC<IProps> = ({ children }) => (
+    <React.Fragment>
+        <Wrapper>{children}</Wrapper>
+    </React.Fragment>
 );

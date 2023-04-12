@@ -1,7 +1,7 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
 const MainPage: FC = () => {
-  return <p>Next App</p>;
+    return <p>Next App</p>;
 };
 
 export default MainPage;
