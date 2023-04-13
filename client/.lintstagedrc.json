@@ -1,0 +1,5 @@
+{
+    "**/*.(js|jsx|ts|tsx|css|scss|html|json|yaml|md)": ["prettier --write"],
+    "**/*.(js|jsx|ts|tsx)": ["eslint --fix", "eslint --max-warnings=0"],
+    "**/*.(js|ts)": ["stylelint --fix", "stylelint --max-warnings=0"]
+}
