@@ -1,9 +1,14 @@
 name: Github Actions
 
 on:
-    pull_request:
-        branches: [main]
     push:
+        branches:
+            - "*"
+            - "*/*"
+            - "**"
+            - "!master"
+    pull_request:
+        branches: ["master"]
 
 jobs:
     init:
