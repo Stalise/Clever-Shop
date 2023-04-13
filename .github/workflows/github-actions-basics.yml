@@ -29,7 +29,7 @@ jobs:
             - name: Run prettier (client)
               run: |
                   cd client
-                  yarn run prettier --check \"./\"
+                  yarn run prettier --check "./"
             - name: Run stylelint (client)
               run: |
                   cd client
