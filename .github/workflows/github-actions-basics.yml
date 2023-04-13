@@ -52,6 +52,7 @@ jobs:
               run: |
                   cd server
                   yarn run lint
+        needs: ["init"]
     build:
         runs-on: ubuntu-latest
         strategy:
@@ -62,3 +63,4 @@ jobs:
               run: |
                   cd client
                   yarn run build
+        needs: ["init", "lint"]
