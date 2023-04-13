@@ -3,6 +3,7 @@ name: CI Client
 on:
     pull_request:
         types: ["opened", "edited"]
+    push:
 
 jobs:
     init:
