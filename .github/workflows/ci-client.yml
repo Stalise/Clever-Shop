@@ -1,0 +1,41 @@
+name: CI Client
+
+on:
+    pull_request:
+        types: ["opened", "edited"]
+
+jobs:
+    init:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [18.x]
+        steps:
+            - name: Get repository code
+              uses: actions/checkout@v3
+            - name: Staring Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - name: Install dependencies
+              run: |
+                  cd client
+                  yarn install
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get repository code
+              uses: actions/checkout@v3
+            - name: Install dependencies
+              run: |
+                  cd client
+                  yarn install
+            - name: Run stylelint
+              run: |
+                  cd client
+                  yarn run stylelint
+            - name: Run eslint
+              run: |
+                  cd client
+                  yarn run lint
+        needs: ["init"]
