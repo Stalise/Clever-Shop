@@ -57,10 +57,6 @@ jobs:
               run: |
                   cd client
                   yarn run lint
-            - name: Run eslint (server)
-              run: |
-                  cd server
-                  yarn run lint
         needs: ["init"]
     lintForServer:
         runs-on: ubuntu-latest
