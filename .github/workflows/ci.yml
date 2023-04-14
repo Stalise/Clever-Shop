@@ -37,7 +37,7 @@ jobs:
       - name: Run eslint for server
         run: |
           cd server
-          yarn run lint
+          yarn lint
       - name: Install dependencies for client
         run: |
           cd client
@@ -45,8 +45,8 @@ jobs:
       - name: Run stylelint for client
         run: |
           cd client
-          yarn run stylelint
+          yarn stylelint
       - name: Run eslint for client
         run: |
           cd client
-          yarn run lint
+          yarn lint
