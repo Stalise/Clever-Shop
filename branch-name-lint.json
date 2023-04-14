@@ -1,6 +1,7 @@
 {
     "branchNameLinter": {
         "prefixes": ["feat", "fix", "refactor"],
+        "separator": "/",
         "suggestions": {
             "features": "feat",
             "feature": "feat",
