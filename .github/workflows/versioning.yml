@@ -1,27 +1,27 @@
 name: CI Version
 
 on:
-    push:
-        branches: [main]
+  push:
+    branches: [main]
 
 jobs:
-    bumpVersion:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version: [18.x]
-        steps:
-            - name: Get repository code
-              uses: actions/checkout@v3
-            - name: Staring Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v3
-              with:
-                  node-version: ${{ matrix.node-version }}
-            - name: Init
-              run: |
-                  git config --global user.email github-actions[bot]
-                  git config --global user.name github-actions[bot]@users.noreply.github.com
-            - name: Update version of Clever Shop!
-              run: |
-                  npm version patch -m "Version upgraded! It's %s version now"
-                  git push --follow-tags
+  bumpVersion:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Init
+        run: |
+          git config --global user.email github-actions[bot]
+          git config --global user.name github-actions[bot]@users.noreply.github.com
+      - name: Update version of Clever Shop!
+        run: |
+          npm version patch -m "Version upgraded! It's %s version now"
+          git push --follow-tags
