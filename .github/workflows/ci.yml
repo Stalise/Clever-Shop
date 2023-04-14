@@ -1,51 +1,52 @@
 name: CI
 
 on:
-    pull_request:
-        types: ["opened", "edited"]
-    push:
+  push:
+    branches:
+      - main
+      - feat/**
+      - fix/**
+      - refactor/**
+  pull_request:
+    branches:
+      - main
 
 jobs:
-    init:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version: [18.x]
-        steps:
-            - name: Get repository code
-              uses: actions/checkout@v3
-            - name: Staring Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v3
-              with:
-                  node-version: ${{ matrix.node-version }}
-            - name: Install dependencies for project
-              run: |
-                  yarn install
-            - name: Checking the branch name
-              run: |
-                  yarn branch-name-lint branch-name-lint.json
-
-            - name: Install dependencies for server
-              run: |
-                  cd server
-                  yarn install
-
-            - name: Run eslint for server
-              run: |
-                  cd server
-                  yarn run lint
-
-            - name: Install dependencies for client
-              run: |
-                  cd client
-                  yarn install
-
-            - name: Run stylelint for client
-              run: |
-                  cd client
-                  yarn run stylelint
-
-            - name: Run eslint for client
-              run: |
-                  cd client
-                  yarn run lint
+  init:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies for project
+        run: |
+          yarn install
+      - name: Checking the branch name
+        run: |
+          yarn branch
+      - name: Install dependencies for server
+        run: |
+          cd server
+          yarn install
+      - name: Run eslint for server
+        run: |
+          cd server
+          yarn run lint
+      - name: Install dependencies for client
+        run: |
+          cd client
+          yarn install
+      - name: Run stylelint for client
+        run: |
+          cd client
+          yarn run stylelint
+      - name: Run eslint for client
+        run: |
+          cd client
+          yarn run lint
