@@ -21,7 +21,7 @@ jobs:
             - name: Install dependencies for project
               run: |
                   yarn install
-            - name: Run husky
+            - name: Checking the branch name
               run: |
                   yarn branch-name-lint branch-name-lint.json
 
