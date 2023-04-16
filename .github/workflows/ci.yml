@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Get repository code
         uses: actions/checkout@v3
-      - name: Staring Node.js ${{ matrix.node-version }}
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
