@@ -9,7 +9,8 @@ on:
       - refactor/**
 
 jobs:
-  init:
+  project:
+    name: Project
     runs-on: ubuntu-latest
     steps:
       - name: Get repository code
@@ -18,29 +19,49 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
-      - name: Install dependencies for project
+      - name: Install dependencies
         run: |
           yarn install
       - name: Checking the branch name
         run: |
           yarn branch
-      - name: Install dependencies for server
-        run: |
-          cd server
-          yarn install
-      - name: Run eslint for server
-        run: |
-          cd server
-          yarn lint
-      - name: Install dependencies for client
+  client:
+    name: Client
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+      - name: Install dependencies
         run: |
           cd client
           yarn install
-      - name: Run stylelint for client
+      - name: Run stylelint
         run: |
           cd client
           yarn stylelint
-      - name: Run eslint for client
+      - name: Run eslint
         run: |
           cd client
+          yarn lint
+  server:
+    name: Server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+      - name: Install dependencies
+        run: |
+          cd server
+          yarn install
+      - name: Run eslint
+        run: |
+          cd server
           yarn lint
