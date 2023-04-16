@@ -7,9 +7,6 @@ on:
       - feat/**
       - fix/**
       - refactor/**
-  pull_request:
-    branches:
-      - main
 
 jobs:
   init:
