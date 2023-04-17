@@ -1,11 +1,15 @@
 name: Versioning
 
 on:
-  push:
-    branches: [main]
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
 
 jobs:
-  bumpVersion:
+  bump_version:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Get repository code
@@ -14,11 +18,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
-      - name: Init
+      - name: Set git config
         run: |
           git config --global user.email github-actions[bot]
           git config --global user.name github-actions[bot]@users.noreply.github.com
-      - name: Update version of Clever Shop!
+      - name: Update version of Clever-Shop!
         run: |
           npm version patch -m "Version upgraded! It's %s version now"
           git push --follow-tags
