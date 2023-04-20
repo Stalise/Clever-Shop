@@ -22,6 +22,8 @@
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
         "plugin:@next/next/recommended",
+        "plugin:jest/recommended",
+        "plugin:jest/style",
         "plugin:prettier/recommended"
     ],
     "plugins": ["react", "import", "simple-import-sort", "check-file"],
