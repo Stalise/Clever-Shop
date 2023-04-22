@@ -12,6 +12,6 @@
 
 #### Команда разработки:
 
--   Stas Liseenko (Frontend)
--   Ilona Kosko (Frontend)
--   Ilya Strelkovski (Backend)
+-   [Stas Liseenko (Frontend)](https://github.com/Stalise)
+-   [Ilona Kosko (Frontend)](https://github.com/psycho0sis)
+-   [Ilya Strelkovski (Backend)](https://github.com/SklifCybe)

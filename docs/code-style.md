@@ -40,7 +40,7 @@
 -   Vars
 -   Handlers
 
-Данные структуры позволяет лучше цепляться глазами за участки кода.
+Данные структуры позволяют лучше цепляться глазами за участки кода.
 
 Группы кода отделяем пустой строкой.
 
@@ -49,7 +49,7 @@ _Как делать_:
 ```javascript
 const [state, setState] = useState(0);
 
-const handleSubmitForm = () => {...};
+const handleFormSubmit = () => {...};
 
 useEffect(() => {...}, []);
 ```
@@ -58,6 +58,6 @@ _Как не делать_:
 
 ```javascript
 useEffect(() => {...}, []);
-const handleSubmitForm = () => {...};
+const handleFormSubmit = () => {...};
 const [state, setState] = useState(0);
 ```
