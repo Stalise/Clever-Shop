@@ -1,15 +1,13 @@
-name: CI
+name: Release
 
 on:
   push:
     branches:
-      - feat/**
-      - fix/**
-      - refactor/**
+      - main
 
 jobs:
-  project:
-    name: Project
+  bump_version:
+    name: Release new version of the project
     runs-on: ubuntu-latest
     steps:
       - name: Get repository code
@@ -18,14 +16,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
-      - name: Install dependencies
+      - name: Set git config
         run: |
-          yarn install
-      - name: Checking the branch name
+          git config --global user.email github-actions[bot]
+          git config --global user.name github-actions[bot]@users.noreply.github.com
+      - name: Update version of Clever-Shop!
         run: |
-          yarn branch
+          npm version patch -m "Version upgraded! It's %s version now"
+          git push --follow-tags
   client:
-    name: Client
+    needs: bump_version
+    name: Creating a build for the client
     runs-on: ubuntu-latest
     steps:
       - name: Get repository code
@@ -38,16 +39,13 @@ jobs:
         run: |
           cd client
           yarn install
-      - name: Run stylelint
+      - name: Creating build
         run: |
           cd client
-          yarn stylelint
-      - name: Run eslint
-        run: |
-          cd client
-          yarn lint
+          yarn build
   server:
-    name: Server
+    needs: bump_version
+    name: Creating a build for the server
     runs-on: ubuntu-latest
     steps:
       - name: Get repository code
@@ -60,7 +58,7 @@ jobs:
         run: |
           cd server
           yarn install
-      - name: Run eslint
+      - name: Creating build
         run: |
           cd server
-          yarn lint
+          yarn build
