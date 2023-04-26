@@ -1,15 +1,12 @@
 import React, { FC } from 'react';
 import type { AppProps } from 'next/app';
-import localFont from 'next/font/local';
 import Head from 'next/head';
+
+import { spartanFont } from 'styles/font';
 
 import { Layout } from 'components/common/layout';
 
-import '../styles/globals.css';
-
-const spartanFont = localFont({
-    src: '../font/Spartan.ttf',
-});
+import 'styles/globals.css';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => (
     <React.Fragment>
