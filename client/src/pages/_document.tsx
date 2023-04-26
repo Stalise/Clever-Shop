@@ -51,7 +51,6 @@ export default class AppDocument extends Document {
                         sizes='180x180'
                         type='image/x-icon'
                     />
-                    <title>Clever-Shop</title>
                 </Head>
                 <body>
                     <Main />
