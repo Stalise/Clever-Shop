@@ -1,7 +1,7 @@
 interface IFont {
     lineHeight?: string;
     size?: string;
-    weight?: string;
+    weight?: number;
 }
 
 interface IFlex {
@@ -14,7 +14,7 @@ interface IFlex {
 
 export const font = ({ lineHeight, size, weight }: IFont) => `
     font-size: ${size || '14px'};
-    font-weight: ${weight || '400'};
+    font-weight: ${weight || 400};
     line-height: ${lineHeight || '18px'};
 `;
 
