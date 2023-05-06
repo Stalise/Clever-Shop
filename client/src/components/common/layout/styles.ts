@@ -3,7 +3,7 @@ import { flex, font } from 'styles/mixins';
 
 // For example !!!
 export const Wrapper = styled.main`
-    ${font({ lineHeight: '16px', size: '18px' })};
+    ${font({ lineHeight: 16, size: 18 })};
 
     padding: 15px;
 
