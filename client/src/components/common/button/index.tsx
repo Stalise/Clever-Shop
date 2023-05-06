@@ -5,22 +5,26 @@ import { StyledButton } from './styles';
 import { IButtonProps } from './types';
 
 export const Button: FC<IButtonProps> = ({
-    buttonTheme,
+    block,
+    buttonTheme = 'dark',
     fontSize,
     fontWeight,
     lineHeight,
     outline,
+    padding,
     text,
     width,
     onClick,
 }) => (
     <StyledButton
+        block={block}
         buttonTheme={buttonTheme}
         fontSize={fontSize}
         fontWeight={fontWeight}
         lineHeight={lineHeight}
         outline={outline}
         onClick={onClick}
+        padding={padding}
         width={width}
     >
         {text}

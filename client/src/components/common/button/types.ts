@@ -1,10 +1,12 @@
 type ButtonThemeType = 'light' | 'dark';
 
 export interface IStyledButton {
-    buttonTheme: ButtonThemeType;
+    block?: boolean;
+    buttonTheme?: ButtonThemeType;
     fontSize?: string;
     fontWeight?: number;
     lineHeight?: string;
+    padding?: string;
     outline?: boolean;
     width?: number;
 }
