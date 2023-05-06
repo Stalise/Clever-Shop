@@ -1,25 +1,24 @@
 import styled from 'styled-components';
-import { flex, font } from 'styles/mixins';
+import { font } from 'styles/mixins';
 
+import { paddings, widths } from './config';
 import { IStyledButton } from './types';
-
-// obj = {
-//     "xs"; Na
-//     "s";jkkj
-// }
 
 export const StyledButton = styled.button`
     ${({ fontSize, fontWeight, lineHeight }: IStyledButton) =>
         font({
-            lineHeight: lineHeight || '15px',
-            size: fontSize || '13px',
+            lineHeight: lineHeight || 15,
+            size: fontSize || 13,
             weight: fontWeight || 500,
         })};
 
-    display: ${({ block }) => (block ? 'block' : flex({ justify: 'center' }))};
+    display: ${({ block }) => (block ? 'block' : 'flex')};
+    align-items: center;
+    justify-content: center;
     width: 100%;
     min-width: 108px;
-    max-width: ${({ width }) => width && `${width}px`};
+    max-width: ${({ block, size }) => (block ? 'none' : size && widths[size])};
+    padding: ${({ size }) => (size ? paddings[size] : paddings['s'])};
     color: ${({ buttonTheme }) =>
         buttonTheme === 'light' ? 'var(--dark)' : 'var(--white)'};
     text-transform: uppercase;

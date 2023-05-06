@@ -11,9 +11,8 @@ export const Button: FC<IButtonProps> = ({
     fontWeight,
     lineHeight,
     outline,
-    padding,
+    size,
     text,
-    width,
     onClick,
 }) => (
     <StyledButton
@@ -24,8 +23,7 @@ export const Button: FC<IButtonProps> = ({
         lineHeight={lineHeight}
         outline={outline}
         onClick={onClick}
-        padding={padding}
-        width={width}
+        size={size}
     >
         {text}
     </StyledButton>

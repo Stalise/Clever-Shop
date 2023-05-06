@@ -18,19 +18,28 @@
     />
 ```
 
+У кнопки есть разные размеры: `s, m, l`. Настраивается через пропс `size`;
+
+```php
+    <Button
+        buttonTheme='light'
+        onClick={handleClick}
+        size='l'
+        text='This is light button'
+    />
+```
+
 Шрифт, отступы, бордер и ширина настраивается через соответствующие пропсы:
 
 ```php
     <Button
         buttonTheme='dark'
-        fontSize='37px'
+        fontSize={16}
         fontWeight={700}
-        lineHeight='18px'
+        lineHeight={18}
         onClick={handleClick}
         outline
-        padding='7px 0'
         text='This is button with fixed width'
-        width={340}
     />
 ```
 
