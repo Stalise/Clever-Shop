@@ -46,6 +46,10 @@ jobs:
         run: |
           cd client
           yarn lint
+      - name: Check TS
+        run: |
+          cd client
+          yarn check:ts
   server:
     name: Server
     runs-on: ubuntu-latest

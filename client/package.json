@@ -12,7 +12,8 @@
         "lint": "eslint -c .eslintrc.json --ext .js,.jsx,.ts,.tsx --max-warnings=0 \"./\"",
         "lint:fix": "yarn lint --fix",
         "styles": "stylelint \"src/**/*.ts\" --max-warnings=0",
-        "styles:fix": "stylelint \"src/**/*.ts\" --fix"
+        "styles:fix": "stylelint \"src/**/*.ts\" --fix",
+        "check:ts": "tsc"
     },
     "dependencies": {
         "next": "13.2.4",
