@@ -1,4 +1,4 @@
-export const Location = () => (
+export const LocationIcon = () => (
     <svg
         width='18'
         height='20'

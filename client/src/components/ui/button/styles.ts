@@ -3,6 +3,11 @@ import { flex, font } from 'styles/mixins';
 
 import { IStyledButton } from './types';
 
+// obj = {
+//     "xs"; Na
+//     "s";jkkj
+// }
+
 export const StyledButton = styled.button`
     ${({ fontSize, fontWeight, lineHeight }: IStyledButton) =>
         font({
@@ -15,7 +20,6 @@ export const StyledButton = styled.button`
     width: 100%;
     min-width: 108px;
     max-width: ${({ width }) => width && `${width}px`};
-    padding: ${({ padding }) => padding || '17px 0 16px'};
     color: ${({ buttonTheme }) =>
         buttonTheme === 'light' ? 'var(--dark)' : 'var(--white)'};
     text-transform: uppercase;
@@ -31,7 +35,6 @@ export const StyledButton = styled.button`
 
     &:active {
         color: var(--white);
-        background-color: var(--pink);
-        border-radius: 57px;
+        background-color: var(--dark-grey);
     }
 `;
