@@ -15,6 +15,7 @@ then
 echo
 echo 🚀 Running linters for client
 cd client
+yarn check:ts
 yarn lint
 yarn styles
 cd ..
