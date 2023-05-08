@@ -13,7 +13,7 @@
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "incremental": false,
+        "incremental": true,
         "baseUrl": "./src/"
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -13,7 +13,7 @@
         "lint:fix": "yarn lint --fix",
         "styles": "stylelint \"src/**/*.ts\" --max-warnings=0",
         "styles:fix": "stylelint \"src/**/*.ts\" --fix",
-        "check:ts": "tsc"
+        "check:ts": "tsc --incremental false"
     },
     "dependencies": {
         "next": "13.2.4",
