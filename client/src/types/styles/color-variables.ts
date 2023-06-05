@@ -1,4 +1,4 @@
-export type ColorsType =
+export type ColorVariablesType =
     | 'var(--dark)'
     | 'var(--dark-grey)'
     | 'var(--grey)'
