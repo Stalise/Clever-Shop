@@ -2,18 +2,18 @@ import React, { FC } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import { spartanFont } from 'styles/font';
+import { interFont, spartanFont } from 'styles/fonts';
+import GlobalStyles from 'styles/global-styles';
 
 import { Layout } from 'components/common/layout';
-
-import 'styles/globals.css';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => (
     <React.Fragment>
         <Head>
             <title>Clever-Shop</title>
         </Head>
-        <div className={spartanFont.className}>
+        <div className={`${spartanFont.variable}  ${interFont.variable}`}>
+            <GlobalStyles />
             <Layout>
                 <Component {...pageProps} />
             </Layout>
