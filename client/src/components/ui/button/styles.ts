@@ -1,39 +1,33 @@
 import styled from 'styled-components';
-import { font } from 'styles/mixins';
+import { fontSpartan } from 'styles/mixins-styles';
 
-import { paddings, widths } from './config';
-import { IStyledButton } from './types';
+import { dimensions, typography, views } from './config';
+import type { IStyledProps } from './types';
 
-export const StyledButton = styled.button`
-    ${({ fontSize, fontWeight, lineHeight }: IStyledButton) =>
-        font({
-            lineHeight: lineHeight || 15,
-            size: fontSize || 13,
-            weight: fontWeight || 500,
-        })};
+export const Component = styled.button<IStyledProps>`
+    ${({ size }) =>
+        fontSpartan(typography[size].size, typography[size].weight)};
 
-    display: ${({ block }) => (block ? 'block' : 'flex')};
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    min-width: 108px;
-    max-width: ${({ block, size }) => (block ? 'none' : size && widths[size])};
-    padding: ${({ size }) => (size ? paddings[size] : paddings['s'])};
-    color: ${({ buttonTheme }) =>
-        buttonTheme === 'light' ? 'var(--dark)' : 'var(--white)'};
+    max-width: ${({ block, size }) =>
+        block ? '100%' : dimensions[size].width};
+    padding: ${({ size }) => dimensions[size].padding};
+    color: ${({ view }) => views[view].color};
+    letter-spacing: 0.06px;
     text-transform: uppercase;
-    background-color: ${({ buttonTheme }) =>
-        buttonTheme === 'light' ? 'var(--gr-white)' : 'var(--dark)'};
-    border: ${({ outline }) => (outline ? '1px solid var(--white)' : 'none')};
+    background-color: ${({ view }) => views[view].backgroundColor};
+    border: ${({ outline, view }) => (outline ? views[view].outline : 'none')};
     transition: 0.5s all ease;
 
     &:hover {
-        color: var(--dark);
-        background-color: var(--grey);
+        color: ${({ view }) => views[view].hover.color};
+        background-color: ${({ view }) => views[view].hover.backgroundColor};
     }
 
     &:active {
-        color: var(--white);
-        background-color: var(--dark-grey);
+        color: ${({ view }) => views[view].active.color};
+        background-color: ${({ view }) => views[view].active.backgroundColor};
     }
+
+    ${({ styles }) => styles}
 `;

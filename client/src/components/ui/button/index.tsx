@@ -1,30 +1,34 @@
 import type { FC } from 'react';
 import React from 'react';
 
-import { StyledButton } from './styles';
-import { IButtonProps } from './types';
+import { css } from 'styled-components';
 
-export const Button: FC<IButtonProps> = ({
-    block,
-    buttonTheme = 'dark',
-    fontSize,
-    fontWeight,
-    lineHeight,
-    outline,
-    size,
-    text,
+import { Component } from './styles';
+import type { IProps } from './types';
+
+export const Button: FC<IProps> = ({
+    children,
+    /** Возможность задать дополнительные стили */
+    styles = css``,
+    /** Тип кнопки, её внешний вид */
+    view = 'primary',
+    /** Размер компонента */
+    size = 's',
+    /** Растягивает компонент на ширину контейнера */
+    block = false,
+    /** Включение обводки */
+    outline = false,
+    /** Обработчик клика */
     onClick,
 }) => (
-    <StyledButton
+    <Component
+        styles={styles}
+        view={view}
+        size={size}
         block={block}
-        buttonTheme={buttonTheme}
-        fontSize={fontSize}
-        fontWeight={fontWeight}
-        lineHeight={lineHeight}
         outline={outline}
         onClick={onClick}
-        size={size}
     >
-        {text}
-    </StyledButton>
+        {children}
+    </Component>
 );
