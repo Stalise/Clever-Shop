@@ -1,8 +1,10 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
 
+import type { FontSizeSpartan, FontWeightSpartan } from 'types/styles/fonts';
+
 type FontSpartanType = (
-    size?: 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl',
-    weight?: '400' | '500' | '600'
+    size?: FontSizeSpartan,
+    weight?: FontWeightSpartan
 ) => FlattenSimpleInterpolation;
 
 export const fontSpartan: FontSpartanType = (
