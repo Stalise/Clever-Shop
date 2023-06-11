@@ -42,7 +42,9 @@
                     // libraries
                     ["^@?\\w"],
                     // internal folders
-                    ["^(hooks|store|api|tests|utils|data|constants|types)"],
+                    [
+                        "^(hooks|store|api|tests|utils|data|constants|types|assets)"
+                    ],
                     // components
                     ["^(pages|components)\\/.+"],
                     // any files from the current folder// Other relative imports. Put same-folder imports and `.` last.
