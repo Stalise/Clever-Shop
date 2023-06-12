@@ -1,0 +1,22 @@
+{
+    "outDir": "src/components/ui/icons",
+    "filenameCase": "kebab",
+    "typescript": true,
+    "svgProps": {
+        "role": "img",
+        "fill": "currentColor",
+        "focusable": "false"
+    },
+    "svgoConfig": {
+        "plugins": [
+            {
+                "name": "preset-default",
+                "params": {
+                    "overrides": {
+                        "removeViewBox": false
+                    }
+                }
+            }
+        ]
+    }
+}
