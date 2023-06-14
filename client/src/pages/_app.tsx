@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import { interFont, spartanFont } from 'styles/fonts';
-import GlobalStyles from 'styles/global-styles';
+import { interFont, spartanFont } from 'assets/styles/fonts';
+import GlobalStyles from 'assets/styles/global-styles';
 
 import { Layout } from 'components/common/layout';
 
