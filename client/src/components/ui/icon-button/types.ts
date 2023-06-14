@@ -1,8 +1,29 @@
-export interface IStyledIconButton {
-    isFill: boolean;
+import type { ReactNode } from 'react';
+
+import { FlattenSimpleInterpolation } from 'styled-components';
+
+import type { ColorVariablesType } from 'types/styles/color-variables';
+
+type SizeType = 's' | 'm' | 'l' | 'xl';
+type ViewType = 'accent' | 'filled';
+
+export interface IStyledProps {
+    styles: FlattenSimpleInterpolation;
+    size: SizeType;
+    view: ViewType;
+    isActive: boolean;
 }
 
-export interface IIconButtonProps extends IStyledIconButton {
-    children: JSX.Element;
+export interface IProps extends Partial<IStyledProps> {
+    color?: ColorVariablesType | 'transparent';
+    outline?: ColorVariablesType | 'none';
+    children: ReactNode;
     onClick: (e?: React.MouseEvent<HTMLButtonElement>) => void;
 }
+
+export type DimensionsType = {
+    [key in SizeType]: {
+        width: string;
+        height: string;
+    };
+};

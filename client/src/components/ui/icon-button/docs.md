@@ -3,15 +3,13 @@
 Варианты использования:
 
 ```php
-    <IconButton isFill onClick={handleClick}>
-        <Location /> /** SVG-иконка */
+    <IconButton size='m' outline='var(--dark)' isActive={isActive} onClick={handleClick}>
+        <ClockIconAccentM /> /** SVG-иконка, React-компонент */
     </IconButton>
 ```
 
 ```php
-    <IconButton isFill={false} onClick={handleClick}>
-        <SearchIcon /> /** SVG-иконка */
+    <IconButton view='filled' color='var(--yellow)' onClick={handleClick}>
+        <SvgStarIconFilledS /> /** SVG-иконка, React-компонент */
     </IconButton>
 ```
-
-Пропс `isFill` необходим для того, чтобы регулировать отображение прожатой кнопки (заливать ее черным цветом или нет).
