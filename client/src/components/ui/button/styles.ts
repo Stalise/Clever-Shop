@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { fontSpartan } from 'styles/mixins-styles';
+
+import { fontSpartan } from 'assets/styles/mixins-styles';
 
 import { dimensions, typography, views } from './config';
 import type { IStyledProps } from './types';

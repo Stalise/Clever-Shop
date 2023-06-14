@@ -8,13 +8,13 @@ import type { FontSizeSpartan, FontWeightSpartan } from 'types/styles/fonts';
 type SizeType = 's' | 'm' | 'l';
 type ViewType = 'accent' | 'primary' | 'secondary';
 
-export type IStyledProps = {
+export interface IStyledProps {
     styles: FlattenSimpleInterpolation;
     view: ViewType;
     size: SizeType;
     block: boolean;
     outline: boolean;
-};
+}
 
 export interface IProps extends Partial<IStyledProps> {
     children: ReactNode;

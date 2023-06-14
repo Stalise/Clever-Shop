@@ -7,6 +7,7 @@ import { Component } from './styles';
 import type { IProps } from './types';
 
 export const Button: FC<IProps> = ({
+    /** Текст кнопки */
     children,
     /** Возможность задать дополнительные стили */
     styles = css``,
