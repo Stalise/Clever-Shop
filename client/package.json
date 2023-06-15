@@ -14,7 +14,7 @@
         "styles": "stylelint \"src/**/*.ts\" --max-warnings=0",
         "styles:fix": "stylelint \"src/**/*.ts\" --fix",
         "check:ts": "tsc --incremental false",
-        "convert-svg": "node_modules/@svgr/cli/bin/svgr src/assets/static --template svgr-template.js"
+        "convert-svg": "node_modules/@svgr/cli/bin/svgr src/assets/static --template svgr-template.js && yarn lint:fix"
     },
     "dependencies": {
         "next": "13.2.4",
