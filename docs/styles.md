@@ -4,7 +4,8 @@
 
 ## CSS-variables:
 
-В проекте присутствуют css-переменные для цветов. Они находятся в `styles/colors-variables.css`;
+В проекте присутствуют css-переменные для: цветов, шрифтов.
+Они находятся в папке `styles`;
 
 > Пример использования:
 
@@ -20,30 +21,14 @@
 
 Миксины протипизированы с помощью Typescript и, как правило, содержат необязательные пропсы и значения по умолчанию для удобного использования.
 
-На данным момент в проекте присутствует только 2 миксина:
+На данным момент в проекте присутствуют миксины:
 
--   для шрифтов (font)
--   для флексов (flex)
+-   для шрифтов (fontSpartan, fontInter)
 
-> Пример миксина и его использования:
+> Пример миксина и его использования с styled-components
 
 ```css
-interface IFont {
-    color?: string;
-    size?: string;
-    family?: string;
-}
-
-const font = ({ color, size, family }: IFont) => `
-    color: ${color || "red"};
-    font-size: ${size || "1rem"};
-    font-family: ${family || "Roboto"};
-`;
-
-const Container = styled.div`
-    text-align: center;
-    ${font({ color: "green", size: "2rem" })};
-`;
+    ${fontSpartan('xl', '500')};
 ```
 
-Миксины можно добавлять в процессе разработки в файл `styles/mixins.ts`.
+Миксины можно добавлять в процессе разработки в файл `styles/mixins-styles.ts`.

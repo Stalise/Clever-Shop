@@ -17,6 +17,9 @@ const Configuration: UserConfig = {
         "subject-min-length": [RuleConfigSeverity.Error, "always", 5],
         "subject-max-length": [RuleConfigSeverity.Error, "always", 100],
     },
+    ignores: [
+        (commit) => commit.startsWith("Merge") || commit.startsWith("Revert"),
+    ],
 };
 
 module.exports = Configuration;
