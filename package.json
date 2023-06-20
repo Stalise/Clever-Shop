@@ -5,7 +5,9 @@
     "scripts": {
         "prepare": "husky install",
         "commit": "commitlint --edit ${1}",
-        "branch": "branch-name-lint branch-name-lint.json"
+        "branch": "branch-name-lint branch-name-lint.json",
+        "check-node": "sh ./scripts/check-node.sh",
+        "nvm": "unset PREFIX; source $HOME/.nvm/nvm.sh && nvm use"
     },
     "devDependencies": {
         "@commitlint/cli": "^17.5.1",

@@ -22,5 +22,8 @@
     },
     "files.associations": {
         "*styles.ts": "typescriptreact"
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
     }
 }
