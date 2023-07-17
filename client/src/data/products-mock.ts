@@ -33,7 +33,38 @@ export const productsMock = {
                     url: 'RTLACR345101_20072722_4_v1_2x.webp',
                 },
             ],
-            reviews: [],
+            reviews: [
+                {
+                    id: 1,
+                    name: 'Mark Markul',
+                    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                    rating: 4,
+                },
+                {
+                    id: 2,
+                    name: 'Dan Frolov',
+                    text: 'When an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                    rating: 4,
+                },
+                {
+                    id: 3,
+                    name: 'Alfred Brown',
+                    text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                    rating: 3,
+                },
+                {
+                    id: 4,
+                    name: 'John Foden',
+                    text: 'There are many variations of passages of Lorem Ipsum available.',
+                    rating: 3,
+                },
+                {
+                    id: 5,
+                    name: 'Luke Show',
+                    text: 'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.',
+                    rating: 3,
+                },
+            ],
         },
         {
             id: 2,
@@ -85,9 +116,9 @@ export const productsMock = {
             ],
             reviews: [
                 {
-                    id: 1,
-                    name: 'Mark Markul',
-                    text: 'Хорошая, но оказалася большой. Закажу на размер меньше.',
+                    id: 6,
+                    name: 'Markus Rashford',
+                    text: 'But I must explain to you how all this mistaken idea of denouncing pleasure.',
                     rating: 4,
                 },
             ],
@@ -2297,7 +2328,38 @@ export const productsMock = {
                     url: 'MP002XW01LG2_20086050_3_v1_2x.webp',
                 },
             ],
-            reviews: [],
+            reviews: [
+                {
+                    id: 7,
+                    name: 'Mia Clark',
+                    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                    rating: 4,
+                },
+                {
+                    id: 8,
+                    name: 'Jane Varane',
+                    text: 'When an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                    rating: 4,
+                },
+                {
+                    id: 9,
+                    name: 'Anna Grealish',
+                    text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                    rating: 3,
+                },
+                {
+                    id: 10,
+                    name: 'Bella Sanches',
+                    text: 'There are many variations of passages of Lorem Ipsum available.',
+                    rating: 3,
+                },
+                {
+                    id: 11,
+                    name: 'Loli Stown',
+                    text: 'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.',
+                    rating: 5,
+                },
+            ],
         },
         {
             id: 48,
@@ -2334,9 +2396,9 @@ export const productsMock = {
             ],
             reviews: [
                 {
-                    id: 47,
-                    name: 'Maria Hodosova',
-                    text: 'Хорошая, но оказалась большой. Закажу на размер меньше.',
+                    id: 12,
+                    name: 'Ingrid Hole',
+                    text: 'But I must explain to you how all this mistaken idea of denouncing pleasure.',
                     rating: 4,
                 },
             ],
