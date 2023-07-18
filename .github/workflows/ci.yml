@@ -41,7 +41,7 @@ jobs:
       - name: Run stylelint
         run: |
           cd client
-          yarn stylelint
+          yarn styles
       - name: Run eslint
         run: |
           cd client
