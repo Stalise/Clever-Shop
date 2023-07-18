@@ -1,11 +1,11 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
+import { css, RuleSet } from 'styled-components';
 
 import type { FontSizeSpartan, FontWeightSpartan } from 'types/styles/fonts';
 
 type FontSpartanType = (
     size?: FontSizeSpartan,
     weight?: FontWeightSpartan
-) => FlattenSimpleInterpolation;
+) => RuleSet;
 
 export const fontSpartan: FontSpartanType = (
     size = 'xs',

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { FlattenSimpleInterpolation } from 'styled-components';
+import { RuleSet } from 'styled-components';
 
 import type { ColorVariablesType } from 'types/styles/color-variables';
 
@@ -8,7 +8,7 @@ type SizeType = 's' | 'm' | 'l' | 'xl';
 type ViewType = 'accent' | 'filled';
 
 export interface IStyledProps {
-    styles: FlattenSimpleInterpolation;
+    styles: RuleSet;
     size: SizeType;
     view: ViewType;
     isActive: boolean;
