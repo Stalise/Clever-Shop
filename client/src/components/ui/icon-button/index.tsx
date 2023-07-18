@@ -25,7 +25,7 @@ export const IconButton: FC<IProps> = ({
 }) => {
     const SVG = cloneElement<SVGProps<SVGSVGElement>>(
         children as ReactSVGElement,
-        { color, stroke: outline }
+        { color, stroke: outline },
     );
 
     return (

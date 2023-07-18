@@ -1,15 +1,15 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
+import { css, RuleSet } from 'styled-components';
 
 import type { FontSizeSpartan, FontWeightSpartan } from 'types/styles/fonts';
 
 type FontSpartanType = (
     size?: FontSizeSpartan,
-    weight?: FontWeightSpartan
-) => FlattenSimpleInterpolation;
+    weight?: FontWeightSpartan,
+) => RuleSet;
 
 export const fontSpartan: FontSpartanType = (
     size = 'xs',
-    weight = '400'
+    weight = '400',
 ) => css`
     font-weight: ${weight};
     font-size: var(--typography-spartan-size-${size});
