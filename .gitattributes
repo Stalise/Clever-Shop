@@ -1,1 +1,28 @@
-* eol=lf
+# All files set default to text and use LF
+* text eol=lf
+
+# Binary files need to be listed explicitly as first rule makes all files text files
+
+# Graphics
+*.gif   binary
+*.ico   binary
+*.jpg   binary
+*.jpeg  binary
+*.pdf   binary
+*.png   binary
+*.svg   text eol=lf
+*.wbmp  binary
+*.webp  binary
+
+# Fonts
+*.eot   binary
+*.otf   binary
+*.ttf   binary
+*.woff  binary
+*.woff2 binary
+
+# Media
+*.mov   binary
+*.mp4   binary
+*.mp3   binary
+*.webm  binary
