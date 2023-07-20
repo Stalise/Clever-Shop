@@ -31,7 +31,7 @@
 > -   _fix/ci_
 > -   _refactor/header_.
 
--   Комиты должны быть в формате - _тип(скоуп): описание_.  
+-   Комиты должны быть в формате - _тип(скоуп): описание_ или _тип: описание_.
     **Типы** === категории в ветках.
     **Скоуп** проставляется в зависимости от области выполнения на которую влияет комит.
     **Описание** стандартно показывает, что конкретно было сделано.
@@ -41,5 +41,5 @@
 > Примеры:
 >
 > -   _feat(sidebar): add new background_
-> -   _fix(adaptive): update adaptive for search component_
+> -   _fix: update adaptive for search component_
 > -   _refactor(scripts): change scripts for eslint in package.json_
