@@ -10,24 +10,20 @@ echo 🚀 Checking the name of branch
 yarn branch
 
 # FRONTEND
-if [ -d client/node_modules ]
-then
-echo
-echo 🚀 Running linters for client
-cd client
-yarn check:ts
-yarn lint
-yarn styles
-cd ..
+if [ -d client/node_modules ]; then
+    echo
+    echo 🚀 Running checks for client
+    cd client
+    yarn check:all
+    cd ..
 fi
 
 # BACKEND
-if [ -d server/node_modules ]
-then
-echo
-echo 🚀 Running linters for server
-cd server
-yarn lint
+if [ -d server/node_modules ]; then
+    echo
+    echo 🚀 running checks for server
+    cd server
+    yarn lint
 fi
 
 exit 0
