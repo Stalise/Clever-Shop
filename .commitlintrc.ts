@@ -3,12 +3,10 @@ import { RuleConfigSeverity as Rule, UserConfig } from "@commitlint/types";
 const Configuration: UserConfig = {
     extends: "@commitlint/config-conventional",
     rules: {
+        // HEADER
+        "header-max-length": [Rule.Error, "always", 150],
         // TYPE
-        "type-enum": [
-            Rule.Error,
-            "always",
-            ["feat", "fix", "refactor"],
-        ],
+        "type-enum": [Rule.Error, "always", ["feat", "fix", "refactor"]],
         // SCOPE
         "scope-case": [Rule.Error, "always", "kebab-case"],
         "scope-min-length": [Rule.Error, "always", 2],
