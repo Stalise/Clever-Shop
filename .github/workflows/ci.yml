@@ -38,18 +38,10 @@ jobs:
         run: |
           cd client
           yarn install
-      - name: Run stylelint
+      - name: Run checks
         run: |
           cd client
-          yarn styles
-      - name: Run eslint
-        run: |
-          cd client
-          yarn lint
-      - name: Check TS
-        run: |
-          cd client
-          yarn check:ts
+          yarn check:all
   server:
     name: Server
     runs-on: ubuntu-latest
