@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 
+import { interFont, spartanFont } from 'assets/styles/fonts';
+
 import { Wrapper } from './styles';
 
 interface IProps {
@@ -7,7 +9,7 @@ interface IProps {
 }
 
 export const Layout: FC<IProps> = ({ children }) => (
-    <React.Fragment>
-        <Wrapper>{children}</Wrapper>
-    </React.Fragment>
+    <Wrapper className={`${spartanFont.variable}  ${interFont.variable}`}>
+        {children}
+    </Wrapper>
 );
