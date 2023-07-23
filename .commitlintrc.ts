@@ -1,21 +1,18 @@
-import type { UserConfig } from "@commitlint/types";
-import { RuleConfigSeverity } from "@commitlint/types";
+import { RuleConfigSeverity as Rule, UserConfig } from "@commitlint/types";
 
 const Configuration: UserConfig = {
     extends: "@commitlint/config-conventional",
     rules: {
+        // HEADER
+        "header-max-length": [Rule.Error, "always", 150],
         // TYPE
-        "type-enum": [
-            RuleConfigSeverity.Error,
-            "always",
-            ["feat", "fix", "refactor"],
-        ],
+        "type-enum": [Rule.Error, "always", ["feat", "fix", "refactor"]],
         // SCOPE
-        "scope-empty": [RuleConfigSeverity.Error, "never"],
-        "scope-min-length": [RuleConfigSeverity.Error, "always", 2],
+        "scope-case": [Rule.Error, "always", "kebab-case"],
+        "scope-min-length": [Rule.Error, "always", 2],
         // SUBJECT
-        "subject-min-length": [RuleConfigSeverity.Error, "always", 5],
-        "subject-max-length": [RuleConfigSeverity.Error, "always", 100],
+        "subject-min-length": [Rule.Error, "always", 5],
+        "subject-max-length": [Rule.Error, "always", 100],
     },
     ignores: [
         (commit) => commit.startsWith("Merge") || commit.startsWith("Revert"),
