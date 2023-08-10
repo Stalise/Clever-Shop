@@ -11,8 +11,8 @@ export default createGlobalStyle`
 
     * {
         font-weight: 400;
-        font-size: 14px;
+        font-size: var(--typography-spartan-size-m);
         font-family: var(--font-spartan);
-        line-height: 12px;
+        line-height: var(--typography-spartan-height-m);
     }
 `;
