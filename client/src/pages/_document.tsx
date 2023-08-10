@@ -42,12 +42,12 @@ export default class AppDocument extends Document {
                 <Head>
                     <link
                         rel='icon'
-                        href='./static/clevertec.ico'
+                        href='./static/clever-shop.ico'
                         type='image/x-icon'
                     />
                     <link
                         rel='apple-touch-icon'
-                        href='./static/clevertec.ico'
+                        href='./static/clever-shop.ico'
                         sizes='180x180'
                         type='image/x-icon'
                     />
