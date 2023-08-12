@@ -46,6 +46,11 @@ export const nullStyles = css`
         text-size-adjust: 100%;
     }
 
+    /* stylelint-disable-next-line selector-id-pattern */
+    #__next {
+        height: 100%;
+    }
+
     input,
     button,
     textarea {
