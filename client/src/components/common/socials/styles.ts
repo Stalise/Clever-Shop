@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { styled } from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -7,8 +9,7 @@ export const Wrapper = styled.div`
     max-width: 85px;
 `;
 
-export const Button = styled.button`
-    background-color: transparent;
+export const StyledLink = styled(Link)`
     transition: 0.3s;
 
     &:hover {

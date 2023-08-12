@@ -1,12 +1,11 @@
 import { FC } from 'react';
-import Link from 'next/link';
 
 import SvgFacebookIconFilledS from 'components/ui/icons/facebook-icon-filled-s';
 import SvgInstagramIconFilledS from 'components/ui/icons/instagram-icon-filled-s';
 import SvgPinterestIconFilledS from 'components/ui/icons/pinterest-icon-filled-s';
 import SvgTwitterIconFilledS from 'components/ui/icons/twitter-icon-filled-s';
 
-import { Button, Wrapper } from './styles';
+import { StyledLink, Wrapper } from './styles';
 
 const data = [
     { Icon: SvgFacebookIconFilledS, path: 'https://www.facebook.com' },
@@ -18,11 +17,9 @@ const data = [
 export const Socials: FC = () => (
     <Wrapper>
         {data.map(({ Icon, path }) => (
-            <Button type='button' key={path}>
-                <Link href={path} target='_blank'>
-                    <Icon color='var(--grey)' />
-                </Link>
-            </Button>
+            <StyledLink href={path} target='_blank' key={path}>
+                <Icon color='var(--grey)' />
+            </StyledLink>
         ))}
     </Wrapper>
 );
