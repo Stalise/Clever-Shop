@@ -13,7 +13,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1110px;
     height: 100%;
     margin: 0 auto;
 `;
