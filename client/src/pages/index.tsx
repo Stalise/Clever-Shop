@@ -1,14 +1,14 @@
 import { FC } from 'react';
 
+import { Wrapper } from 'assets/styles/pages/main-page-styles';
+
+import { Showcase } from 'components/main-page/showcase';
+
 const MainPage: FC = () => {
     return (
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'end',
-            }}
-        ></div>
+        <Wrapper>
+            <Showcase />
+        </Wrapper>
     );
 };
 

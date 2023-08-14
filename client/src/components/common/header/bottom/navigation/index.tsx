@@ -12,14 +12,12 @@ const data = [
     { text: 'Contact', path: '#!' },
 ];
 
-export const Navigation: FC = () => {
-    return (
-        <Wrapper>
-            {data.map(({ text, path }) => (
-                <StyledLink href={path} key={text}>
-                    {text}
-                </StyledLink>
-            ))}
-        </Wrapper>
-    );
-};
+export const Navigation: FC = () => (
+    <Wrapper>
+        {data.map(({ text, path }) => (
+            <StyledLink href={path} key={text}>
+                {text}
+            </StyledLink>
+        ))}
+    </Wrapper>
+);
