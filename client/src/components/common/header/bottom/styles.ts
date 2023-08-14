@@ -5,7 +5,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     height: 66px;
     padding: 0 15px;
-    border-bottom: 2px solid var(--light-grey);
 `;
 
 export const Container = styled.div`
