@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { interFont, spartanFont } from 'assets/styles/fonts';
 
-import { Header } from 'components/common/header';
+import { Header } from './header';
 
 import { Wrapper } from './styles';
 
