@@ -1,10 +1,14 @@
 import { FC } from 'react';
 
+import accessoriesCategoryPicture from '../../../../../public/static/accessories_category.jpg';
+import menCategoryPicture from '../../../../../public/static/men_category.jpg';
+import womenCategoryPicture from '../../../../../public/static/women_category.jpg';
+
 import { Banner, StyledImage, StyledLink, Top, Wrapper } from './styles';
 
 const data = [
-    { name: 'Women', image: 'women_category.jpg', path: '#!' },
-    { name: 'Men', image: 'men_category.jpg', path: '#!' },
+    { name: 'Women', image: womenCategoryPicture, path: '#!' },
+    { name: 'Men', image: menCategoryPicture, path: '#!' },
 ];
 
 export const Categories: FC = () => (
@@ -13,9 +17,10 @@ export const Categories: FC = () => (
             {data.map(({ name, image, path }) => (
                 <Banner bannerWidth='50%' bannerHeight='200px' key={name}>
                     <StyledImage
-                        src={`/static/${image}`}
+                        src={image}
                         width={255}
                         height={200}
+                        placeholder='blur'
                         alt={`${name} category`}
                         priority
                     />
@@ -28,9 +33,10 @@ export const Categories: FC = () => (
         <div>
             <Banner bannerWidth='100%' bannerHeight='260px'>
                 <StyledImage
-                    src='/static/accessories_category.jpg'
+                    src={accessoriesCategoryPicture}
                     width={540}
                     height={260}
+                    placeholder='blur'
                     alt='Accessories category'
                     priority
                 />

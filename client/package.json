@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "yarn check:node && next dev --turbo",
+        "dev": "yarn check:node && next dev",
         "build": "yarn check:node && next build",
         "start": "next start",
         "test:unit": "jest --config jest.config.ts --passWithNoTests --coverage",

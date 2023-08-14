@@ -2,6 +2,8 @@ import { FC } from 'react';
 
 import { SwiperSlide } from 'swiper/react';
 
+import bannerPicture from '../../../../../public/static/banner.jpg';
+
 import {
     Banner,
     StyledImage,
@@ -25,11 +27,12 @@ export const Slider: FC = () => (
             {[1, 2, 3].map((item) => (
                 <SwiperSlide key={item}>
                     <StyledImage
-                        src={'/static/banner.jpg'}
+                        src={bannerPicture}
+                        priority
                         width={540}
                         height={490}
+                        placeholder='blur'
                         alt='shop banner'
-                        priority
                     />
                     <Banner>
                         <Title>Banner</Title>

@@ -11,7 +11,7 @@ interface IBannerProps {
 }
 
 export const Wrapper = styled.div`
-    width: 100%;
+    width: 50%;
     padding-left: 15px;
 `;
 
