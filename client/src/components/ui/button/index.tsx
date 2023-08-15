@@ -20,6 +20,8 @@ export const Button: FC<IProps> = ({
     block = false,
     /** Включение обводки */
     outline = false,
+    /** Блокировка доступа к кнопке */
+    isDisabled = false,
     /** Обработчик клика */
     onClick,
 }) => (
@@ -30,6 +32,7 @@ export const Button: FC<IProps> = ({
         block={block}
         outline={outline}
         onClick={onClick}
+        disabled={isDisabled}
     >
         {children}
     </Component>

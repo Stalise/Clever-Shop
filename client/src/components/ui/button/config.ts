@@ -12,6 +12,10 @@ export const views: ViewsConfigType = {
             color: 'var(--light)',
             backgroundColor: 'var(--dark-grey)',
         },
+        disabled: {
+            color: 'var(--dark-grey)',
+            outline: '1.2px solid var(--dark-grey)',
+        },
     },
     primary: {
         color: 'var(--light)',
@@ -24,6 +28,10 @@ export const views: ViewsConfigType = {
         active: {
             backgroundColor: 'var(--dark-grey)',
         },
+        disabled: {
+            color: 'var(--dark-grey)',
+            outline: '1.2px solid var(--dark-grey)',
+        },
     },
     secondary: {
         color: 'var(--dark)',
@@ -35,6 +43,10 @@ export const views: ViewsConfigType = {
         active: {
             color: 'var(--light)',
             backgroundColor: 'var(--dark-grey)',
+        },
+        disabled: {
+            color: 'var(--dark-grey)',
+            outline: '1.2px solid var(--dark-grey)',
         },
     },
 };

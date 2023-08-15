@@ -19,6 +19,7 @@ export interface IStyledProps {
 export interface IProps extends Partial<IStyledProps> {
     children: ReactNode;
     onClick: (e?: React.MouseEvent<HTMLButtonElement>) => void;
+    isDisabled?: boolean;
 }
 
 export type ViewsConfigType = {
@@ -33,6 +34,10 @@ export type ViewsConfigType = {
         active: {
             color?: ColorVariablesType;
             backgroundColor?: ColorVariablesType;
+        };
+        disabled: {
+            color?: ColorVariablesType;
+            outline?: string;
         };
     };
 };

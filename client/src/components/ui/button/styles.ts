@@ -30,5 +30,12 @@ export const Component = styled.button<IStyledProps>`
         background-color: ${({ view }) => views[view].active.backgroundColor};
     }
 
+    &:disabled {
+        color: ${({ view }) => views[view].disabled.color};
+        border: ${({ outline, view }) =>
+            outline ? views[view].disabled.outline : 'none'};
+        pointer-events: none;
+    }
+
     ${({ styles }) => styles}
 `;
