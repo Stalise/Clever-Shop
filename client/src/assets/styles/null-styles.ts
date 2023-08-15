@@ -61,6 +61,12 @@ export const nullStyles = css`
         display: none;
     }
 
+    input,
+    textarea {
+        display: block;
+        width: 100%;
+    }
+
     button {
         cursor: pointer;
     }
