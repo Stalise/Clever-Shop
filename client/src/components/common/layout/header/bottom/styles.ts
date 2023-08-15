@@ -2,6 +2,8 @@ import Link from 'next/link';
 
 import styled from 'styled-components';
 
+import { fontSpartan } from 'assets/styles/mixins-styles';
+
 export const Wrapper = styled.div`
     height: 66px;
     padding: 0 15px;
@@ -18,10 +20,9 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled(Link)`
+    ${fontSpartan('2xl', '100')}
+
     color: var(--dark);
-    font-weight: 100;
-    font-size: var(--typography-spartan-size-2xl);
-    line-height: var(--typography-spartan-height-2xl);
 `;
 
 export const Actions = styled.div`

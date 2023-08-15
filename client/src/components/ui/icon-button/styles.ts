@@ -7,14 +7,14 @@ export const Component = styled.button<IStyledProps>`
     width: ${({ size }) => dimensions[size].width};
     height: ${({ size }) => dimensions[size].height};
     background-color: transparent;
-    transition: 0.3s;
+    transition: 300ms;
 
     &:hover {
         transform: scale(0.9);
     }
 
     & > svg {
-        transition: 0.3s;
+        transition: 300ms;
         stroke-width: ${({ view, isActive }) =>
             view === 'accent' && isActive ? 2 : 1};
     }

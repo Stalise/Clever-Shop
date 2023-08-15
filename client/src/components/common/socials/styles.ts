@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledLink = styled(Link)`
-    transition: 0.3s;
+    transition: 300ms;
 
     &:hover {
         transform: scale(0.9);

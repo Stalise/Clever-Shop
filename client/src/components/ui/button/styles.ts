@@ -18,7 +18,7 @@ export const Component = styled.button<IStyledProps>`
     text-transform: uppercase;
     background-color: ${({ view }) => views[view].backgroundColor};
     border: ${({ outline, view }) => (outline ? views[view].outline : 'none')};
-    transition: 0.5s all ease;
+    transition: 500ms all ease;
 
     &:hover {
         color: ${({ view }) => views[view].hover.color};

@@ -2,6 +2,8 @@ import Link from 'next/link';
 
 import styled from 'styled-components';
 
+import { fontSpartan } from 'assets/styles/mixins-styles';
+
 export const Wrapper = styled.nav`
     display: flex;
     justify-content: space-between;
@@ -10,10 +12,9 @@ export const Wrapper = styled.nav`
 `;
 
 export const StyledLink = styled(Link)`
+    ${fontSpartan('l', '300')}
+
     color: var(--dark);
-    font-weight: 300;
-    font-size: var(--typography-spartan-size-l);
-    line-height: var(--typography-spartan-height-l);
     transition: 100ms;
 
     &:hover {
