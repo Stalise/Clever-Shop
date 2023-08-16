@@ -19,6 +19,7 @@ export const Text = styled.span`
     ${fontSpartan('s')}
 
     margin-left: 5px;
+    padding-top: 3px;
     color: var(--grey);
     opacity: 0.8;
 `;
@@ -27,7 +28,7 @@ export const Number = styled.a`
     display: flex;
     align-items: center;
     color: var(--grey);
-    transition: 300s;
+    transition: 300ms;
 
     &:hover {
         transform: scale(0.95);
