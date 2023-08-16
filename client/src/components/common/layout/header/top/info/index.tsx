@@ -7,8 +7,8 @@ import SvgPhoneIconFilledS from 'components/ui/icons/phone-icon-filled-s';
 import { Item, Number, Text, Wrapper } from './styles';
 
 const data = [
-    { Icon: SvgPhoneIconFilledS, text: '+375 29 100 20 30' },
-    { Icon: SvgLocationMarkerIconFilledS, text: 'Belarus, Gomel, Lange 17' },
+    { Icon: SvgPhoneIconFilledS, text: '+375 25 100 20 30' },
+    { Icon: SvgLocationMarkerIconFilledS, text: 'Belarus, Mogilev, Kaluga 3' },
     { Icon: SvgClockIconFilledS, text: 'All week 24/7' },
 ];
 

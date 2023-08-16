@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { Bottom } from './bottom';
 import { Content } from './content';
 import { Top } from './top';
 
@@ -10,7 +11,7 @@ export const Footer: FC = () => {
         <Wrapper>
             <Top />
             <Content />
-            <div style={{ height: '540px' }} />
+            <Bottom />
         </Wrapper>
     );
 };

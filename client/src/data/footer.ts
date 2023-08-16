@@ -37,7 +37,7 @@ export const contacts = {
     data: [
         {
             Icon: SvgLocationMarkerIconFilledS,
-            text: 'Belarus, Gomel, Lange 17',
+            text: 'Belarus, Mogilev, Kaluga 3',
         },
         { Icon: SvgPhoneIconFilledS, text: '+375 29 100 20 30' },
         { Icon: SvgClockIconFilledS, text: 'All week 24/7' },
