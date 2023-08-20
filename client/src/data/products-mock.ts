@@ -1,9 +1,16 @@
+// import { IProduct } from 'types/common';
+
+// interface IProductsMock {
+//     men: IProduct[];
+//     women: IProduct[];
+// }
+
 export const productsMock = {
     men: [
         {
             id: 1,
             name: 'Hoodie',
-            brand: 'H&M',
+            brand: 'Nike',
             category: 'men',
             rating: 4,
             price: 50,
@@ -69,14 +76,14 @@ export const productsMock = {
         {
             id: 2,
             name: 'Hoodie',
-            brand: 'Bershka',
+            brand: 'Carhartt',
             category: 'men',
             rating: 5,
             price: 30,
             discount: null,
             material: ['Flax - 30%', 'Wool - 50%', 'Acrylic - 20%'],
             sizes: ['S', 'M', 'L', '3XL'],
-            colors: ['Beige', 'Red', 'Light green'],
+            colors: ['Gray', 'White', 'Turquoise'],
             images: [
                 {
                     id: 5,
@@ -126,7 +133,7 @@ export const productsMock = {
         {
             id: 3,
             name: 'Sweatshirt',
-            brand: 'Morato',
+            brand: 'Reebok',
             category: 'men',
             rating: 2,
             price: 70,
@@ -168,7 +175,7 @@ export const productsMock = {
             discount: '5%',
             material: ['Flax - 50%', 'Wool - 50%'],
             sizes: ['M'],
-            colors: ['Gray', 'White'],
+            colors: ['Yellow', 'White', 'Blue'],
             images: [
                 {
                     id: 16,
@@ -248,7 +255,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XL', '2XL', '3XL'],
-            colors: ['Gray'],
+            colors: ['Black', 'Blue', 'Beige'],
             images: [
                 {
                     id: 29,
@@ -313,7 +320,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'XL', '2XL'],
-            colors: ['Blue', 'White'],
+            colors: ['Pink', 'Beige'],
             images: [
                 {
                     id: 39,
@@ -368,7 +375,7 @@ export const productsMock = {
             discount: null,
             material: ['Flax - 100%'],
             sizes: ['2XL'],
-            colors: ['Light green'],
+            colors: ['Green'],
             images: [
                 {
                     id: 47,
@@ -403,7 +410,7 @@ export const productsMock = {
             discount: null,
             material: ['Flax - 80%', 'Acrylic - 20%'],
             sizes: ['XS', 'S', 'M', 'L'],
-            colors: ['White'],
+            colors: ['Green', 'Light blue'],
             images: [
                 {
                     id: 51,
@@ -443,7 +450,7 @@ export const productsMock = {
             discount: '10%',
             material: ['Wool - 100%'],
             sizes: ['2XL', '3XL', '4XL'],
-            colors: ['Orange'],
+            colors: ['Gray', 'Green'],
             images: [
                 {
                     id: 56,
@@ -491,14 +498,14 @@ export const productsMock = {
         {
             id: 10,
             name: 'Sweatshirt',
-            brand: 'H&M',
+            brand: 'Champion',
             category: 'men',
             rating: 5,
             price: 50,
             discount: null,
             material: ['Flax - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
-            colors: ['Pink', 'Light blue'],
+            colors: ['Blue', 'Blue'],
             images: [
                 {
                     id: 64,
@@ -553,7 +560,7 @@ export const productsMock = {
             discount: '10%',
             material: ['Flax - 100%'],
             sizes: ['M', 'L', 'XL'],
-            colors: ['White', 'Green'],
+            colors: ['White', 'Black'],
             images: [
                 {
                     id: 72,
@@ -613,7 +620,7 @@ export const productsMock = {
             discount: null,
             material: ['Acrylic - 100%'],
             sizes: ['M', 'L'],
-            colors: ['White'],
+            colors: ['Brown'],
             images: [
                 {
                     id: 81,
@@ -643,7 +650,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XL', '2XL', '3XL', '4XL'],
-            colors: ['Green'],
+            colors: ['White', 'Gray', 'Blue'],
             images: [
                 {
                     id: 84,
@@ -728,7 +735,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
-            colors: ['Beige', 'Pink', 'Green'],
+            colors: ['Green', 'Gray'],
             images: [
                 {
                     id: 98,
@@ -788,7 +795,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L'],
-            colors: ['Green', 'Black'],
+            colors: ['Yellow'],
             images: [
                 {
                     id: 107,
@@ -828,7 +835,7 @@ export const productsMock = {
             discount: '5%',
             material: ['Cotton - 100%'],
             sizes: ['M', 'L'],
-            colors: ['Gray', 'Green'],
+            colors: ['Brown', 'Black', 'Gray'],
             images: [
                 {
                     id: 112,
@@ -913,7 +920,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
-            colors: ['Turquoise', 'Purple'],
+            colors: ['Gray'],
             images: [
                 {
                     id: 123,
@@ -958,7 +965,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL', '3XL', '4XL'],
-            colors: ['Beige', 'Red', 'Blue'],
+            colors: ['Light blue', 'Purple', 'Yellow'],
             images: [
                 {
                     id: 129,
@@ -1028,7 +1035,7 @@ export const productsMock = {
             discount: '20%',
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL'],
-            colors: ['Purple', 'Red'],
+            colors: ['Black', 'White'],
             images: [
                 {
                     id: 140,
@@ -1093,7 +1100,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L'],
-            colors: ['White', 'Black'],
+            colors: ['White', 'Blue'],
             images: [
                 {
                     id: 150,
@@ -1153,7 +1160,7 @@ export const productsMock = {
             discount: '10%',
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S'],
-            colors: ['Blue'],
+            colors: ['Light blue'],
             images: [
                 {
                     id: 156,
@@ -1183,7 +1190,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL', '3XL', '4XL'],
-            colors: ['Maroon', 'Black'],
+            colors: ['Red', 'Beige', 'Grey'],
             images: [
                 {
                     id: 159,
@@ -1238,7 +1245,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L'],
-            colors: ['Gray', 'White', 'Green'],
+            colors: ['Orange', 'Blue'],
             images: [
                 {
                     id: 167,
@@ -1288,7 +1295,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L'],
-            colors: ['Black', 'Blue'],
+            colors: ['Black', 'Blue', 'Beige'],
             images: [
                 {
                     id: 174,
@@ -1353,7 +1360,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
-            colors: ['White', 'Light blue'],
+            colors: ['Red', 'Blue'],
             images: [
                 {
                     id: 184,
@@ -1413,7 +1420,7 @@ export const productsMock = {
             discount: '10%',
             material: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL'],
-            colors: ['White'],
+            colors: ['Blue'],
             images: [
                 {
                     id: 193,
@@ -1448,7 +1455,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
-            colors: ['Brown', 'Black'],
+            colors: ['Orange', 'Blue', 'Purple'],
             images: [
                 {
                     id: 197,
@@ -1523,7 +1530,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
-            colors: ['Green', 'Beige', 'Gray'],
+            colors: ['Black', 'White'],
             images: [
                 {
                     id: 209,
@@ -1588,7 +1595,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
-            colors: ['Green'],
+            colors: ['White'],
             images: [
                 {
                     id: 218,
@@ -1623,7 +1630,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL'],
-            colors: ['White', 'Gray'],
+            colors: ['Red', 'Black'],
             images: [
                 {
                     id: 222,
@@ -1733,7 +1740,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL', '3XL'],
-            colors: ['Beige', 'Gray'],
+            colors: ['Beige', 'Blue'],
             images: [
                 {
                     id: 235,
@@ -1788,7 +1795,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
-            colors: ['Blue', 'Brown'],
+            colors: ['Maroon', 'Beige'],
             images: [
                 {
                     id: 243,
@@ -1843,7 +1850,7 @@ export const productsMock = {
             discount: '15%',
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL', '3XL'],
-            colors: ['Black'],
+            colors: ['Blue'],
             images: [
                 {
                     id: 251,
@@ -1933,7 +1940,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['L'],
-            colors: ['White'],
+            colors: ['Black'],
             images: [
                 {
                     id: 262,
@@ -1973,7 +1980,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL', '3XL'],
-            colors: ['Blue'],
+            colors: ['Black'],
             images: [
                 {
                     id: 267,
@@ -2008,7 +2015,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'XL'],
-            colors: ['Black', 'Green'],
+            colors: ['Black', 'Gray'],
             images: [
                 {
                     id: 270,
@@ -2053,7 +2060,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['L', 'XL', '2XL'],
-            colors: ['Gray', 'Blue'],
+            colors: ['Black', 'Blue'],
             images: [
                 {
                     id: 276,
@@ -2153,7 +2160,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['S', 'L', 'XL'],
-            colors: ['Beige', 'Blue'],
+            colors: ['Light blue', 'Blue'],
             images: [
                 {
                     id: 290,
@@ -2208,7 +2215,7 @@ export const productsMock = {
             discount: '25%',
             material: ['Cotton - 100%'],
             sizes: ['2XL', '3XL'],
-            colors: ['Blue'],
+            colors: ['Black'],
             images: [
                 {
                     id: 298,
@@ -2243,7 +2250,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['S', 'L', 'XL', '2XL'],
-            colors: ['Gray'],
+            colors: ['Black'],
             images: [
                 {
                     id: 302,
