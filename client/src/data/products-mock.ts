@@ -1775,7 +1775,7 @@ export const productsMock = {
             discount: '20%',
             material: ['Cotton - 100%'],
             sizes: ['S', 'M', 'XL'],
-            colors: ['Beige', 'Yellow'],
+            colors: ['Beige', 'Turquoise'],
             images: [
                 {
                     id: 358,
@@ -1873,14 +1873,14 @@ export const productsMock = {
         {
             id: 51,
             name: 'Polo',
-            brand: 'Bershka',
+            brand: 'Tommy Hilfiger',
             category: 'women',
             rating: 5,
-            price: 20,
+            price: 100,
             discount: null,
             material: ['Cotton - 20%'],
             sizes: ['L'],
-            colors: ['Light green'],
+            colors: ['White'],
             images: [
                 {
                     id: 373,
@@ -1915,7 +1915,7 @@ export const productsMock = {
             discount: null,
             material: ['Wool - 70%', 'Acrylic - 30%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
-            colors: ['White', 'Black', 'Green'],
+            colors: ['Pink'],
             images: [
                 {
                     id: 377,
@@ -1973,14 +1973,14 @@ export const productsMock = {
         {
             id: 53,
             name: 'Polo',
-            brand: 'Tommy Hilfiger',
+            brand: 'Bershka',
             category: 'women',
             rating: 5,
             price: 150,
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
-            colors: ['White', 'Black', 'Blue'],
+            colors: ['Light blue'],
             images: [
                 {
                     id: 386,
@@ -2075,7 +2075,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
-            colors: ['Beige', 'White'],
+            colors: ['Yellow', 'Pink'],
             images: [
                 {
                     id: 399,
@@ -2120,7 +2120,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
-            colors: ['Beige', 'Red', 'Light blue', 'Pink'],
+            colors: ['Khaki', 'Beige'],
             images: [
                 {
                     id: 406,
@@ -2195,7 +2195,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
-            colors: ['Purple'],
+            colors: ['Green', 'Red'],
             images: [
                 {
                     id: 418,
@@ -2222,7 +2222,7 @@ export const productsMock = {
         },
         {
             id: 58,
-            name: 'T-shirt',
+            name: 'Sweatshirt',
             brand: 'H&M',
             category: 'women',
             rating: 5,
@@ -2230,7 +2230,7 @@ export const productsMock = {
             discount: '10%',
             material: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL'],
-            colors: ['Beige', 'Black'],
+            colors: ['Brown', 'Pink'],
             images: [
                 {
                     id: 422,
@@ -2290,7 +2290,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
-            colors: ['Turquoise', 'Blue', 'Pink', 'Black'],
+            colors: ['Beige', 'Purple'],
             images: [
                 {
                     id: 431,
@@ -2360,7 +2360,7 @@ export const productsMock = {
             discount: '20%',
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
-            colors: ['Black', 'Green'],
+            colors: ['Black', 'White'],
             images: [
                 {
                     id: 442,
@@ -2415,7 +2415,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L'],
-            colors: ['Black', 'White'],
+            colors: ['Turquoise'],
             images: [
                 {
                     id: 450,
@@ -2460,7 +2460,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'Xl', '2XL'],
-            colors: ['Pink'],
+            colors: ['Purple'],
             images: [
                 {
                     id: 456,
@@ -2490,7 +2490,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
-            colors: ['Black'],
+            colors: ['Beige'],
             images: [
                 {
                     id: 459,
@@ -2525,7 +2525,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XL'],
-            colors: ['White', 'Black', 'Gray'],
+            colors: ['Pink', 'Green'],
             images: [
                 {
                     id: 463,
@@ -2580,7 +2580,7 @@ export const productsMock = {
             discount: '10%',
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL', '3XL'],
-            colors: ['Black', 'White'],
+            colors: ['Grey'],
             images: [
                 {
                     id: 471,
@@ -2630,7 +2630,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
-            colors: ['Beige'],
+            colors: ['Black'],
             images: [
                 {
                     id: 478,
@@ -2660,7 +2660,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['L', 'XL'],
-            colors: ['Light blue', 'Beige'],
+            colors: ['Purple', 'White'],
             images: [
                 {
                     id: 481,
@@ -2715,7 +2715,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
-            colors: ['Beige', 'Black'],
+            colors: ['Yellow', 'Brown'],
             images: [
                 {
                     id: 489,
@@ -2780,7 +2780,7 @@ export const productsMock = {
             discount: '15%',
             material: ['Cotton - 100%'],
             sizes: ['S', 'L', 'XL'],
-            colors: ['Green'],
+            colors: ['Red'],
             images: [
                 {
                     id: 498,
@@ -2807,7 +2807,7 @@ export const productsMock = {
         },
         {
             id: 70,
-            name: 'Bodysuit',
+            name: 'Dress',
             brand: 'COS',
             category: 'women',
             rating: 5,
@@ -2815,7 +2815,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL'],
-            colors: ['White', 'Black'],
+            colors: ['Black'],
             images: [
                 {
                     id: 502,
@@ -2862,7 +2862,7 @@ export const productsMock = {
         },
         {
             id: 71,
-            name: 'Bodysuit',
+            name: 'Dress',
             brand: 'Bershka',
             category: 'women',
             rating: 4,
@@ -2870,7 +2870,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL', '2XL'],
-            colors: ['Black', 'Beige'],
+            colors: ['Red'],
             images: [
                 {
                     id: 507,
@@ -2922,7 +2922,7 @@ export const productsMock = {
         },
         {
             id: 72,
-            name: 'Dress',
+            name: 'Longsleeve',
             brand: 'Zara',
             category: 'women',
             rating: 5,
@@ -2930,7 +2930,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
-            colors: ['Pink'],
+            colors: ['Turquoise'],
             images: [
                 {
                     id: 516,
@@ -2957,7 +2957,7 @@ export const productsMock = {
         },
         {
             id: 73,
-            name: 'Dress',
+            name: 'Longsleeve',
             brand: 'H&M',
             category: 'women',
             rating: 5,
@@ -2965,7 +2965,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL'],
-            colors: ['Green', 'Blue'],
+            colors: ['Gray'],
             images: [
                 {
                     id: 520,
@@ -3062,7 +3062,7 @@ export const productsMock = {
         },
         {
             id: 75,
-            name: 'Dress',
+            name: 'Longsleeve',
             brand: 'Uniqlo',
             category: 'women',
             rating: 5,
@@ -3070,7 +3070,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
-            colors: ['Black'],
+            colors: ['White'],
             images: [
                 {
                     id: 535,
@@ -3105,7 +3105,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL'],
-            colors: ['Red'],
+            colors: ['Light blue'],
             images: [
                 {
                     id: 539,
@@ -3132,7 +3132,7 @@ export const productsMock = {
         },
         {
             id: 77,
-            name: 'Shorts',
+            name: 'Shirt',
             brand: 'Bershka',
             category: 'women',
             rating: 3,
@@ -3140,7 +3140,7 @@ export const productsMock = {
             discount: null,
             material: ['Cotton - 100%'],
             sizes: ['L', 'XL'],
-            colors: ['Beige', 'Green'],
+            colors: ['Yellow', 'Beige'],
             images: [
                 {
                     id: 543,
