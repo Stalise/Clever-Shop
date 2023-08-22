@@ -10,6 +10,7 @@ const MainPage: FC = () => {
             <Showcase />
             <Advantages />
             <Products category='women' />
+            <Products category='men' />
         </Fragment>
     );
 };
