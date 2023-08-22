@@ -13,7 +13,7 @@ const nextConfig = {
         ignoreDuringBuilds: true,
     },
     images: {
-        formats: ['image/webp'],
+        domains: ['res.cloudinary.com'],
     },
 };
 
