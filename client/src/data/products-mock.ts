@@ -1,11 +1,8 @@
-// import { IProduct } from 'types/common';
+import { CategoriesType, IProduct } from 'types/common';
 
-// interface IProductsMock {
-//     men: IProduct[];
-//     women: IProduct[];
-// }
+interface IProductsMock extends Record<CategoriesType, IProduct[]> {}
 
-export const productsMock = {
+export const productsMock: IProductsMock = {
     men: [
         {
             id: 1,
