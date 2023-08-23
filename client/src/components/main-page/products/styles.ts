@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { fontSpartan } from 'assets/styles/mixins-styles';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
     padding: 95px 15px 0;
 `;
 
