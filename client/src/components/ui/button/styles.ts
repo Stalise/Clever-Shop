@@ -14,7 +14,7 @@ export const Component = styled.button<IStyledProps>`
         block ? '100%' : dimensions[size].width};
     padding: ${({ size }) => dimensions[size].padding};
     color: ${({ view }) => views[view].color};
-    letter-spacing: 0.06px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     background-color: ${({ view }) => views[view].backgroundColor};
     border: ${({ outline, view }) => (outline ? views[view].outline : 'none')};

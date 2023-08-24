@@ -5,7 +5,7 @@ import { RuleSet } from 'styled-components';
 import type { ColorVariablesType } from 'types/styles/color-variables';
 import type { FontSizeSpartan, FontWeightSpartan } from 'types/styles/fonts';
 
-type SizeType = 's' | 'm' | 'l';
+type SizeType = 's' | 'm' | 'l' | 'xl';
 type ViewType = 'accent' | 'primary' | 'secondary';
 
 export interface IStyledProps {

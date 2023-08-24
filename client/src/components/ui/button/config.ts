@@ -64,6 +64,10 @@ export const dimensions: DimensionsType = {
         width: '340px',
         padding: '17px 0 14px 0',
     },
+    xl: {
+        width: '340px',
+        padding: '23px 0 21px 0',
+    },
 };
 
 export const typography: TypographyType = {
@@ -78,5 +82,9 @@ export const typography: TypographyType = {
     l: {
         size: 'l',
         weight: '500',
+    },
+    xl: {
+        size: 'xl',
+        weight: '400',
     },
 };
