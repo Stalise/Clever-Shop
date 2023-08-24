@@ -17,6 +17,8 @@ export const typographyVariables = css`
         --typography-spartan-height-2xl: 19px;
         --typography-spartan-size-3xl: 26px;
         --typography-spartan-height-3xl: 22px;
+        --typography-spartan-size-4xl: 35px;
+        --typography-spartan-height-4xl: 31px;
 
         /** For Inter font */
         --typography-inter-size-xs: 11px;
