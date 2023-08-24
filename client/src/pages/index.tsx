@@ -4,6 +4,7 @@ import { Advantages } from 'components/main-page/advantages';
 import { News } from 'components/main-page/news';
 import { Products } from 'components/main-page/products';
 import { Showcase } from 'components/main-page/showcase';
+import { Subscribe } from 'components/main-page/subscribe';
 
 const MainPage: FC = () => {
     return (
@@ -13,6 +14,7 @@ const MainPage: FC = () => {
             <Products category='women' />
             <Products category='men' />
             <News />
+            <Subscribe />
         </Fragment>
     );
 };
