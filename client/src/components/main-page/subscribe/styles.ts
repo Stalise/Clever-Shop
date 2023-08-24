@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { fontSpartan } from 'assets/styles/mixins-styles';
 
 export const Wrapper = styled.div`
-    margin-bottom: 100px;
     padding: 60px 15px;
     overflow: hidden;
     background: linear-gradient(180deg, #f4f2f2 0%, #dcdcdc 100%);
