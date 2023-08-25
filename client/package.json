@@ -59,8 +59,5 @@
         "ts-node": "10.9.1",
         "tsc-files": "1.1.4",
         "typescript": "5.1.6"
-    },
-    "engines": {
-        "node": "18.15.0"
     }
 }
