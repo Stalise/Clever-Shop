@@ -14,11 +14,11 @@ export const Component = styled.button<IStyledProps>`
         block ? '100%' : dimensions[size].width};
     padding: ${({ size }) => dimensions[size].padding};
     color: ${({ view }) => views[view].color};
-    letter-spacing: 0.06px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     background-color: ${({ view }) => views[view].backgroundColor};
     border: ${({ outline, view }) => (outline ? views[view].outline : 'none')};
-    transition: 0.5s all ease;
+    transition: 500ms all ease;
 
     &:hover {
         color: ${({ view }) => views[view].hover.color};
@@ -28,6 +28,13 @@ export const Component = styled.button<IStyledProps>`
     &:active {
         color: ${({ view }) => views[view].active.color};
         background-color: ${({ view }) => views[view].active.backgroundColor};
+    }
+
+    &:disabled {
+        color: ${({ view }) => views[view].disabled.color};
+        border: ${({ outline, view }) =>
+            outline ? views[view].disabled.outline : 'none'};
+        pointer-events: none;
     }
 
     ${({ styles }) => styles}

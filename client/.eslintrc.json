@@ -50,7 +50,7 @@
                     // any files from the current folder// Other relative imports. Put same-folder imports and `.` last.
                     ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
                     // Style imports.
-                    ["^.+\\.s?css$"]
+                    ["\\./styles"]
                 ]
             }
         ],

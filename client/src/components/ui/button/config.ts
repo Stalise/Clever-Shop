@@ -12,6 +12,10 @@ export const views: ViewsConfigType = {
             color: 'var(--light)',
             backgroundColor: 'var(--dark-grey)',
         },
+        disabled: {
+            color: 'var(--dark-grey)',
+            outline: '1.2px solid var(--dark-grey)',
+        },
     },
     primary: {
         color: 'var(--light)',
@@ -24,6 +28,10 @@ export const views: ViewsConfigType = {
         active: {
             backgroundColor: 'var(--dark-grey)',
         },
+        disabled: {
+            color: 'var(--dark-grey)',
+            outline: '1.2px solid var(--dark-grey)',
+        },
     },
     secondary: {
         color: 'var(--dark)',
@@ -35,6 +43,10 @@ export const views: ViewsConfigType = {
         active: {
             color: 'var(--light)',
             backgroundColor: 'var(--dark-grey)',
+        },
+        disabled: {
+            color: 'var(--dark-grey)',
+            outline: '1.2px solid var(--dark-grey)',
         },
     },
 };
@@ -52,6 +64,10 @@ export const dimensions: DimensionsType = {
         width: '340px',
         padding: '17px 0 14px 0',
     },
+    xl: {
+        width: '340px',
+        padding: '23px 0 21px 0',
+    },
 };
 
 export const typography: TypographyType = {
@@ -66,5 +82,9 @@ export const typography: TypographyType = {
     l: {
         size: 'l',
         weight: '500',
+    },
+    xl: {
+        size: 'xl',
+        weight: '400',
     },
 };

@@ -46,6 +46,11 @@ export const nullStyles = css`
         text-size-adjust: 100%;
     }
 
+    /* stylelint-disable-next-line selector-id-pattern */
+    #__next {
+        height: 100%;
+    }
+
     input,
     button,
     textarea {
@@ -54,6 +59,12 @@ export const nullStyles = css`
 
     input::-ms-clear {
         display: none;
+    }
+
+    input,
+    textarea {
+        display: block;
+        width: 100%;
     }
 
     button {

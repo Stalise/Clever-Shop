@@ -3,8 +3,9 @@ import React from 'react';
 
 import { css } from 'styled-components';
 
-import { Component } from './styles';
 import type { IProps } from './types';
+
+import { Component } from './styles';
 
 export const Button: FC<IProps> = ({
     /** Текст кнопки */
@@ -19,6 +20,8 @@ export const Button: FC<IProps> = ({
     block = false,
     /** Включение обводки */
     outline = false,
+    /** Блокировка доступа к кнопке */
+    isDisabled = false,
     /** Обработчик клика */
     onClick,
 }) => (
@@ -29,6 +32,7 @@ export const Button: FC<IProps> = ({
         block={block}
         outline={outline}
         onClick={onClick}
+        disabled={isDisabled}
     >
         {children}
     </Component>

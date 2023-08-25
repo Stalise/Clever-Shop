@@ -2,8 +2,9 @@ import { cloneElement, FC, ReactSVGElement, SVGProps } from 'react';
 
 import { css } from 'styled-components';
 
-import { Component } from './styles';
 import type { IProps } from './types';
+
+import { Component } from './styles';
 
 export const IconButton: FC<IProps> = ({
     /** SVG компонент */

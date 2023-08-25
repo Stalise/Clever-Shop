@@ -5,7 +5,7 @@ import { RuleSet } from 'styled-components';
 import type { ColorVariablesType } from 'types/styles/color-variables';
 import type { FontSizeSpartan, FontWeightSpartan } from 'types/styles/fonts';
 
-type SizeType = 's' | 'm' | 'l';
+type SizeType = 's' | 'm' | 'l' | 'xl';
 type ViewType = 'accent' | 'primary' | 'secondary';
 
 export interface IStyledProps {
@@ -19,6 +19,7 @@ export interface IStyledProps {
 export interface IProps extends Partial<IStyledProps> {
     children: ReactNode;
     onClick: (e?: React.MouseEvent<HTMLButtonElement>) => void;
+    isDisabled?: boolean;
 }
 
 export type ViewsConfigType = {
@@ -33,6 +34,10 @@ export type ViewsConfigType = {
         active: {
             color?: ColorVariablesType;
             backgroundColor?: ColorVariablesType;
+        };
+        disabled: {
+            color?: ColorVariablesType;
+            outline?: string;
         };
     };
 };

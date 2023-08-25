@@ -1,2 +1,10 @@
-export type FontSizeSpartan = 'xs' | 's' | 'm' | 'l' | 'xl' | '2xl';
-export type FontWeightSpartan = '400' | '500' | '600';
+export type FontSizeSpartan =
+    | 'xs'
+    | 's'
+    | 'm'
+    | 'l'
+    | 'xl'
+    | '2xl'
+    | '3xl'
+    | '4xl';
+export type FontWeightSpartan = '100' | '200' | '300' | '400' | '500' | '600';
