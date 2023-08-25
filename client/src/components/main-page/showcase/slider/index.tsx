@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { Autoplay } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 
 import bannerPicture from '../../../../../public/static/banner.jpg';
@@ -18,11 +19,12 @@ import 'swiper/css';
 export const Slider: FC = () => (
     <Wrapper>
         <StyledSwiper
+            modules={[Autoplay]}
             slidesPerView={1}
             spaceBetween={0}
             autoplay={true}
             loop={true}
-            speed={1000}
+            speed={5000}
         >
             {[1, 2, 3].map((item) => (
                 <SwiperSlide key={item}>
