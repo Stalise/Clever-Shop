@@ -17,9 +17,11 @@ const data = [
 export const Socials: FC = () => (
     <Wrapper>
         {data.map(({ Icon, path }) => (
-            <StyledLink href={path} target='_blank' key={path}>
-                <Icon color='var(--grey)' />
-            </StyledLink>
+            <li key={path}>
+                <StyledLink href={path} target='_blank'>
+                    <Icon color='var(--grey)' />
+                </StyledLink>
+            </li>
         ))}
     </Wrapper>
 );
