@@ -7,8 +7,8 @@ import womenCategoryPicture from '../../../../../public/static/women_category.jp
 import { Banner, StyledImage, StyledLink, Top, Wrapper } from './styles';
 
 const data = [
-    { name: 'Women', image: womenCategoryPicture, path: '#!' },
-    { name: 'Men', image: menCategoryPicture, path: '#!' },
+    { name: 'Women', image: womenCategoryPicture, path: 'women' },
+    { name: 'Men', image: menCategoryPicture, path: 'men' },
 ];
 
 export const Categories: FC = () => (
