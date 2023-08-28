@@ -29,7 +29,7 @@ export const Product: FC<IProps> = ({
                 <StyledImage
                     src={pathToImage}
                     width={255}
-                    height={315}
+                    height={365}
                     alt='product'
                 />
 
