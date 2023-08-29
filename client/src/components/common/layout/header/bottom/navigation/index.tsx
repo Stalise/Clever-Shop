@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useRouter } from 'next/router';
 
 import { StyledLink, Wrapper } from './styles';
 
@@ -12,12 +13,22 @@ const data = [
     { text: 'Contact', path: '#!' },
 ];
 
-export const Navigation: FC = () => (
-    <Wrapper>
-        {data.map(({ text, path }) => (
-            <StyledLink href={path} key={text}>
-                {text}
-            </StyledLink>
-        ))}
-    </Wrapper>
-);
+export const Navigation: FC = () => {
+    const {
+        query: { category },
+    } = useRouter();
+
+    return (
+        <Wrapper>
+            <ul>
+                {data.map(({ text, path }) => (
+                    <li key={text}>
+                        <StyledLink href={path} selected={path === category}>
+                            {text}
+                        </StyledLink>
+                    </li>
+                ))}
+            </ul>
+        </Wrapper>
+    );
+};
