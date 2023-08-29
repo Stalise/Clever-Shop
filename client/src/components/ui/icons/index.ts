@@ -15,6 +15,7 @@ export { default as PinterestIconFilledS } from './pinterest-icon-filled-s';
 export { default as RefreshIconAccentXl } from './refresh-icon-accent-xl';
 export { default as ScaleIconAccentL } from './scale-icon-accent-l';
 export { default as SearchIconAccentL } from './search-icon-accent-l';
+export { default as ShareIconFilledM } from './share-icon-filled-m';
 export { default as ShoppingBagIconAccentL } from './shopping-bag-icon-accent-l';
 export { default as StarIconFilledS } from './star-icon-filled-s';
 export { default as SupportIconAccentXl } from './support-icon-accent-xl';
