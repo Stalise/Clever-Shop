@@ -10,6 +10,7 @@ export const Wrapper = styled.ul`
 `;
 
 export const StyledLink = styled(Link)`
+    display: inline-block;
     transition: 300ms;
 
     &:hover {
