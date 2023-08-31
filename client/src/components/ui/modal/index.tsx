@@ -10,9 +10,13 @@ import type { AnimationStatusType, IProps, ModalStatusType } from './types';
 import { Close, Container, Content, Wrapper } from './styles';
 
 const Modal: FC<IProps> = ({
+    /** JSX элемент */
     children,
+    /** Размер компонента */
     size = 's',
+    /** Позволяет отображать или скрывать модальное окно */
     isShowModal,
+    /** Функция сеттер для состояния октрытия модального окна */
     setIsShowModal,
 }) => {
     const [modalStatus, setModalStatus] = useState<ModalStatusType>('close');
