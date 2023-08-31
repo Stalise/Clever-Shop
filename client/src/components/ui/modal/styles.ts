@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components';
 
+import { dimensions } from './config';
+import { IContentProps } from './types';
+
 export const Wrapper = styled.div<{ isShow: boolean }>`
     position: fixed;
     top: 0;
@@ -19,4 +22,19 @@ export const Wrapper = styled.div<{ isShow: boolean }>`
         css`
             opacity: 1;
         `}
+`;
+
+export const Container = styled.div`
+    background-color: var(--light);
+    border-radius: 5px;
+`;
+
+export const Close = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid var(--light-grey);
+`;
+
+export const Content = styled.div<IContentProps>`
+    padding: ${({ size }) => dimensions[size].padding};
 `;

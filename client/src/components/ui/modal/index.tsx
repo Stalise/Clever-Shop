@@ -1,31 +1,38 @@
 import { FC, MouseEvent, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import type { AnimationStatusType, ModalStatusType } from './types';
+import { IconButton } from 'components/ui/icon-button';
+import SvgCrossIconAccentL from 'components/ui/icons/cross-icon-accent-l';
 
-import { Wrapper } from './styles';
+import { dimensions } from './config';
+import type { AnimationStatusType, IProps, ModalStatusType } from './types';
 
-interface IProps {
-    children: JSX.Element;
-    isShowModal: boolean;
-    setIsShowModal: (data: boolean) => void;
-}
+import { Close, Container, Content, Wrapper } from './styles';
 
-const Modal: FC<IProps> = ({ children, isShowModal, setIsShowModal }) => {
+const Modal: FC<IProps> = ({
+    children,
+    size = 's',
+    isShowModal,
+    setIsShowModal,
+}) => {
     const [modalStatus, setModalStatus] = useState<ModalStatusType>('close');
     const [animationStatus, setAnimationStatus] =
         useState<AnimationStatusType>('off');
 
-    const modalContainerId = 'modal-container';
+    const modalWrapperId = 'modal-wrapper';
 
-    const handleModalClose = (event: MouseEvent<HTMLDivElement>): void => {
+    const handleModalOutsideClose = (event: MouseEvent): void => {
         event.stopPropagation();
 
         const element = event.target as HTMLDivElement;
 
-        if (element.id === modalContainerId) {
+        if (element.id === modalWrapperId) {
             setIsShowModal(!isShowModal);
         }
+    };
+
+    const handleModalClose = () => {
+        setIsShowModal(!isShowModal);
     };
 
     useEffect(() => {
@@ -51,10 +58,25 @@ const Modal: FC<IProps> = ({ children, isShowModal, setIsShowModal }) => {
         createPortal(
             <Wrapper
                 isShow={animationStatus === 'on'}
-                id={modalContainerId}
-                onClick={handleModalClose}
+                id={modalWrapperId}
+                onClick={handleModalOutsideClose}
             >
-                {children}
+                <Container>
+                    <Close>
+                        <IconButton
+                            size={size}
+                            view='filled'
+                            color='var(--dark)'
+                            onClick={handleModalClose}
+                        >
+                            <SvgCrossIconAccentL
+                                width={dimensions[size].width}
+                                height={dimensions[size].height}
+                            />
+                        </IconButton>
+                    </Close>
+                    <Content size={size}>{children}</Content>
+                </Container>
             </Wrapper>,
             document.body,
         )
