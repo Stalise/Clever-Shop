@@ -2,6 +2,7 @@ export { default as ChevronLeftIconAccentL } from './chevron-left-icon-accent-l'
 export { default as ChevronRightIconAccentL } from './chevron-right-icon-accent-l';
 export { default as ClockIconAccentM } from './clock-icon-accent-m';
 export { default as ClockIconFilledS } from './clock-icon-filled-s';
+export { default as CrossIconAccentL } from './cross-icon-accent-l';
 export { default as FacebookIconFilledS } from './facebook-icon-filled-s';
 export { default as GlobeIconAccentL } from './globe-icon-accent-l';
 export { default as HeartIconAccentL } from './heart-icon-accent-l';
