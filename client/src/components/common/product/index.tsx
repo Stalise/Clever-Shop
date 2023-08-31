@@ -1,9 +1,10 @@
 import { FC } from 'react';
 
 import type { IProduct } from 'types/common';
-import { subtractPercentages } from 'utils/subtract-percentages';
 
 import { Rating } from 'components/ui/rating';
+
+import { subtractPercentages } from './utils/subtract-percentages';
 
 import {
     Container,
