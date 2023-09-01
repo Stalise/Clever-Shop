@@ -11,16 +11,16 @@ import { IProps } from './types';
 import { Wrapper } from './styles';
 
 export const Rating: FC<IProps> = ({
-    /** Возможность задать дополнительные стили */
-    styles = css``,
     /** Текущий рейтинг */
     rating = 1,
     /** Размер компонента */
     size = 's',
+    /** Возможность задать дополнительные стили */
+    styles = css``,
     /** Обработчик клика в который передается выбранный рейтинг */
     onClick,
 }) => (
-    <Wrapper styles={styles}>
+    <Wrapper $styles={styles}>
         {[1, 2, 3, 4, 5].map((item, index) => {
             const color = index <= rating - 1 ? 'var(--yellow)' : 'var(--grey)';
 
