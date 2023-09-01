@@ -8,16 +8,20 @@ type SizeType = 's' | 'm' | 'l' | 'xl';
 type ViewType = 'accent' | 'filled';
 
 export interface IStyledProps {
-    styles: RuleSet;
-    size: SizeType;
-    view: ViewType;
-    isActive: boolean;
+    $styles: RuleSet;
+    $size: SizeType;
+    $view: ViewType;
+    $isActive: boolean;
 }
 
-export interface IProps extends Partial<IStyledProps> {
+export interface IProps {
+    children: ReactNode;
     color?: ColorVariablesType | 'transparent';
     outline?: ColorVariablesType | 'none';
-    children: ReactNode;
+    styles?: RuleSet;
+    size?: SizeType;
+    view?: ViewType;
+    isActive?: boolean;
     onClick: (e?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
