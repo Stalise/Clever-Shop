@@ -15,7 +15,7 @@ export const Categories: FC = () => (
     <Wrapper>
         <Top>
             {data.map(({ name, image, path }) => (
-                <Banner bannerWidth='50%' bannerHeight='200px' key={name}>
+                <Banner $bannerWidth='50%' $bannerHeight='200px' key={name}>
                     <StyledImage
                         src={image}
                         width={255}
@@ -31,7 +31,7 @@ export const Categories: FC = () => (
             ))}
         </Top>
         <div>
-            <Banner bannerWidth='100%' bannerHeight='260px'>
+            <Banner $bannerWidth='100%' $bannerHeight='260px'>
                 <StyledImage
                     src={accessoriesCategoryPicture}
                     width={540}

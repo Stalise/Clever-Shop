@@ -42,7 +42,7 @@ export const Text = styled.span`
     padding-top: 1px;
 `;
 
-export const StyledLink = styled(Link)<{ selected: boolean }>`
+export const StyledLink = styled(Link)<{ $selected: boolean }>`
     ${fontSpartan('l', '300')}
 
     color: var(--dark-08);
@@ -52,8 +52,8 @@ export const StyledLink = styled(Link)<{ selected: boolean }>`
         color: var(--dark);
     }
 
-    ${({ selected }) =>
-        selected &&
+    ${({ $selected }) =>
+        $selected &&
         css`
             ${fontSpartan('l', '400')}
 

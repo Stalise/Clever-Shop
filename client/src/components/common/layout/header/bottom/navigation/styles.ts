@@ -14,7 +14,7 @@ export const Wrapper = styled.nav`
     }
 `;
 
-export const StyledLink = styled(Link)<{ selected: boolean }>`
+export const StyledLink = styled(Link)<{ $selected: boolean }>`
     ${fontSpartan('l', '300')}
 
     display: inline-block;
@@ -25,8 +25,8 @@ export const StyledLink = styled(Link)<{ selected: boolean }>`
         transform: scale(1.1);
     }
 
-    ${({ selected }) =>
-        selected &&
+    ${({ $selected }) =>
+        $selected &&
         css`
             ${fontSpartan('l', '400')}
 

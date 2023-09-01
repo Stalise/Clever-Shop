@@ -23,7 +23,7 @@ export const Navigation: FC = () => {
             <ul>
                 {data.map(({ text, path }) => (
                     <li key={text}>
-                        <StyledLink href={path} selected={path === category}>
+                        <StyledLink href={path} $selected={path === category}>
                             {text}
                         </StyledLink>
                     </li>

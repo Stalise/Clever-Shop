@@ -33,7 +33,7 @@ export const Content: FC = () => {
                             <Item key={text}>
                                 <StyledLink
                                     href={link}
-                                    selected={link === category}
+                                    $selected={link === category}
                                 >
                                     {text}
                                 </StyledLink>
