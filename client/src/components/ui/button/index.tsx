@@ -26,13 +26,13 @@ export const Button: FC<IProps> = ({
     onClick,
 }) => (
     <Component
-        styles={styles}
-        view={view}
-        size={size}
-        block={block}
-        outline={outline}
-        onClick={onClick}
+        $styles={styles}
+        $view={view}
+        $size={size}
+        $block={block}
+        $outline={outline}
         disabled={isDisabled}
+        onClick={onClick}
     >
         {children}
     </Component>

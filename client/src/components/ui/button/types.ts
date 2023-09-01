@@ -9,17 +9,22 @@ type SizeType = 's' | 'm' | 'l' | 'xl';
 type ViewType = 'accent' | 'primary' | 'secondary';
 
 export interface IStyledProps {
-    styles: RuleSet;
-    view: ViewType;
-    size: SizeType;
-    block: boolean;
-    outline: boolean;
+    $styles: RuleSet;
+    $view: ViewType;
+    $size: SizeType;
+    $block: boolean;
+    $outline: boolean;
 }
 
 export interface IProps extends Partial<IStyledProps> {
     children: ReactNode;
-    onClick: (e?: React.MouseEvent<HTMLButtonElement>) => void;
+    styles?: RuleSet;
+    view?: ViewType;
+    size?: SizeType;
+    block?: boolean;
+    outline?: boolean;
     isDisabled?: boolean;
+    onClick: (e?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export type ViewsConfigType = {
