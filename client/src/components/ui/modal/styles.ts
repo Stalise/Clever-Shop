@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
 import { dimensions } from './config';
-import { IContentProps } from './types';
+import { IContentProps, IWrapperProps } from './types';
 
-export const Wrapper = styled.div<{ isShow: boolean }>`
+export const Wrapper = styled.div<IWrapperProps>`
     position: fixed;
     top: 0;
     left: 0;
@@ -17,8 +17,8 @@ export const Wrapper = styled.div<{ isShow: boolean }>`
     opacity: 0;
     transition: opacity 300ms;
 
-    ${({ isShow }) =>
-        isShow &&
+    ${({ $isShow }) =>
+        $isShow &&
         css`
             opacity: 1;
         `}
@@ -36,5 +36,5 @@ export const Close = styled.div`
 `;
 
 export const Content = styled.div<IContentProps>`
-    padding: ${({ size }) => dimensions[size].padding};
+    padding: ${({ $size }) => dimensions[$size].padding};
 `;

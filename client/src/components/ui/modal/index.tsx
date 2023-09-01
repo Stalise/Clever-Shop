@@ -12,10 +12,10 @@ import { Close, Container, Content, Wrapper } from './styles';
 const Modal: FC<IProps> = ({
     /** JSX элемент */
     children,
-    /** Размер компонента */
-    size = 's',
     /** Позволяет отображать или скрывать модальное окно */
     isShowModal,
+    /** Размер компонента */
+    size = 's',
     /** Функция сеттер для состояния октрытия модального окна */
     setIsShowModal,
 }) => {
@@ -61,7 +61,7 @@ const Modal: FC<IProps> = ({
         modalStatus === 'open' &&
         createPortal(
             <Wrapper
-                isShow={animationStatus === 'on'}
+                $isShow={animationStatus === 'on'}
                 id={modalWrapperId}
                 onClick={handleModalOutsideClose}
             >
@@ -79,7 +79,7 @@ const Modal: FC<IProps> = ({
                             />
                         </IconButton>
                     </Close>
-                    <Content size={size}>{children}</Content>
+                    <Content $size={size}>{children}</Content>
                 </Container>
             </Wrapper>,
             document.body,

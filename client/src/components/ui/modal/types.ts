@@ -2,14 +2,18 @@ export type ModalStatusType = 'open' | 'close';
 export type AnimationStatusType = 'on' | 'off';
 export type SizeType = 's' | 'm' | 'l' | 'xl';
 
+export interface IWrapperProps {
+    $isShow: boolean;
+}
+
 export interface IContentProps {
-    size: SizeType;
+    $size: SizeType;
 }
 
 export interface IProps {
     children: JSX.Element;
-    size?: SizeType;
     isShowModal: boolean;
+    size?: SizeType;
     setIsShowModal: (data: boolean) => void;
 }
 
