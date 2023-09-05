@@ -1,7 +1,7 @@
 // This is auto-generated file by scripts/convert-svg
 import React, { SVGProps } from 'react';
 
-const SvgLinesIconAccentLsvg = (props: SVGProps<SVGSVGElement>) => (
+const SvgLinesIconAccentL = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
         width={24}
@@ -15,4 +15,4 @@ const SvgLinesIconAccentLsvg = (props: SVGProps<SVGSVGElement>) => (
         <path d='M4 18h16M4 6h16H4Zm0 4h16H4Zm0 4h16H4Z' />
     </svg>
 );
-export default SvgLinesIconAccentLsvg;
+export default SvgLinesIconAccentL;

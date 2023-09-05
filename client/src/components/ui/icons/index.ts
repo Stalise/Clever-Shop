@@ -10,7 +10,7 @@ export { default as GlobeIconAccentL } from './globe-icon-accent-l';
 export { default as GridIconAccentL } from './grid-icon-accent-l';
 export { default as HeartIconAccentL } from './heart-icon-accent-l';
 export { default as InstagramIconFilledS } from './instagram-icon-filled-s';
-export { default as LinesIconAccentLSvg } from './lines-icon-accent-l-svg';
+export { default as LinesIconAccentL } from './lines-icon-accent-l';
 export { default as LocationMarkerAccentM } from './location-marker-accent-m';
 export { default as LocationMarkerIconFilledS } from './location-marker-icon-filled-s';
 export { default as MailIconAccentM } from './mail-icon-accent-m';
