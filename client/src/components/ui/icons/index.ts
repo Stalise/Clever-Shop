@@ -1,12 +1,16 @@
+export { default as AdjustmentsIconAccentXl } from './adjustments-icon-accent-xl';
 export { default as ChevronLeftIconAccentL } from './chevron-left-icon-accent-l';
 export { default as ChevronRightIconAccentL } from './chevron-right-icon-accent-l';
 export { default as ClockIconAccentM } from './clock-icon-accent-m';
 export { default as ClockIconFilledS } from './clock-icon-filled-s';
 export { default as CrossIconAccentL } from './cross-icon-accent-l';
+export { default as CrossIconAccentXl } from './cross-icon-accent-xl';
 export { default as FacebookIconFilledS } from './facebook-icon-filled-s';
 export { default as GlobeIconAccentL } from './globe-icon-accent-l';
+export { default as GridIconAccentL } from './grid-icon-accent-l';
 export { default as HeartIconAccentL } from './heart-icon-accent-l';
 export { default as InstagramIconFilledS } from './instagram-icon-filled-s';
+export { default as LinesIconAccentLSvg } from './lines-icon-accent-l-svg';
 export { default as LocationMarkerAccentM } from './location-marker-accent-m';
 export { default as LocationMarkerIconFilledS } from './location-marker-icon-filled-s';
 export { default as MailIconAccentM } from './mail-icon-accent-m';
