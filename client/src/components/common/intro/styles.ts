@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { fontSpartan } from 'assets/styles/mixins-styles';
 
 export const Wrapper = styled.div`
+    margin-bottom: 35px;
     padding: 0 15px;
     background-color: var(--light-grey);
 `;
