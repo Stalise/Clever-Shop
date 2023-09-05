@@ -14,6 +14,10 @@ export const dimensions: DimensionsType = {
         height: '24px',
     },
     xl: {
+        width: '32px',
+        height: '32px',
+    },
+    '2xl': {
         width: '40px',
         height: '40px',
     },

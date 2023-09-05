@@ -4,7 +4,7 @@ import { RuleSet } from 'styled-components';
 
 import type { ColorVariablesType } from 'types/styles/color-variables';
 
-type SizeType = 's' | 'm' | 'l' | 'xl';
+type SizeType = 's' | 'm' | 'l' | 'xl' | '2xl';
 type ViewType = 'accent' | 'filled';
 
 export interface IStyledProps {
