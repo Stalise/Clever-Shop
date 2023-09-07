@@ -30,7 +30,7 @@ export const Filter: FC<IProps> = ({
     filters,
     handleFiltersChange,
 }) => (
-    <Wrapper>
+    <Wrapper $isOpenFilter={isOpenFilter}>
         <Container>
             <Content $isOpenFilter={isOpenFilter}>
                 {data.map(({ group, items }) => (
@@ -53,7 +53,7 @@ export const Filter: FC<IProps> = ({
                     </List>
                 ))}
             </Content>
-            <Result>
+            <Result $isOpenFilter={isOpenFilter}>
                 {[].length > 0 && (
                     <TextFirst>{declinationProductCount(4)}</TextFirst>
                 )}

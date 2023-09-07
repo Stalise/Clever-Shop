@@ -2,8 +2,12 @@ import styled from 'styled-components';
 
 import { fontSpartan } from 'assets/styles/mixins-styles';
 
-export const Wrapper = styled.div`
-    margin-bottom: 30px;
+interface IProps {
+    $isOpenFilter: boolean;
+}
+
+export const Wrapper = styled.div<IProps>`
+    margin-bottom: ${({ $isOpenFilter }) => ($isOpenFilter ? '30px' : 0)};
     padding: 0 15px;
 `;
 
@@ -12,7 +16,7 @@ export const Container = styled.div`
     margin: 0 auto;
 `;
 
-export const Content = styled.div<{ $isOpenFilter: boolean }>`
+export const Content = styled.div<IProps>`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -59,8 +63,8 @@ export const Title = styled.span`
     text-transform: uppercase;
 `;
 
-export const Result = styled.div`
-    margin-top: 15px;
+export const Result = styled.div<IProps>`
+    margin-top: ${({ $isOpenFilter }) => ($isOpenFilter ? '15px' : 0)};
 
     span {
         display: inline-block;
