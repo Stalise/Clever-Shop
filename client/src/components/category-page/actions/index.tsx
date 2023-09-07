@@ -6,12 +6,16 @@ import SvgCrossIconAccentXl from 'components/ui/icons/cross-icon-accent-xl';
 import SvgGridIconAccentL from 'components/ui/icons/grid-icon-accent-l';
 import SvgLinesIconAccentL from 'components/ui/icons/lines-icon-accent-l';
 
-import { ViewType } from './types';
+import type { ViewType } from './types';
 
 import { Container, Filter, View, Wrapper } from './styles';
 
-export const Actions: FC = () => {
-    const [isOpenFilter, setIsOpenFilter] = useState(false);
+interface IProps {
+    isOpenFilter: boolean;
+    setIsOpenFilter: (value: boolean) => void;
+}
+
+export const Actions: FC<IProps> = ({ isOpenFilter, setIsOpenFilter }) => {
     const [view, setView] = useState<ViewType>('grid');
 
     const handleOpenFilterClick = () => {
