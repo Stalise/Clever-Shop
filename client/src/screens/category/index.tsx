@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { useRouter } from 'next/router';
 
-import type { IBreadcrumbs } from 'types/breadcrumbs';
+import type { IBreadcrumb } from 'types/breadcrumbs';
 import type { handleFiltersChangeType } from 'types/filter';
 
 import { Actions } from 'components/category-page/actions';
@@ -19,7 +19,7 @@ export const Category: FC = () => {
     const [isOpenFilter, setIsOpenFilter] = useState(false);
     const [filters, setFilters] = useState(filtersData);
 
-    const breadcrumbs: IBreadcrumbs = [
+    const breadcrumbs: IBreadcrumb[] = [
         { text: 'Home', path: '/' },
         { text: category as string },
     ];

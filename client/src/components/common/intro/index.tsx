@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useRouter } from 'next/router';
 
-import type { IBreadcrumbs } from 'types/breadcrumbs';
+import type { IBreadcrumb } from 'types/breadcrumbs';
 
 import { Rating } from 'components/ui/rating';
 
@@ -20,7 +20,7 @@ import {
 } from './styles';
 
 interface IProps {
-    breadcrumbs: IBreadcrumbs;
+    breadcrumbs: IBreadcrumb[];
     bottomContent?: {
         rating: number;
         countReviews: number;

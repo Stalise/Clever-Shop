@@ -1,6 +1,4 @@
 export interface IBreadcrumb {
-    text: string;
+    text: string | undefined;
     path?: string;
 }
-
-export interface IBreadcrumbs extends Array<IBreadcrumb> {}

@@ -1,18 +1,18 @@
 import { FC } from 'react';
 
-import { IBreadcrumbs } from 'types/breadcrumbs';
+import { IBreadcrumb } from 'types/breadcrumbs';
 
 import { List, StyledLink, Wrapper } from './styles';
 
 interface IProps {
-    breadcrumbs: IBreadcrumbs;
+    breadcrumbs: IBreadcrumb[];
 }
 
 export const Breadcrumbs: FC<IProps> = ({ breadcrumbs }) => (
     <Wrapper>
         <List>
-            {breadcrumbs.map(({ text, path }) => (
-                <li key={text}>
+            {breadcrumbs.map(({ text, path }, index) => (
+                <li key={index}>
                     {path ? (
                         <StyledLink href={path ? path : ''}>
                             {text}&nbsp;<em>&raquo;</em>&nbsp;
