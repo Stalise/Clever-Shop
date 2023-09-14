@@ -64,7 +64,8 @@ export const Title = styled.span`
 `;
 
 export const Result = styled.div<IProps>`
-    margin-top: ${({ $isOpenFilter }) => ($isOpenFilter ? '15px' : 0)};
+    margin-top: ${({ $isOpenFilter }) => ($isOpenFilter ? '30px' : 0)};
+    margin-bottom: 30px;
 
     span {
         display: inline-block;
