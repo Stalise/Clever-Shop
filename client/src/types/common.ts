@@ -3,6 +3,7 @@ export interface IProduct {
     name: string;
     brand: string;
     category: CategoriesType;
+    particulars: string[];
     rating: number;
     price: number;
     discount: null | number;

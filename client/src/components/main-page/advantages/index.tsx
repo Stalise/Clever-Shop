@@ -1,24 +1,24 @@
 import { FC } from 'react';
 
-import SvgRefreshIconAccentXl from 'components/ui/icons/refresh-icon-accent-xl';
-import SvgSupportIconAccentXl from 'components/ui/icons/support-icon-accent-xl';
-import SvgTruckIconAccentXl from 'components/ui/icons/truck-icon-accent-xl';
+import SvgRefreshIconAccent2Xl from 'components/ui/icons/refresh-icon-accent-2xl';
+import SvgSupportIconAccent2Xl from 'components/ui/icons/support-icon-accent-2xl';
+import SvgTruckIconAccent2Xl from 'components/ui/icons/truck-icon-accent-2xl';
 
 import { Container, Item, Text, TextContainer, Title, Wrapper } from './styles';
 
 const data = [
     {
-        Icon: SvgTruckIconAccentXl,
+        Icon: SvgTruckIconAccent2Xl,
         title: 'Free shipping',
         text: 'On all UA order or order above $100',
     },
     {
-        Icon: SvgRefreshIconAccentXl,
+        Icon: SvgRefreshIconAccent2Xl,
         title: '30 days return',
         text: 'Simply return it within 30 days for an exchange',
     },
     {
-        Icon: SvgSupportIconAccentXl,
+        Icon: SvgSupportIconAccent2Xl,
         title: 'Support 24/7',
         text: 'Contact us 24 hours a day, 7 days a week',
     },

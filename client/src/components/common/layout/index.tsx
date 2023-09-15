@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
 
-import { interFont, spartanFont } from 'assets/styles/fonts';
-
 import { Footer } from './footer';
 import { Header } from './header';
 
@@ -12,7 +10,7 @@ interface IProps {
 }
 
 export const Layout: FC<IProps> = ({ children }) => (
-    <Wrapper className={`${spartanFont.variable}  ${interFont.variable}`}>
+    <Wrapper>
         <Header />
         <Main>{children}</Main>
         <Footer />

@@ -15,6 +15,7 @@ export const colorVariables = css`
 
         /** With transparency */
         --dark-04: rgb(18 18 18 / 40%);
+        --dark-07: rgb(18 18 18 / 70%);
         --dark-08: rgb(18 18 18 / 80%);
         --light-08: rgb(255 255 255 / 80%);
         --light-02: rgb(255 255 255 / 20%);

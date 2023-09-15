@@ -31,10 +31,10 @@ export const IconButton: FC<IProps> = ({
 
     return (
         <Component
-            styles={styles}
-            view={view}
-            size={size}
-            isActive={isActive}
+            $styles={styles}
+            $view={view}
+            $size={size}
+            $isActive={isActive}
             onClick={onClick}
         >
             {SVG}

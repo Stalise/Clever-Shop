@@ -3,12 +3,13 @@ import { RuleSet } from 'styled-components';
 export type SizeType = 's' | 'm' | 'l';
 
 export interface IStyledProps {
-    styles: RuleSet;
+    $styles: RuleSet;
 }
 
-export interface IProps extends Partial<IStyledProps> {
+export interface IProps {
     rating: number;
     size?: SizeType;
+    styles?: RuleSet;
     onClick?: (value: number) => void;
 }
 

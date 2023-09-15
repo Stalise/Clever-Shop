@@ -5,10 +5,7 @@ import styled from 'styled-components';
 
 import { fontSpartan } from 'assets/styles/mixins-styles';
 
-interface IBannerProps {
-    bannerWidth: '50%' | '100%';
-    bannerHeight: '200px' | '260px';
-}
+import { IBannerProps } from './types';
 
 export const Wrapper = styled.div`
     width: 50%;
@@ -22,8 +19,8 @@ export const Top = styled.div`
 
 export const Banner = styled.div<IBannerProps>`
     position: relative;
-    width: ${({ bannerWidth }) => bannerWidth};
-    max-height: ${({ bannerHeight }) => bannerHeight};
+    width: ${({ $bannerWidth }) => $bannerWidth};
+    max-height: ${({ $bannerHeight }) => $bannerHeight};
     overflow: hidden;
 
     &:first-child {

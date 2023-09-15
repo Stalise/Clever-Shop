@@ -32,6 +32,7 @@
         "react/jsx-uses-react": "off",
         "react/react-in-jsx-scope": "off",
         "react/jsx-fragments": ["warn", "element"],
+        "react-hooks/exhaustive-deps": "off",
         // IMPORT
         "simple-import-sort/imports": [
             "error",

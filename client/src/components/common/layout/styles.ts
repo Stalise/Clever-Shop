@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+import { interFont, spartanFont } from 'assets/styles/fonts';
+
+export const Wrapper = styled.div.attrs({
+    className: `${spartanFont.variable}  ${interFont.variable}`,
+})`
     display: flex;
     flex-direction: column;
     align-items: center;

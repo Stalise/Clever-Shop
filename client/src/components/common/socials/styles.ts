@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { styled } from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.ul`
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledLink = styled(Link)`
+    display: inline-block;
     transition: 300ms;
 
     &:hover {

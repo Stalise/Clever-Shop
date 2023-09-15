@@ -1,9 +1,10 @@
 import { FC } from 'react';
 
 import type { IProduct } from 'types/common';
-import { subtractPercentages } from 'utils/subtract-percentages';
 
 import { Rating } from 'components/ui/rating';
+
+import { subtractPercentages } from './utils/subtract-percentages';
 
 import {
     Container,
@@ -29,7 +30,7 @@ export const Product: FC<IProps> = ({
                 <StyledImage
                     src={pathToImage}
                     width={255}
-                    height={315}
+                    height={365}
                     alt='product'
                 />
 
