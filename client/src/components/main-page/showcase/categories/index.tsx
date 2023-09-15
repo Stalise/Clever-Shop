@@ -7,8 +7,8 @@ import womenCategoryPicture from '../../../../../public/static/women_category.jp
 import { Banner, StyledImage, StyledLink, Top, Wrapper } from './styles';
 
 const data = [
-    { name: 'Women', image: womenCategoryPicture, path: 'women' },
-    { name: 'Men', image: menCategoryPicture, path: 'men' },
+    { name: 'Women', image: womenCategoryPicture, path: '/women' },
+    { name: 'Men', image: menCategoryPicture, path: '/men' },
 ];
 
 export const Categories: FC = () => (
@@ -40,7 +40,7 @@ export const Categories: FC = () => (
                     alt='Accessories category'
                     priority
                 />
-                <StyledLink $maxWidth='165px' href='#!'>
+                <StyledLink $maxWidth='165px' href='/'>
                     Accessories
                 </StyledLink>
             </Banner>

@@ -5,30 +5,30 @@ import SvgPhoneIconFilledS from 'components/ui/icons/phone-icon-filled-s';
 export const categories = {
     title: 'Categories',
     data: [
-        { link: 'men', text: 'Men' },
-        { link: 'women', text: 'Women' },
-        { link: '#!', text: 'Accessories' },
-        { link: '#!', text: 'Beauty' },
+        { path: 'men', text: 'Men' },
+        { path: 'women', text: 'Women' },
+        { path: '/', text: 'Accessories' },
+        { path: '/', text: 'Beauty' },
     ],
 };
 
 export const information = {
     title: 'Information',
     data: [
-        { link: '#!', text: 'About Us' },
-        { link: '#!', text: 'Contact Us' },
-        { link: '#!', text: 'Blog' },
-        { link: '#!', text: 'FAQs' },
+        { path: '/', text: 'About Us' },
+        { path: '/', text: 'Contact Us' },
+        { path: '/', text: 'Blog' },
+        { path: '/', text: 'FAQs' },
     ],
 };
 
 export const useful = {
     title: 'Useful links',
     data: [
-        { link: '#!', text: 'Terms & Conditions' },
-        { link: '#!', text: 'Returns & Exchanges' },
-        { link: '#!', text: 'Shipping & Delivery' },
-        { link: '#!', text: 'Privacy Policy' },
+        { path: '/', text: 'Terms & Conditions' },
+        { path: '/', text: 'Returns & Exchanges' },
+        { path: '/', text: 'Shipping & Delivery' },
+        { path: '/', text: 'Privacy Policy' },
     ],
 };
 

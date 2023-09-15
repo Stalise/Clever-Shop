@@ -20,12 +20,13 @@ interface IProps {
 }
 
 export const Product: FC<IProps> = ({
-    data: { category, images, discount, name, price, rating },
+    data: { id, category, images, discount, name, price, rating },
 }) => {
     const pathToImage = `${process.env.NEXT_PUBLIC_CLOUDINARY}${category}/${images[0].url}`;
+    const link = `/${category}/${id}`;
 
     return (
-        <StyledLink href={'/'}>
+        <StyledLink href={link}>
             <Container>
                 <StyledImage
                     src={pathToImage}

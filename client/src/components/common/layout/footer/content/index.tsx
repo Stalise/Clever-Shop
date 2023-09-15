@@ -1,7 +1,7 @@
 import { FC, Fragment } from 'react';
 import { useRouter } from 'next/router';
 
-import { categories, contacts, information, useful } from 'data/footer';
+import { categories, contacts, information, useful } from './data';
 
 import {
     Container,
@@ -29,11 +29,11 @@ export const Content: FC = () => {
                             <Title>{title}</Title>
                         </Item>
 
-                        {data.map(({ link, text }) => (
+                        {data.map(({ path, text }) => (
                             <Item key={text}>
                                 <StyledLink
-                                    href={link}
-                                    $selected={link === category}
+                                    href={`/${path}`}
+                                    $selected={path === category}
                                 >
                                     {text}
                                 </StyledLink>
