@@ -8,7 +8,7 @@ export const typographyVariables = css`
         --typography-spartan-size-s: 12px;
         --typography-spartan-height-s: 10px;
         --typography-spartan-size-m: 14px;
-        --typography-spartan-height-m: 12px;
+        --typography-spartan-height-m: 13px;
         --typography-spartan-size-l: 16px;
         --typography-spartan-height-l: 14px;
         --typography-spartan-size-xl: 19px;
