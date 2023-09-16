@@ -14,8 +14,6 @@ import {
     Wrapper,
 } from './styles';
 
-import 'swiper/css';
-
 export const Slider: FC = () => (
     <Wrapper>
         <StyledSwiper

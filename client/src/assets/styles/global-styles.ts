@@ -4,6 +4,8 @@ import { colorVariables } from './color-variables-styles';
 import { nullStyles } from './null-styles';
 import { typographyVariables } from './typography-variables-styles';
 
+import 'swiper/css';
+
 export default createGlobalStyle`
     ${nullStyles}
     ${colorVariables}
