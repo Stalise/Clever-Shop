@@ -16,9 +16,7 @@ import {
 } from './styles';
 
 export const Content: FC = () => {
-    const {
-        query: { category },
-    } = useRouter();
+    const { asPath } = useRouter();
 
     return (
         <Wrapper>
@@ -32,8 +30,8 @@ export const Content: FC = () => {
                         {data.map(({ path, text }) => (
                             <Item key={text}>
                                 <StyledLink
-                                    href={`/${path}`}
-                                    $selected={path === category}
+                                    href={path}
+                                    $selected={path === asPath}
                                 >
                                     {text}
                                 </StyledLink>

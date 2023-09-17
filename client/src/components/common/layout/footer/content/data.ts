@@ -5,8 +5,8 @@ import SvgPhoneIconFilledS from 'components/ui/icons/phone-icon-filled-s';
 export const categories = {
     title: 'Categories',
     data: [
-        { path: 'men', text: 'Men' },
-        { path: 'women', text: 'Women' },
+        { path: '/men', text: 'Men' },
+        { path: '/women', text: 'Women' },
         { path: '#!', text: 'Accessories' },
         { path: '#!', text: 'Beauty' },
     ],

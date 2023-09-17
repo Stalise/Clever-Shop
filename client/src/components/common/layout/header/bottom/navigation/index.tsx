@@ -5,8 +5,8 @@ import { StyledLink, Wrapper } from './styles';
 
 const data = [
     { text: 'About Us', path: '#!' },
-    { text: 'Women', path: 'women' },
-    { text: 'Men', path: 'men' },
+    { text: 'Women', path: '/women' },
+    { text: 'Men', path: '/men' },
     { text: 'Beauty', path: '#!' },
     { text: 'Accessories', path: '#!' },
     { text: 'Blog', path: '#!' },
@@ -14,19 +14,14 @@ const data = [
 ];
 
 export const Navigation: FC = () => {
-    const {
-        query: { category },
-    } = useRouter();
+    const { asPath } = useRouter();
 
     return (
         <Wrapper>
             <ul>
                 {data.map(({ text, path }) => (
                     <li key={text}>
-                        <StyledLink
-                            href={`/${path}`}
-                            $selected={path === category}
-                        >
+                        <StyledLink href={path} $selected={path === asPath}>
                             {text}
                         </StyledLink>
                     </li>
