@@ -5,12 +5,13 @@ import { productsMock } from 'data/products-mock';
 import type { IBreadcrumb } from 'types/breadcrumbs';
 
 import { Intro } from 'components/common/intro';
+import { Content } from 'components/product-page/content';
 
 interface IProps {
     router: NextRouter;
 }
 
-const { rating, reviews } = productsMock.women[0];
+const product = productsMock.men[12];
 
 const Component: FC<IProps> = ({ router }) => {
     const { category, id } = router.query;
@@ -26,10 +27,11 @@ const Component: FC<IProps> = ({ router }) => {
             <Intro
                 breadcrumbs={breadcrumbs}
                 bottomContent={{
-                    rating,
-                    countReviews: reviews.length,
+                    rating: product.rating,
+                    countReviews: product.reviews.length,
                 }}
             />
+            <Content product={product} />
         </Fragment>
     );
 };
