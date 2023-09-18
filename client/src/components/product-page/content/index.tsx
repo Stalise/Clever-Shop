@@ -12,17 +12,25 @@ interface IProps {
 }
 
 export const Content: FC<IProps> = ({ product }) => {
-    const [color] = useState(product.images[0].color);
+    const [selectedColor, setSelectedColor] = useState(product.images[0].color);
+
+    const handleColorChange = (color: string) => {
+        setSelectedColor(color);
+    };
 
     return (
         <Wrapper>
             <Container>
                 <Sliders
                     images={product.images}
-                    color={color}
+                    selectedColor={selectedColor}
                     category={product.category}
                 />
-                <Info />
+                <Info
+                    product={product}
+                    selectedColor={selectedColor}
+                    handleColorChange={handleColorChange}
+                />
             </Container>
         </Wrapper>
     );

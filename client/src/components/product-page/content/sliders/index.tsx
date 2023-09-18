@@ -11,16 +11,16 @@ import { Wrapper } from './styles';
 
 interface IProps {
     images: IImage[];
-    color: string;
+    selectedColor: string;
     category: CategoriesType;
 }
 
-export const Sliders: FC<IProps> = ({ images, color, category }) => {
+export const Sliders: FC<IProps> = ({ images, selectedColor, category }) => {
     const [secondarySlider, setSecondarySlider] = useState<SwiperCore | null>(
         null,
     );
 
-    const currentImages = images.filter((item) => item.color === color);
+    const currentImages = images.filter(({ color }) => color === selectedColor);
 
     return (
         <Wrapper>
