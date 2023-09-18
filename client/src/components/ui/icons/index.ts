@@ -8,6 +8,7 @@ export { default as CrossIconAccentXl } from './cross-icon-accent-xl';
 export { default as FacebookIconFilledS } from './facebook-icon-filled-s';
 export { default as GlobeIconAccentL } from './globe-icon-accent-l';
 export { default as GridIconAccentL } from './grid-icon-accent-l';
+export { default as HangerIconAccentL } from './hanger-icon-accent-l';
 export { default as HeartIconAccentL } from './heart-icon-accent-l';
 export { default as InstagramIconFilledS } from './instagram-icon-filled-s';
 export { default as LinesIconAccentL } from './lines-icon-accent-l';
