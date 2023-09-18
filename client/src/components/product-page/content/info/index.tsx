@@ -3,6 +3,7 @@ import { FC } from 'react';
 import type { IProduct } from 'types/common';
 
 import { Colors } from './colors';
+import { Sizes } from './sizes';
 
 import { Wrapper } from './styles';
 
@@ -13,7 +14,7 @@ interface IProps {
 }
 
 export const Info: FC<IProps> = ({
-    product: { images, category },
+    product: { images, category, sizes },
     selectedColor,
     handleColorChange,
 }) => (
@@ -24,5 +25,6 @@ export const Info: FC<IProps> = ({
             category={category}
             handleColorChange={handleColorChange}
         />
+        <Sizes sizes={sizes} />
     </Wrapper>
 );
