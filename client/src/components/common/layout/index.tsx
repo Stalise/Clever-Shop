@@ -10,7 +10,7 @@ interface IProps {
 }
 
 export const Layout: FC<IProps> = ({ children }) => (
-    <Wrapper>
+    <Wrapper id='layout'>
         <Header />
         <Main>{children}</Main>
         <Footer />

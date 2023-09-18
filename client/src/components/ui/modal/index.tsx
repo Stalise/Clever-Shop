@@ -9,7 +9,7 @@ import type { AnimationStatusType, IProps, ModalStatusType } from './types';
 
 import { Close, Container, Content, Wrapper } from './styles';
 
-const Modal: FC<IProps> = ({
+export const Modal: FC<IProps> = ({
     /** JSX элемент */
     children,
     /** Позволяет отображать или скрывать модальное окно */
@@ -46,7 +46,7 @@ const Modal: FC<IProps> = ({
 
             setTimeout(() => {
                 setAnimationStatus('on');
-            }, 10);
+            }, 30);
         } else {
             document.body.style.overflow = 'visible';
             setAnimationStatus('off');
@@ -82,9 +82,7 @@ const Modal: FC<IProps> = ({
                     <Content $size={size}>{children}</Content>
                 </Container>
             </Wrapper>,
-            document.body,
+            document.getElementById('layout') as HTMLElement,
         )
     );
 };
-
-export default Modal;
