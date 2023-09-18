@@ -1,31 +1,23 @@
 import { FC } from 'react';
 import Image from 'next/image';
 
-import { Container, Content, Copyright, StyledLink, Wrapper } from './styles';
+import { data } from './data';
 
-const data = [
-    { path: '/static/stripe_monochrome.png', width: 43, height: 16 },
-    { path: '/static/aes_monochrome.png', width: 31, height: 16 },
-    { path: '/static/paypal_monochrome.png', width: 61, height: 16 },
-    { path: '/static/visa_monochrome.png', width: 52, height: 16 },
-    { path: '/static/mastercard_monochrome.png', width: 27, height: 16 },
-    { path: '/static/discover_monochrome.png', width: 50, height: 16 },
-    { path: '/static/american-express_monochrome.png', width: 47, height: 16 },
-];
+import { Container, Content, StyledLink, Wrapper } from './styles';
 
 export const Bottom: FC = () => {
     return (
         <Wrapper>
             <Container>
-                <Copyright>Copyright © 2023 all rights reserved</Copyright>
+                <span>Copyright © 2023 all rights reserved</span>
                 <Content>
-                    {data.map(({ path, width, height }) => (
+                    {data.map(({ path, width }) => (
                         <div key={path}>
                             <Image
                                 src={path}
                                 priority
                                 width={width}
-                                height={height}
+                                height={16}
                                 alt='payment'
                             />
                         </div>
