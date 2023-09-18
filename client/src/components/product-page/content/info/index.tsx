@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import type { IProduct } from 'types/common';
 
+import { Actions } from './actions';
 import { Colors } from './colors';
 import { Sizes } from './sizes';
 
@@ -14,7 +15,7 @@ interface IProps {
 }
 
 export const Info: FC<IProps> = ({
-    product: { images, category, sizes },
+    product: { images, category, sizes, price, discount },
     selectedColor,
     handleColorChange,
 }) => (
@@ -26,5 +27,6 @@ export const Info: FC<IProps> = ({
             handleColorChange={handleColorChange}
         />
         <Sizes sizes={sizes} />
+        <Actions price={price} discount={discount} />
     </Wrapper>
 );

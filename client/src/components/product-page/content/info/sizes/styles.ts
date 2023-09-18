@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
     margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--grey);
 `;
 
 export const Text = styled.div`
