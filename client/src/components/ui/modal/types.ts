@@ -1,24 +1,25 @@
+import { SvgSisezType } from 'types/ui';
+
 export type ModalStatusType = 'open' | 'close';
 export type AnimationStatusType = 'on' | 'off';
-export type SizeType = 's' | 'm' | 'l' | 'xl';
 
 export interface IWrapperProps {
     $isShow: boolean;
 }
 
 export interface IContentProps {
-    $size: SizeType;
+    $size: SvgSisezType;
 }
 
 export interface IProps {
     children: JSX.Element;
     isShowModal: boolean;
-    size?: SizeType;
+    size?: SvgSisezType;
     setIsShowModal: (data: boolean) => void;
 }
 
 export type DimensionsType = {
-    [key in SizeType]: {
+    [key in SvgSisezType]: {
         width: number;
         height: number;
         padding: string;
