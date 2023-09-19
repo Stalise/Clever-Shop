@@ -4,6 +4,7 @@ import type { IProduct } from 'types/common';
 
 import { Actions } from './actions';
 import { Colors } from './colors';
+import { Description } from './description';
 import { Interaction } from './interaction';
 import { Payment } from './payment';
 import { Sizes } from './sizes';
@@ -32,5 +33,6 @@ export const Info: FC<IProps> = ({
         <Actions price={price} discount={discount} />
         <Interaction />
         <Payment />
+        <Description />
     </Wrapper>
 );
