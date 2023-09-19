@@ -5,6 +5,7 @@ import type { IProduct } from 'types/common';
 import { Actions } from './actions';
 import { Colors } from './colors';
 import { Description } from './description';
+import { Details } from './details';
 import { Interaction } from './interaction';
 import { Payment } from './payment';
 import { Sizes } from './sizes';
@@ -18,7 +19,7 @@ interface IProps {
 }
 
 export const Info: FC<IProps> = ({
-    product: { images, category, sizes, price, discount },
+    product: { images, category, sizes, price, discount, colors, materials },
     selectedColor,
     handleColorChange,
 }) => (
@@ -34,5 +35,6 @@ export const Info: FC<IProps> = ({
         <Interaction />
         <Payment />
         <Description />
+        <Details colors={colors} sizes={sizes} materials={materials} />
     </Wrapper>
 );
