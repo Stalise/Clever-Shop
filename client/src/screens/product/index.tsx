@@ -6,6 +6,7 @@ import type { IBreadcrumb } from 'types/breadcrumbs';
 
 import { Intro } from 'components/common/intro';
 import { Content } from 'components/product-page/content';
+import { Similar } from 'components/product-page/similar';
 
 interface IProps {
     router: NextRouter;
@@ -32,6 +33,7 @@ const Component: FC<IProps> = ({ router }) => {
                 }}
             />
             <Content product={product} />
+            <Similar />
         </Fragment>
     );
 };
