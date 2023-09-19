@@ -20,8 +20,8 @@ export const Slider: FC = () => (
             modules={[Autoplay]}
             slidesPerView={1}
             spaceBetween={0}
-            autoplay={true}
-            loop={true}
+            autoplay
+            loop
             speed={5000}
         >
             {[1, 2, 3].map((item) => (
