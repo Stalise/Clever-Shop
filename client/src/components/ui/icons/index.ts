@@ -1,4 +1,5 @@
 export { default as AdjustmentsIconAccentXl } from './adjustments-icon-accent-xl';
+export { default as AnnotationIconAccentL } from './annotation-icon-accent-l';
 export { default as ChevronLeftIconAccentL } from './chevron-left-icon-accent-l';
 export { default as ChevronRightIconAccentL } from './chevron-right-icon-accent-l';
 export { default as ClockIconAccentM } from './clock-icon-accent-m';
