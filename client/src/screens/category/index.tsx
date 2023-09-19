@@ -21,7 +21,7 @@ export const Category: FC = () => {
 
     const breadcrumbs: IBreadcrumb[] = [
         { text: 'Home', path: '/' },
-        { text: category as string },
+        { text: category },
     ];
 
     const handleFiltersChange: handleFiltersChangeType = (

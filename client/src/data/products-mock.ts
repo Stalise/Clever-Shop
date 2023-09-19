@@ -19,7 +19,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 50,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
             colors: ['White'],
             images: [
@@ -50,30 +50,14 @@ export const productsMock: IProductsMock = {
                     name: 'Mark Markul',
                     text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
                     rating: 4,
+                    date: '2023-01-25',
                 },
                 {
                     id: 2,
                     name: 'Dan Frolov',
                     text: 'When an unknown printer took a galley of type and scrambled it to make a type specimen book.',
                     rating: 4,
-                },
-                {
-                    id: 3,
-                    name: 'Alfred Brown',
-                    text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                    rating: 3,
-                },
-                {
-                    id: 4,
-                    name: 'John Foden',
-                    text: 'There are many variations of passages of Lorem Ipsum available.',
-                    rating: 3,
-                },
-                {
-                    id: 5,
-                    name: 'Luke Show',
-                    text: 'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.',
-                    rating: 3,
+                    date: '2023-04-03',
                 },
             ],
         },
@@ -86,7 +70,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 30,
             discount: null,
-            material: ['Flax - 30%', 'Wool - 50%', 'Acrylic - 20%'],
+            materials: ['Flax - 30%', 'Wool - 50%', 'Acrylic - 20%'],
             sizes: ['S', 'M', 'L', '3XL'],
             colors: ['Gray', 'White', 'Turquoise'],
             images: [
@@ -132,6 +116,7 @@ export const productsMock: IProductsMock = {
                     name: 'Markus Rashford',
                     text: 'But I must explain to you how all this mistaken idea of denouncing pleasure.',
                     rating: 4,
+                    date: '2022-05-25',
                 },
             ],
         },
@@ -144,7 +129,7 @@ export const productsMock: IProductsMock = {
             rating: 2,
             price: 70,
             discount: 20,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'XL', '3XL'],
             colors: ['Black'],
             images: [
@@ -180,7 +165,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 110,
             discount: null,
-            material: ['Flax - 50%', 'Wool - 50%'],
+            materials: ['Flax - 50%', 'Wool - 50%'],
             sizes: ['M'],
             colors: ['Yellow', 'White', 'Blue'],
             images: [
@@ -261,7 +246,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 50,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XL', '2XL', '3XL'],
             colors: ['Black', 'Blue', 'Beige'],
             images: [
@@ -322,7 +307,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 30,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'XL', '2XL'],
             colors: ['Pink', 'Beige'],
             images: [
@@ -373,7 +358,7 @@ export const productsMock: IProductsMock = {
             rating: 2,
             price: 80,
             discount: null,
-            material: ['Flax - 100%'],
+            materials: ['Flax - 100%'],
             sizes: ['2XL'],
             colors: ['Green'],
             images: [
@@ -409,7 +394,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 40,
             discount: null,
-            material: ['Flax - 80%', 'Acrylic - 20%'],
+            materials: ['Flax - 80%', 'Acrylic - 20%'],
             sizes: ['XS', 'S', 'M', 'L'],
             colors: ['Light blue', 'Green'],
             images: [
@@ -450,7 +435,7 @@ export const productsMock: IProductsMock = {
             rating: 2,
             price: 75,
             discount: 10,
-            material: ['Wool - 100%'],
+            materials: ['Wool - 100%'],
             sizes: ['2XL', '3XL', '4XL'],
             colors: ['Gray', 'Green'],
             images: [
@@ -506,7 +491,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 50,
             discount: null,
-            material: ['Flax - 100%'],
+            materials: ['Flax - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
             colors: ['Blue', 'Pink'],
             images: [
@@ -557,7 +542,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 20,
             discount: null,
-            material: ['Flax - 100%'],
+            materials: ['Flax - 100%'],
             sizes: ['M', 'L', 'XL'],
             colors: ['White', 'Black'],
             images: [
@@ -613,7 +598,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 130,
             discount: null,
-            material: ['Acrylic - 100%'],
+            materials: ['Acrylic - 100%'],
             sizes: ['M', 'L'],
             colors: ['Brown'],
             images: [
@@ -644,7 +629,7 @@ export const productsMock: IProductsMock = {
             rating: 2,
             price: 60,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XL', '2XL', '3XL', '4XL'],
             colors: ['White', 'Blue', 'Purple'],
             images: [
@@ -725,7 +710,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 85,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
             colors: ['Green', 'Gray'],
             images: [
@@ -781,7 +766,7 @@ export const productsMock: IProductsMock = {
             rating: 3,
             price: 30,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L'],
             colors: ['Yellow'],
             images: [
@@ -822,7 +807,7 @@ export const productsMock: IProductsMock = {
             rating: 3,
             price: 80,
             discount: 5,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L'],
             colors: ['Brown', 'Black', 'Gray'],
             images: [
@@ -878,7 +863,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 170,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
             colors: ['White'],
             images: [
@@ -909,7 +894,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 90,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
             colors: ['Black'],
             images: [
@@ -955,7 +940,7 @@ export const productsMock: IProductsMock = {
             rating: 2,
             price: 25,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL', '3XL', '4XL'],
             colors: ['Light blue', 'Yellow', 'Purple'],
             images: [
@@ -1026,7 +1011,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 45,
             discount: 20,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL'],
             colors: ['Black', 'White'],
             images: [
@@ -1087,7 +1072,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 20,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L'],
             colors: ['White', 'Blue'],
             images: [
@@ -1143,7 +1128,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 25,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S'],
             colors: ['Light blue'],
             images: [
@@ -1174,7 +1159,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 15,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL', '3XL', '4XL'],
             colors: ['Red', 'Beige', 'Grey'],
             images: [
@@ -1230,7 +1215,7 @@ export const productsMock: IProductsMock = {
             rating: 2,
             price: 20,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L'],
             colors: ['Orange', 'Blue'],
             images: [
@@ -1281,7 +1266,7 @@ export const productsMock: IProductsMock = {
             rating: 3,
             price: 30,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L'],
             colors: ['Black', 'Blue', 'Beige'],
             images: [
@@ -1347,7 +1332,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 40,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
             colors: ['Red', 'Blue'],
             images: [
@@ -1408,7 +1393,7 @@ export const productsMock: IProductsMock = {
             rating: 3,
             price: 20,
             discount: 10,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL'],
             colors: ['Blue'],
             images: [
@@ -1444,7 +1429,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 85,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
             colors: ['Blue', 'Orange', 'Purple'],
             images: [
@@ -1520,7 +1505,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 25,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
             colors: ['Black', 'White'],
             images: [
@@ -1586,7 +1571,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 60,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
             colors: ['White'],
             images: [
@@ -1622,7 +1607,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 20,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL'],
             colors: ['Red', 'Black'],
             images: [
@@ -1673,7 +1658,7 @@ export const productsMock: IProductsMock = {
             rating: 3,
             price: 40,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
             colors: ['Black'],
             images: [
@@ -1712,7 +1697,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 120,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
             colors: ['White'],
             images: [
@@ -1738,30 +1723,14 @@ export const productsMock: IProductsMock = {
                     name: 'Mia Clark',
                     text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
                     rating: 4,
+                    date: '2023-08-15',
                 },
                 {
                     id: 8,
                     name: 'Jane Varane',
                     text: 'When an unknown printer took a galley of type and scrambled it to make a type specimen book.',
                     rating: 4,
-                },
-                {
-                    id: 9,
-                    name: 'Anna Grealish',
-                    text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                    rating: 3,
-                },
-                {
-                    id: 10,
-                    name: 'Bella Sanches',
-                    text: 'There are many variations of passages of Lorem Ipsum available.',
-                    rating: 3,
-                },
-                {
-                    id: 11,
-                    name: 'Loli Stown',
-                    text: 'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.',
-                    rating: 5,
+                    date: '2023-06-11',
                 },
             ],
         },
@@ -1774,7 +1743,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 40,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M'],
             colors: ['Black'],
             images: [
@@ -1805,6 +1774,7 @@ export const productsMock: IProductsMock = {
                     name: 'Ingrid Hole',
                     text: 'But I must explain to you how all this mistaken idea of denouncing pleasure.',
                     rating: 4,
+                    date: '2023-09-20',
                 },
             ],
         },
@@ -1817,7 +1787,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 70,
             discount: 20,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M', 'XL'],
             colors: ['Beige', 'Turquoise'],
             images: [
@@ -1873,7 +1843,7 @@ export const productsMock: IProductsMock = {
             rating: 2,
             price: 45,
             discount: null,
-            material: ['Flax - 100%'],
+            materials: ['Flax - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
             colors: ['White'],
             images: [
@@ -1904,7 +1874,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 100,
             discount: null,
-            material: ['Cotton - 20%'],
+            materials: ['Cotton - 20%'],
             sizes: ['L'],
             colors: ['White'],
             images: [
@@ -1935,7 +1905,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 55,
             discount: null,
-            material: ['Wool - 70%', 'Acrylic - 30%'],
+            materials: ['Wool - 70%', 'Acrylic - 30%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
             colors: ['Pink'],
             images: [
@@ -1971,7 +1941,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 150,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
             colors: ['Light blue'],
             images: [
@@ -2002,7 +1972,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 70,
             discount: 5,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL'],
             colors: ['Black'],
             images: [
@@ -2038,7 +2008,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 25,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
             colors: ['Yellow', 'Pink'],
             images: [
@@ -2084,7 +2054,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 15,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
             colors: ['Khaki', 'Beige'],
             images: [
@@ -2130,7 +2100,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 40,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
             colors: ['Red', 'Green'],
             images: [
@@ -2166,7 +2136,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 20,
             discount: 10,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL'],
             colors: ['Brown', 'Pink'],
             images: [
@@ -2222,7 +2192,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 40,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
             colors: ['Beige', 'Purple'],
             images: [
@@ -2268,7 +2238,7 @@ export const productsMock: IProductsMock = {
             rating: 3,
             price: 50,
             discount: 20,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL'],
             colors: ['White', 'Black'],
             images: [
@@ -2324,7 +2294,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 25,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L'],
             colors: ['Turquoise'],
             images: [
@@ -2355,7 +2325,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 60,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'Xl', '2XL'],
             colors: ['Purple'],
             images: [
@@ -2386,7 +2356,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 50,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
             colors: ['Beige'],
             images: [
@@ -2422,7 +2392,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 25,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XL'],
             colors: ['Pink', 'Green'],
             images: [
@@ -2468,7 +2438,7 @@ export const productsMock: IProductsMock = {
             rating: 3,
             price: 35,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL', '3XL'],
             colors: ['Grey'],
             images: [
@@ -2504,7 +2474,7 @@ export const productsMock: IProductsMock = {
             rating: 3,
             price: 30,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
             colors: ['Black'],
             images: [
@@ -2535,7 +2505,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 50,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['L', 'XL'],
             colors: ['Purple', 'White'],
             images: [
@@ -2581,7 +2551,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 40,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
             colors: ['Yellow', 'Brown'],
             images: [
@@ -2637,7 +2607,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 80,
             discount: 15,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'L', 'XL'],
             colors: ['Red'],
             images: [
@@ -2668,7 +2638,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 40,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL'],
             colors: ['Black'],
             images: [
@@ -2704,7 +2674,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 30,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL', '2XL'],
             colors: ['Red'],
             images: [
@@ -2740,7 +2710,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 40,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['XS', 'S', 'M', 'L', 'XL'],
             colors: ['Turquoise'],
             images: [
@@ -2776,7 +2746,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 55,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL'],
             colors: ['Gray'],
             images: [
@@ -2807,7 +2777,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 20,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL'],
             colors: ['White'],
             images: [
@@ -2838,7 +2808,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 75,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
             colors: ['White'],
             images: [
@@ -2869,7 +2839,7 @@ export const productsMock: IProductsMock = {
             rating: 4,
             price: 15,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['S', 'M', 'L', 'XL'],
             colors: ['Light blue'],
             images: [
@@ -2900,7 +2870,7 @@ export const productsMock: IProductsMock = {
             rating: 3,
             price: 25,
             discount: null,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['L', 'XL'],
             colors: ['Yellow', 'Beige'],
             images: [
@@ -2946,7 +2916,7 @@ export const productsMock: IProductsMock = {
             rating: 5,
             price: 110,
             discount: 25,
-            material: ['Cotton - 100%'],
+            materials: ['Cotton - 100%'],
             sizes: ['M', 'L', 'XL', '2XL'],
             colors: ['Black'],
             images: [

@@ -21,8 +21,6 @@ export const Container = styled.div`
     color: var(--dark-grey);
 `;
 
-export const Copyright = styled.span``;
-
 export const Content = styled.div`
     display: flex;
     flex-wrap: wrap;

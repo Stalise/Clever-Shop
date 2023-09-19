@@ -7,7 +7,7 @@ export interface IProduct {
     rating: number;
     price: number;
     discount: null | number;
-    material: string[];
+    materials: string[];
     sizes: string[];
     colors: string[];
     images: IImage[];
@@ -25,6 +25,7 @@ export interface IReview {
     name: string;
     text: string;
     rating: number;
+    date: string;
 }
 
 export type CategoriesType = 'men' | 'women';

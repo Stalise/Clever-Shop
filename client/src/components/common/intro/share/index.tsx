@@ -1,16 +1,12 @@
 import { FC, useState } from 'react';
-import dynamic from 'next/dynamic';
 
 import SvgShareIconFilledM from 'components/ui/icons/share-icon-filled-m';
+import { Modal } from 'components/ui/modal';
 
 import { generateLinks } from './utils/generate-links';
 import { IShareLink } from './types';
 
 import { Content, StyledLink, Wrapper } from './styles';
-
-const Modal = dynamic(() => import('../../../../components/ui/modal'), {
-    ssr: false,
-});
 
 export const Share: FC = () => {
     const [isShowModal, setIsShowModal] = useState(false);

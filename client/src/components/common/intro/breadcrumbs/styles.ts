@@ -24,6 +24,7 @@ export const StyledLink = styled(Link)`
     ${fontSpartan('m', '300')}
 
     color: var(--dark-grey);
+    text-transform: capitalize;
 
     em {
         font-style: normal;

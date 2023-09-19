@@ -2,10 +2,10 @@ import { FC } from 'react';
 import { useRouter } from 'next/router';
 
 import type { IBreadcrumb } from 'types/breadcrumbs';
+import { declinationReviewsCount } from 'utils/declination-reviews-count';
 
 import { Rating } from 'components/ui/rating';
 
-import { declinationReviewsCount } from './utils/declination-reviews-count';
 import { Breadcrumbs } from './breadcrumbs';
 import { Share } from './share';
 

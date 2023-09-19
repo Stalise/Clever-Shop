@@ -14,16 +14,14 @@ import {
     Wrapper,
 } from './styles';
 
-import 'swiper/css';
-
 export const Slider: FC = () => (
     <Wrapper>
         <StyledSwiper
             modules={[Autoplay]}
             slidesPerView={1}
             spaceBetween={0}
-            autoplay={true}
-            loop={true}
+            autoplay
+            loop
             speed={5000}
         >
             {[1, 2, 3].map((item) => (
