@@ -11,7 +11,7 @@ interface IProps {
     router: NextRouter;
 }
 
-const product = productsMock.men[12];
+const product = productsMock.men[0];
 
 const Component: FC<IProps> = ({ router }) => {
     const { category, id } = router.query;
