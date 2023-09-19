@@ -7,7 +7,7 @@ export interface IProduct {
     rating: number;
     price: number;
     discount: null | number;
-    material: string[];
+    materials: string[];
     sizes: string[];
     colors: string[];
     images: IImage[];
